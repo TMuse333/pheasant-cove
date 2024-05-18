@@ -50,7 +50,7 @@ export const Homepage = () => {
         <Navbar
         links={navLinks}
         />
-        <section className="absolute top-[20%] left-0
+        <section className="absolute top-[25%] left-0
         overflow-x-hidden">
 
             <ImageHero
