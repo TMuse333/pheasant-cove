@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                     >
                         {links.map((link, index) => (
                             <Link key={index} to={link.destination}>
-                                <li className="text-lg  mb-2
+                                <li className="text-lg lg:text-2xl mb-2
                                  pl-2 pr-2 lg:mb-0
                                  hover:text-red-400 ">{link.name}</li>
                             </Link>
