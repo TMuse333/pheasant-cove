@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
+
 interface HeroProps {
     images: string[];
 }
@@ -28,13 +28,10 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
           <p className="mt-4 sm:text-xl pr-4 pl-4">A newly built home that has never been used before</p>
             <h1 className="text-4xl mb-4 mt-4 sm:text-6xl">Pheasant Cove</h1>
             <p className="text-2xl mb-4 sm:text-3xl">Place address Here</p>
-            <Link to='/contact'>
-
- 
+            <Link to='/contact'
             <button>
                 Book a Tour
             </button>
-            </Link>
             </div>
 
             <div className="image-container h-[80vh] relative
