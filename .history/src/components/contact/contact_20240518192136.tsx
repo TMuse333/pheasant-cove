@@ -30,8 +30,8 @@ const navLinks = [
         destination:'/'
     },
     {
-        name:'View Property',
-        destination:'/display'
+        name:'Contact',
+        destination:'/'
     }
 ]
 
