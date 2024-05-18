@@ -151,7 +151,7 @@ const style = (index:number) => {
          left:desktopExpanded || mobileExpanded?'0': 'auto',
        
 
-         zIndex:10
+         zIndex:100
   
    }}
       >
