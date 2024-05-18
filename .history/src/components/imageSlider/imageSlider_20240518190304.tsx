@@ -89,7 +89,14 @@ const ImageSlider:React.FC<props> = ({ images }) => {
 
 
 
+const [positionX, setPositionX] = useState(0);
+    const [positionY, setPositionY] = useState(0);
 
+    const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        // Update positionX and positionY based on scroll direction
+        setPositionX(prevX => prevX + event.deltaX);
+        setPositionY(prevY => prevY + event.deltaY);
+    };
 
 const handleExpansion = () => {
 
@@ -180,7 +187,7 @@ const style = (index:number) => {
               aria-hidden={imageIndex !== index}
               className="img-slider-img"
               style={{ transform: `translateX(${-100 * imageIndex}%)`, 
-         
+              left: positionX, top: positionY,
             //   maxWidth:'1200px',
               height: !isDesktop && mobileExpanded ? '100vh' : 'auto',
             //   marginLeft:'auto'

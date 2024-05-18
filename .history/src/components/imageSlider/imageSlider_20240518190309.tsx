@@ -180,7 +180,7 @@ const style = (index:number) => {
               aria-hidden={imageIndex !== index}
               className="img-slider-img"
               style={{ transform: `translateX(${-100 * imageIndex}%)`, 
-         
+              left: positionX, top: positionY,
             //   maxWidth:'1200px',
               height: !isDesktop && mobileExpanded ? '100vh' : 'auto',
             //   marginLeft:'auto'

@@ -22,7 +22,16 @@ const Booking: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean>(true);
   const form = useRef<HTMLFormElement>(null);
 
-
+  const links = [
+    {
+        title:'Home',
+        destination:'/'
+    },
+    {
+        title:'Contact',
+        destination:'/contact'
+    }
+]
 
 const navLinks = [
     {
@@ -81,7 +90,45 @@ const navLinks = [
   //   { dest: '/about', name: 'About Us' },
   // ];
 
+  const tenets = [
+    'Discipline',
+    'Creativity',
+    'Precision',
+    'Tenacity',
+    'Focus'
+  ]
 
+  const liVariants = (delay:number):Variants => {
+
+    return {
+      initial:{
+        opacity:0,
+        y:-20
+      },
+      animate:{
+        opacity:1,
+        y:0,
+        transition:{
+          delay:delay,
+          duration:0.3
+        }
+      }
+    }
+  }
+
+  //5 x 0.4
+
+  const promiseVariants: Variants = {
+    initial:{
+      scale:0
+    },
+    animate:{
+      scale:1,
+      transition:{
+        delay:5 * 0.4
+      }
+    }
+  }
 
   return (
     <>
