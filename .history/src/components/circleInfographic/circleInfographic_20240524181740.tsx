@@ -53,7 +53,7 @@ title, description}) => {
             />
             <h1 className="text-3xl  ">{title}</h1>
             <p className=" ml-auto mr-auto text-xs sm:text-xs pr-5 pl-5 mt-3 sm:mt-6
-            md:text-lg">
+            md:text-xl">
                 {description}
             </p>
             </div>

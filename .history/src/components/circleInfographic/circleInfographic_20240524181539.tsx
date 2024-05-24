@@ -45,15 +45,14 @@ title, description}) => {
         {/*        ${inView ? 'glow' : ''}`}*/}
             <div className="mt-4">
             <img className="w-[35vw]
-            max-w-[95px] max-h-[95px] h-[25vw]
+            max-w-[115px] max-h-[x] h-[25vw]
             sm:w-[10vw] sm:h-[10vw] object-cover 
             mr-auto ml-auto
             object-right"
             src={image}
             />
-            <h1 className="text-3xl  ">{title}</h1>
-            <p className=" ml-auto mr-auto text-xs sm:text-xs pr-5 pl-5 mt-3 sm:mt-6
-            md:text-lg">
+            <h1 className="text-3xl  2xl:text-2xl ">{title}</h1>
+            <p className=" ml-auto mr-auto text-xs sm:text-xs pr-5 pl-5 mt-3 sm:mt-6">
                 {description}
             </p>
             </div>

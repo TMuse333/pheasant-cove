@@ -51,7 +51,7 @@ export const Homepage = () => {
         links={navLinks}
         />
         <section className="absolute top-[20%] md:top-[10%] left-0
-        bg-[#35465E]
+        
         overflow-x-hidden">
 
             <ImageHero

@@ -95,7 +95,7 @@ const navLinks = [
    
     
       <div className='w-screen h-screen flex justify-center items-center absolute top-10 left-0
-     bg-[#35465E]'
+      bg-black'
     //   style={{
     //     backgroundImage:`url(${bg})`,
     //     backgroundSize: 'cover',
@@ -105,10 +105,10 @@ const navLinks = [
       >
 
       <div className='hidden md:block
-      md:w-[50vw]  
+      md:w-[50vw]  display
      
       max-w-[650px] ml-auto
-      bg-black pt-3 pb-3 bg-opacity-70
+      bg-gray-900 bg-opacity-70
       rounded-3xl '>
        <h1 className='text-white
        text-4xl mb-4'>Pheasant Cove</h1>

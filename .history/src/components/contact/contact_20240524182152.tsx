@@ -108,7 +108,7 @@ const navLinks = [
       md:w-[50vw]  
      
       max-w-[650px] ml-auto
-      bg-black pt-3 pb-3 bg-opacity-70
+      bg-black bg-opacity-70
       rounded-3xl '>
        <h1 className='text-white
        text-4xl mb-4'>Pheasant Cove</h1>
