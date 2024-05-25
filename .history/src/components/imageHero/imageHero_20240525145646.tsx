@@ -32,7 +32,7 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
 
  
             <button>
-                Fill an application
+                
             </button>
             </Link>
             </div>
