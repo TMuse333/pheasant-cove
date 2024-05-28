@@ -19,9 +19,9 @@ import Carousel from '../carousel/carosuel'
 
 export const DisplayPage = () => {
 
-// useEffect(()=> {
-//     window.scrollTo(0,0)
-// },[])
+useEffect(()=> {
+    window.scrollTo(0,0)
+},[])
 
     const links = [
         {
@@ -82,7 +82,7 @@ const carouselImages = [
 
     },
     {
-        url:kitchen,
+        url:front,
         imageIndex:1,
         title:'',
         description:'',
@@ -90,8 +90,8 @@ const carouselImages = [
 
     },
     {
-        url:bathroom2,
-        imageIndex:2,
+        url:front,
+        imageIndex:0,
         title:'',
         description:'',
         link:''

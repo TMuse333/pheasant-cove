@@ -90,7 +90,7 @@ const carouselImages = [
 
     },
     {
-        url:bathroom2,
+        url:bathr,
         imageIndex:2,
         title:'',
         description:'',

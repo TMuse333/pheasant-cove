@@ -82,7 +82,7 @@ const carouselImages = [
 
     },
     {
-        url:kitchen,
+        url:front,
         imageIndex:1,
         title:'',
         description:'',
@@ -90,7 +90,7 @@ const carouselImages = [
 
     },
     {
-        url:bathroom2,
+        url:front,
         imageIndex:2,
         title:'',
         description:'',

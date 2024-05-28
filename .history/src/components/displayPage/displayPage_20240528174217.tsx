@@ -15,13 +15,12 @@ import Closer from '../closer/closer'
 import Navbar from '../navbar/navbar'
 
 import { useEffect } from 'react'
-import Carousel from '../carousel/carosuel'
 
 export const DisplayPage = () => {
 
-// useEffect(()=> {
-//     window.scrollTo(0,0)
-// },[])
+useEffect(()=> {
+    window.scrollTo(0,0)
+},[])
 
     const links = [
         {
@@ -74,39 +73,9 @@ const images = [
 
 const carouselImages = [
     {
-        url:front,
-        imageIndex:0,
-        title:'',
-        description:'',
-        link:''
-
-    },
-    {
-        url:kitchen,
-        imageIndex:1,
-        title:'',
-        description:'',
-        link:''
-
-    },
-    {
-        url:bathroom2,
-        imageIndex:2,
-        title:'',
-        description:'',
-        link:''
-
+        
     }
 ]
-
-// imageIndex:number
-// title:string,
-// description:string
-// link:string
-
-
-// }[],
-// hasDescription?:boolean
 
     return (
         <>
@@ -126,15 +95,10 @@ const carouselImages = [
                 destination='/contact'
                 />
 
-                {/* <HomeSection
+                <HomeSection
                 title='Area of Home'
                 description='We can use this to showcase each area of the home once we have more pictures!, We can use a carousel like this for each of the sections of the home.'
                 images={images}
-                /> */}
-
-                <Carousel
-                images={carouselImages}
-                hasDescription={false}
                 />
 
                 {/* <HomeSection
