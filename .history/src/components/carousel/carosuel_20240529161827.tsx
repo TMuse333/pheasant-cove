@@ -57,6 +57,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
     useEffect(() => {
         if (shift === 0 && rightClicked) {
             console.warn('carousel wrapping!');
+        } else {
+            // Additional logic if needed
         }
 
         if (leftEdgeCase && rightClicked) {
@@ -89,31 +91,17 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
 
     }, [leftEdgeCase, shift, currentImage, leftClicked, rightClicked, images.length]);
 
-    const shouldApplyTransition = (index: number) => {
-        return !(
-            (index === 0 && rightEdgeShift === 100 && !leftClicked) ||
-            (index === images.length - 1 && leftEdgeShift === -100 && !rightClicked) ||
-            (shift === -images.length + 1 && leftClicked && !(index === 0 || index === images.length - 1)) ||
-            (rightEdgeShift === -100 && index === 0 && !rightClicked) ||
-            (leftEdgeShift === 100 && rightClicked && index === images.length - 1) ||
-            (shift === 0 && rightClicked && index !== 0 && index !== images.length - 1) ||
-            (shift === -1 && rightClicked && index === images.length - 1) ||
-            (shift === -images.length + 2 && index === 0 && leftClicked)
-        );
-    };
+    
 
     return (
         <>
             <section
-            aria-label="Image carousel"
                 className={`w-screen  
                 flex flex-col md2:flex-row ml-auto mr-auto
                 justify-center items-center
                 mb-5 ${!carouselClicked ? 'max-w-[1300px] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
 
-                <div className={`mt-10 flex relative ${hasDescription ? 'md:w-[50%]' : 'w-[100%]'}`}
-                 role="region"
-                 aria-labelledby="carousel-heading">
+                <div className={`mt-10 flex relative ${hasDescription ? 'md:w-[50%]' : 'w-[100%]'}`}>
 
                     <section className={`flex relative justify-center items-center ml-auto mr-auto 
                         ${!carouselClicked ? `
@@ -133,12 +121,16 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                     ${!carouselClicked ? `w-[90vw] h-[80vw]
                                     max-h-[400px]
                                     md:max-h-[520px]` : 'w-[100vw] h-[100vw]'}
-                                    ${ shouldApplyTransition(index)
-                                    ? 'transition-transform duration-1000' : ''}`}
+                                    ${ (index === 0 && rightEdgeShift === 100 && !leftClicked) 
+                                    || (index === images.length - 1 && leftEdgeShift === -100 && !rightClicked)
+                                    || (shift === -images.length + 1 && leftClicked && !(index === 0 || index === images.length - 1))
+                                    || (rightEdgeShift === -100 && index === 0 && !rightClicked)
+                                    || (leftEdgeShift === 100 && rightClicked && index === images.length - 1) 
+                                    || (shift === 0 && rightClicked && index !== 0 && index !== images.length - 1)
+                                    || (shift === -1 && rightClicked && index === images.length - 1)
+                                    || (shift === -images.length + 2 && index === 0 && leftClicked) 
+                                    ? '' : 'transition-transform duration-1000'}`}
                                     key={index}
-                                    role="img"
-                                    aria-label={image.title}
-                                    
                                     style={{
                                         transform: `translateX(${index === images.length - 1 ? leftEdgeShift :
                                             index === 0 ? rightEdgeShift :
@@ -168,17 +160,13 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                             max-h-[400px]
                             md:max-h-[424px] absolute
                             max-w-[400px]'>
-                            <button  aria-label="Previous image"
-                            className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
+                            <button className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
                                 <ChevronLeft onClick={handlePrevClick} size={40} />
                             </button>
-                            <button aria-label="Next image"
-                            className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
+                            <button className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
                                 <ChevronRight onClick={handleNextClick} size={40} />
                             </button>
-                            <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
-
-                             className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
+                            <button className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
                                 {carouselClicked ? 'collapse' : 'expand'}
                             </button>
                         </div>

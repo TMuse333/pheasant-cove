@@ -57,6 +57,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
     useEffect(() => {
         if (shift === 0 && rightClicked) {
             console.warn('carousel wrapping!');
+        } else {
+            // Additional logic if needed
         }
 
         if (leftEdgeCase && rightClicked) {
@@ -168,17 +170,13 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                             max-h-[400px]
                             md:max-h-[424px] absolute
                             max-w-[400px]'>
-                            <button  aria-label="Previous image"
-                            className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
+                            <button className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
                                 <ChevronLeft onClick={handlePrevClick} size={40} />
                             </button>
-                            <button aria-label="Next image"
-                            className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
+                            <button className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
                                 <ChevronRight onClick={handleNextClick} size={40} />
                             </button>
-                            <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
-
-                             className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
+                            <button className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
                                 {carouselClicked ? 'collapse' : 'expand'}
                             </button>
                         </div>

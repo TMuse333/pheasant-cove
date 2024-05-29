@@ -176,8 +176,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                             className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
                                 <ChevronRight onClick={handleNextClick} size={40} />
                             </button>
-                            <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
-
+                            <button
                              className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
                                 {carouselClicked ? 'collapse' : 'expand'}
                             </button>
