@@ -251,7 +251,7 @@ hasDescription}) =>{
     transform: `translateX(${index=== images.length - 1 ? leftEdgeShift : 
         index === 0 ? rightEdgeShift :
         (shift * 100) + (100 * index)}%)`,
-
+    // transitionTimingFunction: 'cubic-bezier(0.48, -0.25, 0.17, 1.33)',
    }}
    onClick={handleCarouselClick}
 >

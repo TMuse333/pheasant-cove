@@ -39,10 +39,10 @@ hasDescription}) =>{
     const [rightEdgeShift, setRightEdgeShift] = useState<number>(0)
 
 
-    // const updatedImages = images.map((image, ) => ({
-    //     ...image,
-    //     transformValue: (shift * 100) + (100 * image.imageIndex)
-    // }));
+    const updatedImages = images.map((image, ) => ({
+        ...image,
+        transformValue: (shift * 100) + (100 * image.imageIndex)
+    }));
 
     const [carouselClicked, setCarouselClicked] = useState(false)
 
@@ -194,7 +194,7 @@ hasDescription}) =>{
         `}>
 
        
-        {images.map((image,index) => (
+        {updatedImages.map((image,index) => (
             <>
 
             {/*this dictates the height and width of the image*/}
@@ -212,7 +212,7 @@ hasDescription}) =>{
    md:max-h-[520px] max-h-[390px]
    md:max-h-[520px]` : 'w-[100vw] h-[100vw]'}
 
-   ${ (index=== 0 && rightEdgeShift
+   ${ (image.imageIndex === 0 && rightEdgeShift
     === 100 && !leftClicked
   ) 
   || 
@@ -220,23 +220,23 @@ hasDescription}) =>{
     && leftEdgeShift === -100 && !rightClicked)
 
     || ( shift === -images.length + 1 && leftClicked
-        && !(index === 0 ||
-            index === images.length -1)
+        && !(image.imageIndex === 0 ||
+      image.imageIndex === images.length -1)
 
-     ||(rightEdgeShift === -100 && index
+     ||(rightEdgeShift === -100 && image.imageIndex
       === 0 && !rightClicked))
 
      || (leftEdgeShift === 100 && rightClicked &&
-        index === images.length -1) 
+     image.imageIndex === images.length -1) 
      || 
 
      (shift === 0 && rightClicked &&
-        index !== 0 && index !== images.length - 1
+        image.imageIndex !== 0 && image.imageIndex !== images.length - 1
         )
 
-        || (shift === -1 && rightClicked && index === images.length -1)
+        || (shift === -1 && rightClicked && image.imageIndex === images.length -1)
 
-        || (shift === -images.length +2 && index === 0
+        || (shift === -images.length +2 && image.imageIndex === 0
             && leftClicked)
       
   ? '' : 'transition-transform duration-1000'}
@@ -248,10 +248,10 @@ hasDescription}) =>{
    
    key={index}
    style={{
-    transform: `translateX(${index=== images.length - 1 ? leftEdgeShift : 
-        index === 0 ? rightEdgeShift :
-        (shift * 100) + (100 * index)}%)`,
-
+    transform: `translateX(${image.imageIndex === images.length - 1 ? leftEdgeShift : 
+        image.imageIndex === 0 ? rightEdgeShift :
+          updatedImages[index].transformValue}%)`,
+    // transitionTimingFunction: 'cubic-bezier(0.48, -0.25, 0.17, 1.33)',
    }}
    onClick={handleCarouselClick}
 >
@@ -282,7 +282,7 @@ h-[100%]`}
         ))}
 <div className={`relative z-3 
 w-[100vw] flex justify-between
-items-center h-full
+items-center
 
 
 
@@ -308,9 +308,8 @@ max-h-[1200px]`}
             onClick={handleNextClick}/>
         </button>
 
-        <button onClick={handleCarouselClick}
-        className='absolute
-        bottom-[0] translate-x-[-50%] left-[50%]'>{carouselClicked ? 'collapse' : 'expand'}
+        <button className='absolute
+        bottom-[0]'>{carouselClicked ? 'collapse' : 'expand'}
         </button>
         </div>
 

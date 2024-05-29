@@ -227,16 +227,16 @@ hasDescription}) =>{
       === 0 && !rightClicked))
 
      || (leftEdgeShift === 100 && rightClicked &&
-        index === images.length -1) 
+     image.imageIndex === images.length -1) 
      || 
 
      (shift === 0 && rightClicked &&
-        index !== 0 && index !== images.length - 1
+        image.imageIndex !== 0 && image.imageIndex !== images.length - 1
         )
 
-        || (shift === -1 && rightClicked && index === images.length -1)
+        || (shift === -1 && rightClicked && image.imageIndex === images.length -1)
 
-        || (shift === -images.length +2 && index === 0
+        || (shift === -images.length +2 && image.imageIndex === 0
             && leftClicked)
       
   ? '' : 'transition-transform duration-1000'}
@@ -248,10 +248,10 @@ hasDescription}) =>{
    
    key={index}
    style={{
-    transform: `translateX(${index=== images.length - 1 ? leftEdgeShift : 
-        index === 0 ? rightEdgeShift :
-        (shift * 100) + (100 * index)}%)`,
-
+    transform: `translateX(${image.imageIndex === images.length - 1 ? leftEdgeShift : 
+        image.imageIndex === 0 ? rightEdgeShift :
+          updatedImages[index].transformValue}%)`,
+    // transitionTimingFunction: 'cubic-bezier(0.48, -0.25, 0.17, 1.33)',
    }}
    onClick={handleCarouselClick}
 >
