@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
+import Link from "next/link";
 interface HeroProps {
     images: string[];
 }
@@ -19,19 +19,20 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
 
     return (
         <header className="flex w-screen flex flex-col relative
-        md:flex-row
-        ">
+        md:flex-row 
+        pb-10">
             <div className="md:w-[50vw] relative
             md:flex md:flex-col md:justify-center md:items-center
-            mb-8">
+            mb-8 text-center">
 
           <p className="mt-4 sm:text-xl pr-4 pl-4">A newly built home that has never been used before</p>
-            <h1 className="text-4xl mb-4 mt-4 sm:text-6xl">Pheasant Cove</h1>
+            <h1 className="text-4xl mb-4 mt-4 sm:text-6xl bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent custom-glow">Pheasant Cove</h1>
             <p className="text-2xl mb-4 sm:text-3xl">Place address Here</p>
-            <Link to='/contact'>
+            <Link href='contact' passHref >
 
  
-            <button>
+            <button className="bg-orange-400 p-3
+            rounded-lg">
                 Fill an application
             </button>
             </Link>

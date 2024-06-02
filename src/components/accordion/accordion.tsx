@@ -36,7 +36,8 @@ hasIntro,intro,description}) => {
        
         {hasIntro && (
             <div>
-            <h1 className='text-2xl md:text-4xl'>{intro}</h1>
+            <h1 className='text-2xl bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
+           text-4xl sm:text-5xl font-semibold text-center'>{intro}</h1>
             <p className='text-left  md:text-center pl-4 pr-5 mt-5
            w-[100%] max-w-[900px]'>{description}</p>
             </div>
@@ -45,16 +46,16 @@ hasIntro,intro,description}) => {
             {text.map((text,index:number) => (
                 <div key={index}
                 onClick={()=>handleSectionClick(index)}
-                className={`border-b-4 border-blue-400 p-3 mb-3 transition-all
+                className={`border-b-4 border-orange-400 p-3 mb-3 transition-all
                 w-[80%] ml-auto mr-auto
-                hover:bg-blue-400 hover:rounded-lg max-w-[500px]
-                flex flex-col justify-center items-center ${expandedIndices.includes(index) ? 'bg-blue-400 rounded-lg' : ''}`}>
+                hover:bg-orange-400 hover:rounded-lg max-w-[500px]
+                flex flex-col justify-center items-center ${expandedIndices.includes(index) ? 'bg-orange-400 rounded-lg' : ''}`}>
                     <h2 className='mb-3 mr-auto pl-4 
                     '
                     >{text.title}</h2>
                     <p   onClick={()=>handleSectionClick(index)}
                     className={`
-                     duration-500 bg-blue-500 text-left
+                     duration-500 bg-orange-500 text-left
                       w-[50%] pl-5 pr-5 rounded-md
                       sm:w-[100%]  max-w-[500px]
                    

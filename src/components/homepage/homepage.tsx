@@ -15,9 +15,9 @@ import Footer from "../footer/footer";
 export const Homepage = () => {
 
     const images = [
-        frontView,
-        livingRoom,
-        lake,
+        frontView.src,
+        livingRoom.src,
+        lake.src,
         
     ]
 
@@ -53,9 +53,9 @@ export const Homepage = () => {
     return (
         <>
 
-        <Navbar
+        {/* <Navbar
         links={navLinks}
-        />
+        /> */}
         <section className="absolute top-[20%] md:top-[10%] left-0
         bg-[#35465E]
         overflow-x-hidden">
@@ -96,12 +96,12 @@ export const Homepage = () => {
 
             <Closer
             {...closingStatment}
-            image={dark}
+            image={dark.src}
             />
 
-            <Footer
+            {/* <Footer
             links={footerLinks}
-            />
+            /> */}
 
 
         </section>

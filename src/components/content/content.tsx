@@ -1,19 +1,20 @@
-import React, { useEffect, useState, } from 'react';
+
+
+import React, { useState, } from 'react';
 import { Variants, motion } from 'framer-motion';
 import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
+import { useGeneralContext } from '../../context/context';
+import Image from 'next/image'
 
-import { Link} from 'react-router-dom'
-
+import {StaticImageData} from 'next/image'
 interface contentProps {
-  image: string;
+  image: string | StaticImageData;
   customText: React.ReactNode;
-  description?: string[] | null ;
-  reverse?: boolean | null;
-  mainTitle?: string | null;
-  floatingImage?: boolean;
+  description: string[] | null  ;
+  reverse: boolean | null;
+  mainTitle: string | null;
+  floatingImage: boolean;
   hasAnimation: boolean;
-  buttonText?: string;
-  buttonLink?:string;
 }
 
 const Content: React.FC<contentProps> = ({
@@ -24,32 +25,16 @@ const Content: React.FC<contentProps> = ({
   mainTitle,
   floatingImage,
   hasAnimation,
-  buttonText,
-  buttonLink
 }) => {
   const [inView, setInView] = useState(false);
 
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 655)
-
-  useEffect(()=> {
-    const handleResize = () => {
-        setIsMobile(window.innerWidth <= 655)
-    }
-
-        handleResize()
-        window.addEventListener('resize',handleResize)
-
-        return () => {
-            window.removeEventListener('resize',handleResize)
-        }
-  })
+//  const {isMobile} = useGeneralContext()
 
   // Configure intersection observer options
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: isMobile ? 0.6 : 0.6,
+    threshold:  0.8,
   };
 
   // Use the custom hook to get a ref and observe intersection
@@ -58,25 +43,15 @@ const Content: React.FC<contentProps> = ({
 
   const imageVariants: Variants = {
     initial: {
-      x: reverse ? 180 : -150,
-      opacity: 0,
+      // x: reverse ? 180 : -150,
+      // opacity: 0,
     },
     animate: {
       opacity: 1,
-      x: reverse  && !isMobile? 0 : 0,
+      // x: reverse  && !isMobile? 50 : 0,
       y: floatingImage ? [0, -5, 0] : 0,
       transition: {
-     
-
-        opacity: {
-        //   delay:1.75,
-          duration: 2,
-        },
-        x: {
-        //   delay:1.75,
-          duration: 0.5,
-          ease: 'easeInOut',
-        },
+    
         y: {
           delay: 2.45,
           duration: 2,
@@ -131,34 +106,42 @@ const nullVariant: Variants = {
       ref={componentRef}
       className={`flex flex-col justify-center align-center pt-8 pb-8
        relative mr-auto ml-auto
-       md:w-[100vw] md:max-w-[1400px] sm:max-w-[668px]
+       md:w-[100vw] md:max-w-[1400px] sm:max-w-[668px] z-1
+     
         ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}
     >
-      <motion.img
-        variants={hasAnimation ? imageVariants : nullVariant}
+      {/* <motion.div
+      className='w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[567px] max-w-[668px]'
+       variants={hasAnimation ? imageVariants : nullVariant}
         initial={hasAnimation ? 'initial' : ''}
         animate={hasAnimation && inView ? 'animate' : ''}
-        className={`w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[567px] max-w-[668px] md:w-[50vw]
-        `}
+        > */}
+
+      
+      <Image
+       
+        className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
+        md: "
         src={image}
+        alt='alt'
       />
+      {/* </motion.div> */}
 
       {customText ? (
         <>
           {customText}
         </>
       ) : (
-        <div className={`md:w-[40vw] ${!reverse ? 'md:mr-8' : ''}`} >
+        <div >
           <motion.h1
-          
           variants={headerVariants(0)}
           initial={hasAnimation ? 'initial' : ''}
           animate={hasAnimation && inView ? 'animate' : ''}
            className="text-left pl-5 sm:pl-12 pt-5
-           text-2xl md:text-4xl">{mainTitle}
-           </motion.h1>
+           bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
+           text-4xl sm:text-5xl font-semibold">{mainTitle}</motion.h1>
           <motion.p
-          variants={textVariants(0.25)}
+          variants={textVariants(0.45)}
        initial={hasAnimation ? 'initial' : ''}
        animate={inView && hasAnimation? 'animate' : ''}
           className="mt-6 pl-5 text-left sm:pl-12 whitespace-pre-line">
@@ -166,7 +149,7 @@ const nullVariant: Variants = {
               'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate rem distinctio veniam doloribus placeat volup tatibus dolores deleniti consequuntur harum asperiores?'}
                </motion.p>
             <motion.p
-             variants={textVariants(0.75)}
+             variants={textVariants(0.65)}
              initial={hasAnimation ? 'initial' : ''}
              animate={inView && hasAnimation? 'animate' : ''}
              className="mt-6 text-left pl-5 sm:pl-12"
@@ -174,20 +157,11 @@ const nullVariant: Variants = {
               {description != null ? description[1] :
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident odio labore recusandae est accusantium voluptatibus ad doloremque! Quo corrupti cum delectus ad praesentium minus voluptates soluta consectetur perspiciatis veniam? Pariatur vel, error cum possimus ad asperiores inventore obcaecati suscipit.'}
                 <br/>
-                {buttonLink && (
-
-        
-                <Link to={buttonLink}>
-
-             
                 <motion.button
-                  variants={headerVariants(1.5)}
+                  variants={headerVariants(1.2)}
                   initial={hasAnimation ? 'initial' : ''}
                   animate={hasAnimation && inView ? 'animate' : ''}
-                 className="mt-6 ">{buttonText }
-                 </motion.button>
-                 </Link>
-                         )}
+                 className="mt-6 bg-blue-900">{description !== null ? description[2] : 'button'}</motion.button>
             </motion.p>
             
          
