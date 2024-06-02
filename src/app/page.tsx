@@ -13,6 +13,8 @@ import TextFormat from "@/components/textFormat/textFormat";
 import { Map } from "@/components/map/map";
 import Closer from "@/components/closer/closer";
 import dark from '../media/dark-front.jpg'
+import Footer from "@/components/footer/footer";
+import angle from '../media/new-imports/Front-of-building.webp'
 export default function Home() {
 
   const navLinks = [
@@ -37,6 +39,7 @@ const images = [
   return (
     <main className="absolute top-0 left-0 overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
+    flex flex-col justify-center items-center
    ">
 <Navbar
 links={navLinks}
@@ -59,7 +62,7 @@ image={frontView}
 <Content
 hasAnimation={false}
 reverse={true}
-image={frontView}
+image={angle}
 mainTitle=''
 floatingImage={false}
 description={['']}
@@ -75,6 +78,10 @@ customText={<TextFormat
 <Closer
 image={dark.src}/>
 
+
+<Footer
+links={navLinks}
+/>
 
 
 

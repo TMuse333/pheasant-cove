@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 // import { Link } from "react-router-dom";
 
@@ -37,30 +38,32 @@ const Closer: React.FC<Props> = ({image,}) => {
             backgroundImage:`url(${image})`,
             
         }}
-        className={`w-screen text-white h-[800px]
+        className={`w-screen text-white 
         relative flex flex-col items-center justify-start
-        bg-center 
+        bg-center pb-12
         `}
   
         >
-            <div className=" rounded-2xl"
+            <div className=" mt-8 max-w-[1400px] ml-auto mr-auto"
             // style={{ backgroundColor: 'rgba(128, 128, 128, 0.7)' }}
             >
-            <h1 className="text-5xl text-center">Terms of lease</h1>
+            <h1 className="text-center mb-12
+            bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
+            text-4xl sm:text-5xl font-semibold text-center">Terms of lease</h1>
           
             <p className="mt-4 text-left pl-4 pr-4
             text-2xl
             max-w-[800px]"></p>
 
             <div className="flex flex-col
-            sm:flex-row w-screen sm:justify-around">
+            sm:flex-row w-[100%] sm:justify-around">
 
       
 
-            <section className="bg-blue-800 mb-4
-            pt-5 pb-5 pl-3 w-[90vw]
-            sm:w-[40vw]">
-                <ul>
+            <section className="bg-radial-gradient from-blue-600 to-blue-700 mb-4
+            pt-5 pb-5 pl-3 w-[90vw] max-w-[450px] h-[350px]
+            sm:w-[40vw] border-2 border-orange-400 mr-auto ml-auto mb-8">
+                <ul className="list-disc ml-5">
                 {terms1.map((term, index) => (
                     <li className="mb-4"
                     key={index}>
@@ -70,10 +73,10 @@ const Closer: React.FC<Props> = ({image,}) => {
                 </ul>
             </section>
 
-            <section  className="bg-blue-800 mb-4
-            pt-5 pb-5 pl-3 w-[90vw]
-            sm:w-[40vw]">
-                <ul>
+            <section className="bg-radial-gradient from-blue-700 to-blue-700  mb-4
+            pt-5 pb-5 pl-3 w-[90vw] max-w-[450px]  h-[350px]
+            sm:w-[40vw] border-2 border-orange-400 mr-auto ml-auto">
+                <ul className="list-disc ml-5">
 
                
             {terms2.map((term, index) => (
@@ -88,7 +91,21 @@ const Closer: React.FC<Props> = ({image,}) => {
 
             </div>
 
-        
+            <p className="text-left pl-5 pr-5 w-[90vw]
+            md:text-center md:pl-0 md:pr-0 ml-auto
+            mr-auto mt-10 text-lg
+            ">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro aperiam dolorum iusto, quas laboriosam non amet sit culpa eveniet nam voluptatem aliquid deleniti commodi ad libero reprehenderit, aspernatur modi voluptatibus cum. Suscipit ea deserunt dolores, repellat eum molestias. Odit earum ea ipsum eius aliquid eaque, nulla laudantium libero vel!
+                <br/>
+                <Link href='/property'>
+            <button className=" text-left bg-orange-500 p-3
+            rounded-xl mr-auto ml-auto mt-8">
+                Fill an application
+            </button>
+        </Link>
+            </p>
+
+      
 
             {/* <Link to={destination}>
                 <button className="mt-4">

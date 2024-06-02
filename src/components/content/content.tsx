@@ -106,8 +106,8 @@ const nullVariant: Variants = {
       ref={componentRef}
       className={`flex flex-col justify-center align-center pt-8 pb-8
        relative mr-auto ml-auto
-       md:w-[100vw] md:max-w-[1400px] sm:max-w-[668px] z-1
-     
+       md:w-[100vw] md:max-w-[1400px] sm:max-w-[568px] z-1
+     bg-red-300
         ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}
     >
       {/* <motion.div
@@ -121,7 +121,7 @@ const nullVariant: Variants = {
       <Image
        
         className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
-        md: "
+        "
         src={image}
         alt='alt'
       />

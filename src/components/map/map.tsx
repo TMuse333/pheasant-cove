@@ -12,7 +12,7 @@ export const Map = () => {
             <section id='map'
                 className={`w-[100vw] max-w-[1400px]
                 ml-auto mr-auto flex flex-col md:flex-row 
-                md:flex-row-reverse
+                md:flex-row-reverse mt-10
                 
                 `}>
                 <div className="mb-12

@@ -71,15 +71,15 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
   return (
     <motion.article
       ref={componentRef}
-      className="w-[80vw] pl-0 pr-4 relative mt-5 
+      className="w-[80vw] pl-0 pr-0 relative mt-5 
    
       mr-auto
-      max-h-[567px]
+  
     ml-auto
       sm:mt-8  
        md:pl-8
      text-left
-     sm:pl-0
+
   "   
       
     >
@@ -87,12 +87,12 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
      
       {/* <div className={`${reverse ? 'md:-translate-x-0' : 'md:translate-x-6'}`}> */}
       <motion.h1 className="text-2xl pb-5 text-left ml-0 bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
-           text-4xl sm:text-5xl font-semibold ">
+           text-3xl sm:text-5xl font-semibold ">
        Accommodations</motion.h1>
       <motion.p variants={isAnimated ? textVariants : nullVariants}
        initial="initial" 
        animate={isVisible ? "animate" : "initial"}
-      className="text-lg w-screen  pl-0  text-left w-[90vw] 
+      className="text-lg w-screen  pl-0  text-left w-[85vw] 
       sm:max-w-[650px]
       
     
@@ -102,7 +102,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
     Here are some of the following accommodations included with the home
 
       </motion.p>
-      <motion.ul className="text-left  pl-4 pt-5 list-disc
+      <motion.ul className="text-left  pl-4 pt-5 list-disc pr-5
      ">
         {points.map((point, index) => (
           <motion.li className="text-white disc-none mb-2"

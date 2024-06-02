@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { motion, useMotionTemplate, useMotionValue,
     animate } from "framer-motion";
 
 
 interface links {
     links:{
-        title:string,
+        name:string,
         destination:string,
     }[]
     
@@ -65,14 +65,15 @@ const Footer:React.FC<links> = ({links}) => {
     <>
     <footer className='w-[calc(100vw-5px)]
       relative mt-[8rem] 
-      max-w-[800px]
+  pb-12
       ml-auto mr-auto
-      
+      text-center
+      bg-radial-gradient from-blue-700 to-blue-900
     '>
       <div className="
-      
+      pt-8
       w-[screen] md:w-[50vw] max-w-[700px] ml-auto mr-auto flex flex-col 
-        -translate-y-[3rem]">
+       ">
         <h2 className='text-white
         text-2xl sm:text-5xl
         mb-4'>
@@ -82,11 +83,11 @@ const Footer:React.FC<links> = ({links}) => {
         {links.map((link,index) => (
 
 <Link key={index}
-to={link.destination}>
+href='/' passHref>
 
 
 
-            <p className='mt-2 hover:text-gray-400 md:text-xl'>{link.title}</p>
+            <p className='mt-2 hover:text-gray-400 md:text-xl'>{link.name}</p>
             </Link>
 
 
@@ -108,17 +109,18 @@ to={link.destination}>
       sm:text-2xl'>Pheasant Cove,
       The lake of the woods, Nova scotia</p>
       <Link 
-            to='https://q3designs.netlify.app'>
+            href='https://q3designs.netlify.app'
+            passHref>
                 <motion.p
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                
                 style={{
                     boxShadow: hovered ? boxShadow : "none",
-                    backgroundColor: hovered ? 'rgb(0, 0, 30)' : "transparent",
+                    backgroundColor: hovered ? 'white' : "transparent",
                     color:backgroundColor,
                 }}
-                className='w-[200px] ml-auto mr-auto mb-5 mt-5'   >
+                className='w-[200px] ml-auto mr-auto mb-5 mt-5 p-3 rounded-xl'   >
                 Created by Q3 Designs
                 </motion.p>
                
