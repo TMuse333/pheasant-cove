@@ -39,7 +39,7 @@ const images = [
   return (
     <main className="absolute top-0 left-0 overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
-    flex flex-col justify-center items-center
+   flex flex-col justify-center items-center
    ">
 <Navbar
 links={navLinks}
