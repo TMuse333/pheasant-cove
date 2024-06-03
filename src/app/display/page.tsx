@@ -12,6 +12,7 @@ import bathroom2 from '../../media/Bathroom-2.jpeg'
 import laundrySink from '../../media/new-imports/Laundry-sink.webp'
 import washer from '../../media/new-imports/Laundry-washer-dryer.webp'
 import Carousel from "@/components/carousel/carosuel";
+import HomeSection from "@/components/homeSection/homeSection";
 const Display = () => {
 
     const front: string = '../../media/Front-of-building.jpg'
@@ -40,19 +41,19 @@ const Display = () => {
 
     const images1 = [
         {
-            url:bathroom1,
+            url:bathroom1.src,
             title:'Bathroom1',
             description:'description',
             link:'/'
         },
         {
-            url:bathroom2,
+            url:bathroom2.src,
             title:'Bathroom2',
             description:'description',
             link:'/'
         },
         {
-            url:washer,
+            url:washer.src,
             title:'washer',
             description:'description',
             link:'/'
@@ -88,9 +89,17 @@ description={[]}
 destination=''
 />
 
+<HomeSection
+title='Bathroom'
+description="We have smooth bathrooms"
+images={images1}
+
+/>
+
 <Carousel
 images={images1}
 hasDescription={false}
+
 />
 
 

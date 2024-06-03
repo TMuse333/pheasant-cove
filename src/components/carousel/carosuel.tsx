@@ -4,18 +4,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {StaticImageData} from 'next/image'
 import Image from 'next/image'
+import Draggable, { DraggableEvent, DraggableData } from 'react-draggable';
+
 interface CarouselProps {
     images: {
-        url:  StaticImageData,
+        url:  string,
       
         title: string,
         description: string,
         link: string
     }[],
     hasDescription?: boolean
+ 
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
+     }) => {
 
     const [shift, setShift] = useState<number>(0);
     const [currentImage, setCurrentImage] = useState<number>(0);
@@ -103,16 +107,23 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
         );
     };
 
+
+
+
+
+
+
     return (
         <>
             <section
             aria-label="Image carousel"
                 className={`w-screen  
-                flex flex-col md2:flex-row ml-auto mr-auto
-                justify-center items-center
+           
+                flex flex-col  ml-auto mr-auto
+                justify-center items-center 
                 mb-5 ${!carouselClicked ? 'max-w-[1300px] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
 
-                <div className={`mt-10 flex relative ${hasDescription ? 'md:w-[50%]' : 'w-[100%]'}`}
+                <div className={`mt-10  flex relative ${hasDescription ? 'md:w-[50%]' : 'w-[100%]'}`}
                  role="region"
                  aria-labelledby="carousel-heading">
 
@@ -123,8 +134,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                         h-[95vw]
                         max-w-[900px] 
                         max-h-[420px]
-                        md:max-h-[550px]` : 'w-screen h-[90vh]'}
-                        overflow-hidden`}>
+                        md:max-h-[550px]` : 'w-screen  h-[90vh]'}
+                         overflow-hidden`}>
 
                         {images.map((image, index) => (
                           <React.Fragment
@@ -134,6 +145,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                 {/*this dictates the height and width of the image*/}
                                 <div className={`
                                     ml-auto mr-auto mb-auto absolute top-0
+                                   
                                     ${!carouselClicked ? `w-[90vw] h-[80vw]
                                     max-h-[400px]
                                     md:max-h-[520px]` : 'w-[100vw] h-[100vw]'}
@@ -145,13 +157,14 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                     
                                     style={{
                                         transform: `translateX(${index === images.length - 1 ? leftEdgeShift :
-                                            index === 0 ? rightEdgeShift :
+                                            index === 0  ? rightEdgeShift :
                                             (shift * 100) + (100 * index)}%)`,
                                     }}
                                     onClick={handleCarouselClick}
                                 >
-                                    <Image
-                                  
+
+                                    <img
+                             
                                     alt='lol'
                                         src={image.url}
                                         className={`
@@ -160,20 +173,28 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                             max-h-[424px]
                                             h-[100%]`
                                             : `w-[100vw] 
-                                            max-w-[1400px]
-                                            max-h-[1500px]
-                                            h-[100%]`}
+                                           
+                                            h-screen
+                                           `}
                                             object-cover
                                             ${index === 5 ? 'object-top' : 'object-bottom'}
                                             ml-auto mr-auto`} />
+
+
                                 </div>
                                 </React.Fragment>
                         ))}
 
-                        <div className='w-[90vw] absolute top-0 h-[90vw]
-                            max-h-[400px]
-                            md:max-h-[424px] absolute
-                            max-w-[400px]'>
+                      
+                       
+
+                        <div className={`${!carouselClicked ? `
+                        w-[90vw] absolute top-0 h-[90vw]
+                        max-h-[400px]
+                        md:max-h-[424px] 
+                        max-w-[400px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
+                        `}>
+
                             <button  aria-label="Previous image"
                             className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
                                 <ChevronLeft onClick={handlePrevClick} size={40} />
@@ -184,10 +205,12 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                             </button>
                             <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
-                             className='absolute bottom-[-15%] left-[50%] -translate-x-[50%]' onClick={handleCarouselClick}>
+                             className={`absolute ${carouselClicked ? 'bottom-[10%]' : 'bottom-[-15%]'} bg-black p-3 rounded-xl left-[50%] -translate-x-[50%]`} onClick={handleCarouselClick}>
                                 {carouselClicked ? 'collapse' : 'expand'}
                             </button>
                         </div>
+
+                       
 
                     </div>
 
