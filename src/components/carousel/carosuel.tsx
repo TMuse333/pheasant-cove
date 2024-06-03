@@ -15,6 +15,8 @@ interface CarouselProps {
         link: string
     }[],
     hasDescription?: boolean
+    // width:number,
+    // height:number
  
 }
 
@@ -119,11 +121,11 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
             aria-label="Image carousel"
                 className={`w-screen  
            
-                flex flex-col  ml-auto mr-auto
-                justify-center items-center 
+                flex flex-col md:flex-row  ml-auto mr-auto
+                justify-center items-center md:w-[90vw]
                 mb-5 ${!carouselClicked ? 'max-w-[1300px] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
 
-                <div className={`mt-10  flex relative ${hasDescription ? 'md:w-[50%]' : 'w-[100%]'}`}
+                <div className={`mt-10  flex relative ${hasDescription ? 'md:w-[60%]' : 'w-[100%]'}`}
                  role="region"
                  aria-labelledby="carousel-heading">
 
@@ -134,7 +136,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                         h-[95vw]
                         max-w-[900px] 
                         max-h-[420px]
-                        md:max-h-[550px]` : 'w-screen  h-[90vh]'}
+                       ` : 'w-screen  h-[90vh]'}
                          overflow-hidden`}>
 
                         {images.map((image, index) => (
@@ -146,7 +148,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                 <div className={`
                                     ml-auto mr-auto mb-auto absolute top-0
                                    
-                                    ${!carouselClicked ? `w-[90vw] h-[80vw]
+                                    ${!carouselClicked ? `w-[100vw] h-[80vw]
                                     max-h-[400px] 
                                     md:max-h-[620px]` : 'w-[100vw] h-[100vw]'}
                                     ${ shouldApplyTransition(index)
@@ -168,8 +170,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                     alt='lol'
                                         src={image.url}
                                         className={`
-                                            ${!carouselClicked ? ` w-[90%] 
-                                            max-w-[605px]
+                                            ${!carouselClicked ? ` w-[100%] 
+                                            max-w-[805px]
                                             max-h-[624px]
                                             h-[100%]`
                                             : `w-[100vw] 
@@ -189,10 +191,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                        
 
                         <div className={`${!carouselClicked ? `
-                        w-[90vw] absolute top-0 h-[90vw]
-                        max-h-[400px]
-                        md:max-h-[624px] 
-                        max-w-[600px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
+                        w-[100%] absolute top-0 h-[100%]
+                        max-h-[550px]
+                       z-[20]
+                        max-w-[900px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
                         `}>
 
                             <button  aria-label="Previous image"
@@ -203,14 +205,14 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                             className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
                                 <ChevronRight onClick={handleNextClick} size={40} />
                             </button>
-                            <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
-
-                             className={`absolute ${carouselClicked ? 'bottom-[10%]' : 'bottom-[5%] '} bg-black p-3 rounded-xl left-[50%] -translate-x-[50%]`}
-                              onClick={handleCarouselClick}>
-                                {carouselClicked ? 'collapse' : 'expand'}
-                            </button>
+                          
                         </div>
+                        <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
+className='absolute bottom-[10%]'
+ onClick={handleCarouselClick}>
+   {carouselClicked ? 'collapse' : 'expand'}
+</button>
                        
 
                     </div>
@@ -227,15 +229,15 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.7 }}
                         >
-                            <h1 className='md2:text-left md2:pl-5'>{images[currentImage].title}</h1>
+                            <h1 className='md2:text-left md2:pl-5 text-center'>{images[currentImage].title}</h1>
                             <p className="text-white text-center pl-5 pr-5 pt-5 md2:pr-0 pl-0 md2:text-left">
                                 {images[currentImage].description}
                                 <br />
-                                {images[currentImage].link !== '' && (
+                                {/* {images[currentImage].link !== '' && (
                                     <Link to={images[currentImage].link} className=''>
                                         <button className='mt-5 text-left'>Check it out</button>
                                     </Link>
-                                )}
+                                )} */}
                             </p>
                         </motion.div>
                     </AnimatePresence>

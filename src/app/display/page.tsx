@@ -11,7 +11,16 @@ import bathroom1 from '../../media/Bathroom-1.jpeg'
 import bathroom2 from '../../media/Bathroom-2.jpeg'
 import laundrySink from '../../media/new-imports/Laundry-sink.webp'
 import washer from '../../media/new-imports/Laundry-washer-dryer.webp'
+import balcony from '../../media/new-imports/Balcony-deck.webp'
+import bedroom1 from '../../media/new-imports/Bedroom-1.webp'
+import bedroom2 from '../../media/new-imports/Bedroom-2.webp'
+import garage from '../../media/new-imports/Garage-parking.webp'
+import fireplace from '../../media/new-imports/Gas-fireplace_stove.webp'
+
 import Carousel from "@/components/carousel/carosuel";
+
+
+
 import HomeSection from "@/components/homeSection/homeSection";
 const Display = () => {
 
