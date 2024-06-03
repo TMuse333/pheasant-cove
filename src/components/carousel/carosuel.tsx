@@ -129,7 +129,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
 
                     <div className={`flex relative justify-center items-center ml-auto mr-auto 
                         ${!carouselClicked ? `
-                        w-[70vw]
+                        w-[90vw]
                         max-h-[804px]
                         h-[95vw]
                         max-w-[900px] 
@@ -147,8 +147,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                     ml-auto mr-auto mb-auto absolute top-0
                                    
                                     ${!carouselClicked ? `w-[90vw] h-[80vw]
-                                    max-h-[400px]
-                                    md:max-h-[520px]` : 'w-[100vw] h-[100vw]'}
+                                    max-h-[400px] 
+                                    md:max-h-[620px]` : 'w-[100vw] h-[100vw]'}
                                     ${ shouldApplyTransition(index)
                                     ? 'transition-transform duration-1000' : ''}`}
                                   
@@ -160,17 +160,17 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                             index === 0  ? rightEdgeShift :
                                             (shift * 100) + (100 * index)}%)`,
                                     }}
-                                    onClick={handleCarouselClick}
+                               
                                 >
 
                                     <img
-                             
+                                  onClick={handleCarouselClick}
                                     alt='lol'
                                         src={image.url}
                                         className={`
-                                            ${!carouselClicked ? ` w-[80%] 
-                                            max-w-[405px]
-                                            max-h-[424px]
+                                            ${!carouselClicked ? ` w-[90%] 
+                                            max-w-[605px]
+                                            max-h-[624px]
                                             h-[100%]`
                                             : `w-[100vw] 
                                            
@@ -191,8 +191,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                         <div className={`${!carouselClicked ? `
                         w-[90vw] absolute top-0 h-[90vw]
                         max-h-[400px]
-                        md:max-h-[424px] 
-                        max-w-[400px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
+                        md:max-h-[624px] 
+                        max-w-[600px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
                         `}>
 
                             <button  aria-label="Previous image"
@@ -205,7 +205,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                             </button>
                             <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
-                             className={`absolute ${carouselClicked ? 'bottom-[10%]' : 'bottom-[-15%]'} bg-black p-3 rounded-xl left-[50%] -translate-x-[50%]`} onClick={handleCarouselClick}>
+                             className={`absolute ${carouselClicked ? 'bottom-[10%]' : 'bottom-[5%] '} bg-black p-3 rounded-xl left-[50%] -translate-x-[50%]`}
+                              onClick={handleCarouselClick}>
                                 {carouselClicked ? 'collapse' : 'expand'}
                             </button>
                         </div>
