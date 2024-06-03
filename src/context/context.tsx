@@ -13,6 +13,8 @@ interface GeneralContextType {
   isMobile2: boolean;
   setIsMobile2: React.Dispatch<React.SetStateAction<boolean>>;
   handleCircleComplete: (index: number, value: boolean) => void;
+  count:number,
+  setCount:React.Dispatch<React.SetStateAction<number>>
 }
 
 // Create the context
@@ -22,6 +24,8 @@ export const GeneralContext = createContext<GeneralContextType | undefined>(unde
 export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Initialize the value state
   const [textYPosition, setTextYPosition] = useState<number>(0);
+
+  const [count, setCount] = useState(0)
 
   // Detect mobile devices
   const [isMobile, setIsMobile] = useState<boolean>(true);
@@ -79,7 +83,8 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
     setSecondCircleComplete,
     isMobile2,
     setIsMobile2,
-    handleCircleComplete
+    handleCircleComplete,
+    count, setCount
   };
 
   return <GeneralContext.Provider value={contextValue}>{children}</GeneralContext.Provider>;

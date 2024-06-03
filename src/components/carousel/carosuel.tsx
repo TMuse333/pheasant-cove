@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import {StaticImageData} from 'next/image'
+import Image from 'next/image'
 interface CarouselProps {
     images: {
-        url: string,
-        imageIndex: number,
+        url:  StaticImageData,
+      
         title: string,
         description: string,
         link: string
@@ -115,7 +116,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                  role="region"
                  aria-labelledby="carousel-heading">
 
-                    <section className={`flex relative justify-center items-center ml-auto mr-auto 
+                    <div className={`flex relative justify-center items-center ml-auto mr-auto 
                         ${!carouselClicked ? `
                         w-[70vw]
                         max-h-[804px]
@@ -126,7 +127,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                         overflow-hidden`}>
 
                         {images.map((image, index) => (
-                            <>
+                          <React.Fragment
+                          key={index}>
+
+                        
                                 {/*this dictates the height and width of the image*/}
                                 <div className={`
                                     ml-auto mr-auto mb-auto absolute top-0
@@ -135,7 +139,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                     md:max-h-[520px]` : 'w-[100vw] h-[100vw]'}
                                     ${ shouldApplyTransition(index)
                                     ? 'transition-transform duration-1000' : ''}`}
-                                    key={index}
+                                  
                                     role="img"
                                     aria-label={image.title}
                                     
@@ -146,7 +150,9 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                     }}
                                     onClick={handleCarouselClick}
                                 >
-                                    <img
+                                    <Image
+                                  
+                                    alt='lol'
                                         src={image.url}
                                         className={`
                                             ${!carouselClicked ? ` w-[80%] 
@@ -158,10 +164,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                                             max-h-[1500px]
                                             h-[100%]`}
                                             object-cover
-                                            ${image.imageIndex === 5 ? 'object-top' : 'object-bottom'}
+                                            ${index === 5 ? 'object-top' : 'object-bottom'}
                                             ml-auto mr-auto`} />
                                 </div>
-                            </>
+                                </React.Fragment>
                         ))}
 
                         <div className='w-[90vw] absolute top-0 h-[90vw]
@@ -183,7 +189,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription }) => {
                             </button>
                         </div>
 
-                    </section>
+                    </div>
 
                 </div>
 
