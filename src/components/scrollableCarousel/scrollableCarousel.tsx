@@ -1,17 +1,23 @@
 
 import { useGeneralContext } from "@/context/context";
 import React, { useEffect, useState } from "react";
+import Image from 'next/image'
+import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
+import {StaticImageData} from 'next/image'
+import { motion } from 'framer-motion'
 
 interface props {
     title?:string,
     description?:string,
     images:{
-        src:string,
+        src:string ,
         alt:string
     }[],
 
 
 }
+
+
 
 const ScrollableCarousel:React.FC<props> = 
 ({title, description, images}) => {
@@ -29,6 +35,18 @@ const ScrollableCarousel:React.FC<props> =
         
     }
 
+    const [inView, setInView] = useState(false);
+
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold:  0.8,
+  };
+
+  // Use the custom hook to get a ref and observe intersection
+  const componentRef = useIntersectionObserver(setInView, options);
+
 
 
 
@@ -37,8 +55,10 @@ const ScrollableCarousel:React.FC<props> =
 
    
 
-        <section className={`relative w-screen
+        <section ref={componentRef}
+        className={`relative w-screen
          ml-auto z-[4] mb-[5rem] mt-[5rem]
+  
         
        `} >
 
@@ -57,13 +77,24 @@ const ScrollableCarousel:React.FC<props> =
             flex 
             ml-auto mr-auto
             sm:ml-0 sm:mr-0
-            
+           
             sm:w-screen
+         
            
            ">
             {images.map((image, index) => (
-                <img loading="lazy"
+                <motion.img
+                initial={{
+                    opacity:0,
+                    // y:-20
+                }}
+                animate={{
+                    opacity: inView ? 1 : 0,
+                    // y: inView ? 0 : -20
+                }}
+                 loading="lazy"
                 src={image.src}
+                alt={image.alt}
                 className={`
                 ${clickedImage === index ? `
                 fixed top-[10%] left-[50%]
@@ -76,10 +107,12 @@ const ScrollableCarousel:React.FC<props> =
                 ` : `
                 w-[90vw]
                 relative
-                h-[120vw] max-w-[500px]
-                max-h-[700px]
+                h-[80vw] max-w-[600px]
+                max-h-[500px]
+                
                 z-[5]`}
                  object-cover
+                 object-center
                transition-transform
                 
                  ${clickedImage !== null

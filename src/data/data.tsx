@@ -7,7 +7,7 @@ export const content1 = {
     floatingImage:false,
     hasAnimation:true,
     buttonText:'View Property',
-    buttonLink:'display'
+    buttonLink:'/display'
 }
 
 export const content2 = {

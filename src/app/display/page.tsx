@@ -17,6 +17,13 @@ import bedroom2 from '../../media/new-imports/Bedroom-2.webp'
 import garage from '../../media/new-imports/Garage-parking.webp'
 import fireplace from '../../media/new-imports/Gas-fireplace_stove.webp'
 
+import lake from '../../media/new-imports/lake-view.webp'
+import lake2 from '../../media/new-imports/lake-view-2.webp'
+
+import deck from '../../media/new-imports/Living-room-deck.webp'
+import livingRoom from '../../media/new-imports/Living-room.webp'
+import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
+
 import Carousel from "@/components/carousel/carosuel";
 
 
@@ -38,15 +45,29 @@ const Display = () => {
         }
     ]
 
-    const {count, setCount } = useGeneralContext()
-
-    // function handleClick(){
-    //     setCount((prev)=>prev + 1)
-    // }
-
-    // useEffect(()=> {
-    //     console.log('count ',count)
-    // },[count])
+   
+    const images3 = [
+        {
+            src:livingRoom.src,
+            alt:'A second photo of the living room of pheasant cove'
+        },
+        {
+            src:livingRoom2.src,
+            alt:'A second photo of the living room of pheasant cove'
+        },
+        {
+            src:deck.src,
+            alt:'The deck of Pheasant Cove'
+        },
+        {
+            src:lake.src,
+            alt:'The lake near pheasant Cove'
+        },
+        {
+            src:lake2.src,
+            alt:'The lake near pheasant Cove'
+        }
+    ]
 
     const scrollables = [
         {
@@ -110,6 +131,8 @@ const Display = () => {
     ]
 
 
+
+
     
 
         const {clickedImage, setClickedImage} = useGeneralContext()
@@ -157,11 +180,7 @@ images={images1}
 
 />
 
-<Carousel
-images={images1}
-hasDescription={false}
 
-/>
 </div>
 
 <ScrollableCarousel
@@ -170,10 +189,16 @@ description="You can place a description here"
 images={scrollables}
 />
 
-<ScrollableCarousel
-title=''
-description=""
+{/* <ScrollableCarousel
+title="Your title here"
+description="You can place a description here"
 images={images2}/>
+
+<ScrollableCarousel
+title="Your title Here"
+description="Description goes here"
+images={images3}
+/> */}
 
 
 

@@ -136,7 +136,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                         h-[95vw]
                         max-w-[900px] 
                         max-h-[420px]
-                       ` : 'w-screen  h-[90vh]'}
+                       ` : 'w-screen  h-[80vh]'}
                          overflow-hidden`}>
 
                         {images.map((image, index) => (
@@ -150,7 +150,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                    
                                     ${!carouselClicked ? `w-[100vw] h-[80vw]
                                     max-h-[400px] 
-                                    md:max-h-[620px]` : 'w-[100vw] h-[100vw]'}
+                                    md:max-h-[620px]` : 'w-[100vw]  h-[100vw] '}
                                     ${ shouldApplyTransition(index)
                                     ? 'transition-transform duration-1000' : ''}`}
                                   
@@ -176,9 +176,9 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                             h-[100%]`
                                             : `w-[100vw] 
                                            
-                                            h-screen
+                                            max-w-[1400px] ml-auto mr-auto max-h-[900px]
                                            `}
-                                            object-cover
+                                            object-cover object-bottom
                                             ${index === 5 ? 'object-top' : 'object-bottom'}
                                             ml-auto mr-auto`} />
 
