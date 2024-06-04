@@ -113,7 +113,7 @@ const navLinks = [
        <h1 className='text-white
        text-4xl mb-4'>Pheasant Cove</h1>
         
-  <img src={house}
+  <img src={house.src}
   className='w-[50vw] object-cover'
   />
 
@@ -128,7 +128,7 @@ const navLinks = [
         >
          <h1>Pheasant Cove</h1>
           <h2 className='text-white text-2xl mt-5 pl-3 pr-3'>You have made an excellent choice</h2>
-          <p className="w-4/5 ml-auto mr-auto">Let's get in contact so we can see if you're a good fit!</p>
+          <p className="w-4/5 ml-auto mr-auto">Let&apos;s get in contact so we can see if your&apos;re a good fit!</p>
           <form onSubmit={sendEmail} ref={form}>
             <div className="mt-8 flex flex-col justify-center items-center
             bg-gray-900 bg-opacity-100 pt-6 pb-6

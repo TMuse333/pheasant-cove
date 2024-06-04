@@ -84,23 +84,23 @@ export const CircleInfoGraphic:React.FC = ({
           `}>
             <CircleElement
             {...circleInfographicDescriptions[0]}
-            image={pheasant}
+            image={pheasant.src}
             />
              <CircleElement
               {...circleInfographicDescriptions[1]}
-            image={pheasant}/>
+            image={pheasant.src}/>
                   <CircleElement
                   {...circleInfographicDescriptions[2]}
-            image={pheasant}/>
+            image={pheasant.src}/>
              <CircleElement
              {...circleInfographicDescriptions[3]}
-            image={pheasant}/>
+            image={pheasant.src}/>
              <CircleElement
              {...circleInfographicDescriptions[4]}
-            image={pheasant}/>
+            image={pheasant.src}/>
                   <CircleElement
                   {...circleInfographicDescriptions[5]}
-            image={pheasant}/>
+            image={pheasant.src}/>
         </section>
         {/* <div className="mt-5
         w-[90vw] h-[5px]
