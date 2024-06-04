@@ -15,6 +15,8 @@ interface GeneralContextType {
   handleCircleComplete: (index: number, value: boolean) => void;
   count:number,
   setCount:React.Dispatch<React.SetStateAction<number>>
+  clickedImage:number | null,
+  setClickedImage:React.Dispatch<React.SetStateAction<number | null>>
 }
 
 // Create the context
@@ -31,6 +33,8 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [isMobile, setIsMobile] = useState<boolean>(true);
 
   const [isMobile2, setIsMobile2] = useState<boolean>(true);
+
+  const [clickedImage, setClickedImage] = useState<number | null>(null)
 
   const [secondCircleComplete, setSecondCircleComplete] = useState<boolean[]>(
     Array.from({ length: 7 }, () => false)
@@ -84,7 +88,9 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
     isMobile2,
     setIsMobile2,
     handleCircleComplete,
-    count, setCount
+    count, setCount,
+    clickedImage,
+    setClickedImage
   };
 
   return <GeneralContext.Provider value={contextValue}>{children}</GeneralContext.Provider>;

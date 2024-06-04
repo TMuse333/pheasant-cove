@@ -72,6 +72,21 @@ const Display = () => {
 
     ]
 
+    const images2 = [
+        {
+            src:bedroom1.src,
+            alt:'Bedroom 1'
+        },
+        {
+            src:bedroom2.src,
+            alt:'Bedroom 2'
+        },
+        {
+            src:balcony.src,
+            alt:'Balcony'
+        }
+    ]
+
 
     const images1 = [
         {
@@ -94,24 +109,34 @@ const Display = () => {
         }
     ]
 
-//     images: {
-//         url: string,
-      
-//         title: string,
-//         description: string,
-//         link: string
-//     }[],
-//     hasDescription?: boolean
-// }
+
+    
+
+        const {clickedImage, setClickedImage} = useGeneralContext()
+
+
+    function handleExitClick(){
+        if(clickedImage !== null){
+            setClickedImage(null)
+        }
+       
+    }
+
 
     return (
         <section className="absolute top-0 left-0
         overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
-">
+" onClick={handleExitClick}
+>
             <Navbar
 links={navLinks}
 />
+
+<div style={{
+    filter: clickedImage !== null ? 'blur(4px)' : 'none'
+}}>
+
 
 
 <TextParallaxContentExample
@@ -137,10 +162,18 @@ images={images1}
 hasDescription={false}
 
 />
+</div>
 
 <ScrollableCarousel
+title="Your title here"
+description="You can place a description here"
 images={scrollables}
 />
+
+<ScrollableCarousel
+title=''
+description=""
+images={images2}/>
 
 
 

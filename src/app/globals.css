@@ -38,3 +38,7 @@ body {
                0 0 2px rgba(255, 255, 255, 0.5);
 }
 
+.no-blur {
+  filter: blur(0) !important;
+}
+
