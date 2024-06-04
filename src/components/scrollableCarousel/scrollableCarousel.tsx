@@ -11,7 +11,7 @@ interface props {
     ,
     description?:string,
     images:{
-        src:string |StaticImageData ,
+        src:StaticImageData ,
         alt:string
     }[],
 
@@ -89,7 +89,7 @@ const ScrollableCarousel:React.FC<props> =
                 <Image
                
                 
-                src={image}
+                src={image.src}
                 alt={image.alt}
                 className={`
                 ${clickedImage === index ? `
