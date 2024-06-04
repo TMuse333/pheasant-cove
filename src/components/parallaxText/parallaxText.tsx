@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, motionValue } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 // import laptop from '../../media/laptop.jpg'
 import {useGeneralContext} from '../../context/context'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 interface ParallaxTextProps {
