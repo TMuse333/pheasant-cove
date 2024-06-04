@@ -71,23 +71,23 @@ const Display = () => {
 
     const scrollables = [
         {
-            src:laundrySink.src,
+            src:laundrySink,
             alt:'sink'
         },
         {
-            src:fireplace.src,
+            src:fireplace,
             alt:'Fire place'
         },
         {
-            src:bathroom1.src,
+            src:bathroom1,
             alt:'sink'
         },
         {
-            src:bathroom2.src,
+            src:bathroom2,
             alt:'sink'
         },
         {
-            src:garage.src,
+            src:garage,
             alt:'Garage'
         }
 

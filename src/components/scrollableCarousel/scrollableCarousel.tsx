@@ -7,10 +7,11 @@ import {StaticImageData} from 'next/image'
 import { motion } from 'framer-motion'
 
 interface props {
-    title?:string,
+    title?:string 
+    ,
     description?:string,
     images:{
-        src:string ,
+        src:string |StaticImageData ,
         alt:string
     }[],
 
@@ -85,17 +86,10 @@ const ScrollableCarousel:React.FC<props> =
            
            ">
             {images.map((image, index) => (
-                <motion.img
-                initial={{
-                    opacity:0,
-                    // y:-20
-                }}
-                animate={{
-                    opacity: inView ? 1 : 0,
-                    // y: inView ? 0 : -20
-                }}
-                 loading="lazy"
-                src={image.src}
+                <Image
+               
+                
+                src={image}
                 alt={image.alt}
                 className={`
                 ${clickedImage === index ? `
