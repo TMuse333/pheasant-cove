@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
+
 import './imageSlider.css'
 
 interface props{
@@ -198,7 +198,7 @@ const style = (index:number) => {
           style={{ left: 0 }}
           aria-label="View Previous Image"
         >
-          <ArrowBigLeft aria-hidden />
+       prev
         </button>
         <button
           onClick={showNextImage}
@@ -206,7 +206,7 @@ const style = (index:number) => {
           style={{ right: 0 }}
           aria-label="View Next Image"
         >
-          <ArrowBigRight aria-hidden />
+        next
         </button>
         <div
           style={{
@@ -228,9 +228,9 @@ const style = (index:number) => {
   
             >
               {index === imageIndex ? (
-                <CircleDot aria-hidden />
+               <p>0</p>
               ) : (
-                <Circle aria-hidden />
+                <p>0</p>
               )}
             </button>
           ))}
