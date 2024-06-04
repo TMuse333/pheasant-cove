@@ -22,6 +22,7 @@ import Carousel from "@/components/carousel/carosuel";
 
 
 import HomeSection from "@/components/homeSection/homeSection";
+import ScrollableCarousel from "@/components/scrollableCarousel/scrollableCarousel";
 const Display = () => {
 
     const front: string = '../../media/Front-of-building.jpg'
@@ -46,6 +47,30 @@ const Display = () => {
     // useEffect(()=> {
     //     console.log('count ',count)
     // },[count])
+
+    const scrollables = [
+        {
+            src:laundrySink.src,
+            alt:'sink'
+        },
+        {
+            src:fireplace.src,
+            alt:'Fire place'
+        },
+        {
+            src:bathroom1.src,
+            alt:'sink'
+        },
+        {
+            src:bathroom2.src,
+            alt:'sink'
+        },
+        {
+            src:garage.src,
+            alt:'Garage'
+        }
+
+    ]
 
 
     const images1 = [
@@ -80,13 +105,14 @@ const Display = () => {
 // }
 
     return (
-        <main className="absolute top-0 left-0
+        <section className="absolute top-0 left-0
         overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
-    h-screen">
+">
             <Navbar
 links={navLinks}
 />
+
 
 <TextParallaxContentExample
 image={frontUrl.src}
@@ -97,6 +123,7 @@ title=''
 description={[]}
 destination=''
 />
+
 
 <HomeSection
 title='Bathroom'
@@ -111,8 +138,13 @@ hasDescription={false}
 
 />
 
+<ScrollableCarousel
+images={scrollables}
+/>
 
-        </main>
+
+
+        </section>
     )
 }
 

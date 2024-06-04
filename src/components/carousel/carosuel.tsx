@@ -122,10 +122,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                 className={`w-screen  
            
                 flex flex-col md:flex-row  ml-auto mr-auto
-                justify-center items-center md:w-[90vw]
-                mb-5 ${!carouselClicked ? 'max-w-[1300px] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
+                justify-center items-center 
+                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[90vw] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
 
-                <div className={`mt-10  flex relative ${hasDescription ? 'md:w-[60%]' : 'w-[100%]'}`}
+                <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription ? 'md:w-[60%]' : 'w-[100%]'}`}
                  role="region"
                  aria-labelledby="carousel-heading">
 
