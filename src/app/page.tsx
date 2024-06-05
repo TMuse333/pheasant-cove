@@ -44,9 +44,9 @@ const images = [
 <Navbar
 links={navLinks}
 />
-<ImageHero
+{/* <ImageHero
 images={images}
-/>
+/> */}
 
 {/* <div className=" bg-radial-gradient from-blue-500 to-blue-900 w-screen"> */}
 
