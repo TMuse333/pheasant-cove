@@ -206,11 +206,13 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                             </button>
                           
                         </div>
-                        <button aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
+                        <button
+                         aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
-className='absolute bottom-[10%]'
+className='absolute bottom-[10%] bg-gray-200 p-2 rounded-xl
+text-black'
  onClick={handleCarouselClick}>
-   {carouselClicked ? 'collapse' : 'expand'}
+   {carouselClicked ? 'Collapse' : 'Expand'}
 </button>
                        
 

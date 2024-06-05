@@ -157,7 +157,7 @@ const Display = () => {
 
     return (
         <section className="absolute top-0 left-0
-        overflow-x-hidden
+        overflow-x-hidden text-white
     bg-radial-gradient from-blue-500 to-blue-900
 " onClick={handleExitClick}
 >
