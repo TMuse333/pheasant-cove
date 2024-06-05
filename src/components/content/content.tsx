@@ -34,7 +34,7 @@ const Content: React.FC<contentProps> = ({
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold:  0.8,
+    threshold:  0.5,
   };
 
   // Use the custom hook to get a ref and observe intersection
