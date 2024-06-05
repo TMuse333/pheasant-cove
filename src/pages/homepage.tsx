@@ -39,6 +39,7 @@ const images = [
     <main className="absolute top-0 left-0 overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
    flex flex-col justify-center items-center
+   text-white
    ">
 <Navbar
 links={navLinks}
