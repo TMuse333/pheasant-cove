@@ -115,6 +115,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
 
 
 
+
     return (
         <>
             <section

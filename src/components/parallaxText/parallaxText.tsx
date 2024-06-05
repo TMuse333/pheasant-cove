@@ -4,10 +4,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 // import laptop from '../../media/laptop.jpg'
 import {useGeneralContext} from '../../context/context'
 // import { Link } from "react-router-dom";
-
+import {StaticImageData} from 'next/image'
 
 interface ParallaxTextProps {
-        image: string;
+        image:  StaticImageData;
         subheading: string;
         heading:string;
         destination:string;
@@ -16,13 +16,13 @@ interface ParallaxTextProps {
         hasDestination:boolean
 }
 
-export const TextParallaxContentExample: React.FC<ParallaxTextProps>
+ const TextParallaxContentExample: React.FC<ParallaxTextProps>
  = ({image,subheading, heading, destination,
 title,description,hasDestination}) => {
   return (
     <div className="relative w-screen">
       <TextParallaxContent
-        imgUrl={image}
+        imgUrl={image.src}
         subheading={subheading}
         heading={heading}
 
@@ -223,3 +223,5 @@ const OverlayCopy = ({
     )
   }
   
+
+  export default TextParallaxContentExample

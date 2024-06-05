@@ -1,11 +1,9 @@
 "use client"
 
 import React, { useEffect } from "react"
-import Navbar from "@/components/navbar/navbar"
+import { useGeneralContext } from "@/context/context";
 import frontUrl from '../../media/Front-of-building.jpg';
 
-import { TextParallaxContentExample } from "@/components/parallaxText/parallaxText"
-import { useGeneralContext } from "@/context/context";
 
 import bathroom1 from '../../media/Bathroom-1.jpeg'
 import bathroom2 from '../../media/Bathroom-2.jpeg'
@@ -24,12 +22,34 @@ import deck from '../../media/new-imports/Living-room-deck.webp'
 import livingRoom from '../../media/new-imports/Living-room.webp'
 import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
 
-import Carousel from "@/components/carousel/carosuel";
+import dynamic from 'next/dynamic';
+
+
+const Navbar = dynamic(() => import("@/components/navbar/navbar"), {
+    loading: () => <p>Loading Navbar...</p>
+  });
+  
+  const TextParallaxContentExample = dynamic(() => import("@/components/parallaxText/parallaxText"), {
+    loading: () => <p>Loading Parallax Text...</p>
+  });
+  
+  const HomeSection = dynamic(() => import("@/components/homeSection/homeSection"), {
+    loading: () => <p>Loading Home Section...</p>
+  });
+  
+  const ScrollableCarousel = dynamic(() => import("@/components/scrollableCarousel/scrollableCarousel"), {
+    loading: () => <p>Loading Scrollable Carousel...</p>
+  });
+  
+  const Carousel = dynamic(() => import("@/components/carousel/carosuel"), {
+    loading: () => <p>Loading Carousel...</p>
+  });
 
 
 
-import HomeSection from "@/components/homeSection/homeSection";
-import ScrollableCarousel from "@/components/scrollableCarousel/scrollableCarousel";
+
+
+
 const Display = () => {
 
     const front: string = '../../media/Front-of-building.jpg'
@@ -163,7 +183,7 @@ links={navLinks}
 
 
 <TextParallaxContentExample
-image={frontUrl.src}
+image={frontUrl}
 heading='Pheasant Cove'
 subheading="Peaceful and quiet"
 hasDestination={false}
@@ -189,16 +209,7 @@ description="You can place a description here"
 images={scrollables}
 />
 
-{/* <ScrollableCarousel
-title="Your title here"
-description="You can place a description here"
-images={images2}/>
 
-<ScrollableCarousel
-title="Your title Here"
-description="Description goes here"
-images={images3}
-/> */}
 
 
 
