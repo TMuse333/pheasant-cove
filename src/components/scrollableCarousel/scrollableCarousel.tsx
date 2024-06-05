@@ -86,10 +86,10 @@ const ScrollableCarousel:React.FC<props> =
            
            ">
             {images.map((image, index) => (
-                <Image
+                <img
                
                 
-                src={image.src}
+                src={image.src.src}
                 alt={image.alt}
                 className={`
                 ${clickedImage === index ? `
