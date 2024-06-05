@@ -24,25 +24,38 @@ import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
 
 import dynamic from 'next/dynamic';
 
+const LoadingScreen = () => {
+
+    return (
+        <div className="
+        absolute top-0 left-0
+        overflow-x-hidden
+    bg-radial-gradient from-blue-500 to-blue-900 h-screen
+    w-screen">
+
+        </div>
+    )
+}
+
 
 const Navbar = dynamic(() => import("@/components/navbar/navbar"), {
-    loading: () => <p>Loading Navbar...</p>
+    loading: () => <LoadingScreen/>
   });
   
   const TextParallaxContentExample = dynamic(() => import("@/components/parallaxText/parallaxText"), {
-    loading: () => <p>Loading Parallax Text...</p>
+    loading: () => <LoadingScreen/>
   });
   
   const HomeSection = dynamic(() => import("@/components/homeSection/homeSection"), {
-    loading: () => <p>Loading Home Section...</p>
+    loading: () => <LoadingScreen/>
   });
   
   const ScrollableCarousel = dynamic(() => import("@/components/scrollableCarousel/scrollableCarousel"), {
-    loading: () => <p>Loading Scrollable Carousel...</p>
+    loading: () => <LoadingScreen/>
   });
   
   const Carousel = dynamic(() => import("@/components/carousel/carosuel"), {
-    loading: () => <p>Loading Carousel...</p>
+    loading: () => <LoadingScreen/>
   });
 
 
