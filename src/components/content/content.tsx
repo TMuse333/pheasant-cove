@@ -119,9 +119,9 @@ const nullVariant: Variants = {
 
       
       <Image
-       
+       priority={true}
         className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
-        md: "
+        md:w-[50vw] "
         src={image}
         alt='alt'
       />
