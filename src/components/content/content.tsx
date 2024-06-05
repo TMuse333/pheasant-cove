@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 import {StaticImageData} from 'next/image'
 interface contentProps {
-  image: string | StaticImageData;
+  image: StaticImageData;
   customText: React.ReactNode;
   description: string[] | null  ;
   reverse: boolean | null;
@@ -118,11 +118,11 @@ const nullVariant: Variants = {
         > */}
 
       
-      <Image
-       priority={true}
+      <img
+      //  priority={true}
         className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
         md:w-[50vw] "
-        src={image}
+        src={image.src}
         alt='alt'
       />
       {/* </motion.div> */}
