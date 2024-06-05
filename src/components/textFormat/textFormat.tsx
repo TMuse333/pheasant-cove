@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 import { motion, Variants } from "framer-motion";
 import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
-
+import {Link} from 'react-router-dom'
 interface TextFormatProps {
   isAnimated: boolean ,
   reverse: boolean 
@@ -102,6 +102,9 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
             {point}
           </motion.li>
         ))}
+        <Link to='display'>
+
+
          <motion.button
         className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
         p-2 rounded-xl"
@@ -111,6 +114,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
       >
         Learn more
       </motion.button>
+      </Link>
       </motion.ul>
       {/* </div> */}
     </motion.article>
