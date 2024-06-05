@@ -1,6 +1,6 @@
 
 
-import React, { useEffect } from "react"
+import React from 'react'
 import { useGeneralContext } from "../context/context";
 import frontUrl from '../../media/Front-of-building.jpg';
 
