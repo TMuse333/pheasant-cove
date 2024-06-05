@@ -103,18 +103,18 @@ export const closingStatment = {
 
 
 
-const outroText = {
-    name:'Terms of lease',
-    terms:[
-        'One-year, fixed-term lease with a possibility of renewal',
-        'Standard, Nova Scotia lease',
-        '$1,250 security deposit, payable at signing of lease',
-        '$2,500 per month, payable on or before the 1st of each month',
-        'Single bay for your car and personal storage items is included',
-        'Heat, hot water, electricity, propane, and high-speed internet are included',
-        'Use of hiking trail and kayak is included',
-        'Smoking or vaping tobacco, canabis, or other controlled substances is not permitted',
-        'Pets are not permitted',
-        'Care of the facility is required'  
-    ]
-}
+// const outroText = {
+//     name:'Terms of lease',
+//     terms:[
+//         'One-year, fixed-term lease with a possibility of renewal',
+//         'Standard, Nova Scotia lease',
+//         '$1,250 security deposit, payable at signing of lease',
+//         '$2,500 per month, payable on or before the 1st of each month',
+//         'Single bay for your car and personal storage items is included',
+//         'Heat, hot water, electricity, propane, and high-speed internet are included',
+//         'Use of hiking trail and kayak is included',
+//         'Smoking or vaping tobacco, canabis, or other controlled substances is not permitted',
+//         'Pets are not permitted',
+//         'Care of the facility is required'  
+//     ]
+// }

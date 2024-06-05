@@ -1,4 +1,4 @@
-import { mapText } from "@/data/data";
+import { mapText } from "../../data/data";
 import Accordion from "../accordion/accordion";
 
 export const Map = () => {

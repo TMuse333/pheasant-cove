@@ -113,7 +113,7 @@ const navLinks = [
        <h1 className='text-white
        text-4xl mb-4'>Pheasant Cove</h1>
         
-  <img src={house.src}
+  <img src={house}
   className='w-[50vw] object-cover'
   />
 

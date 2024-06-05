@@ -63,7 +63,7 @@ hasAnimation={false}
 reverse={true}
 image={angle}
 mainTitle=''
-floatingImage={false}
+
 description={['']}
 customText={<TextFormat
  isAnimated={true}

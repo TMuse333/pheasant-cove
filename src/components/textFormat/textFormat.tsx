@@ -36,17 +36,17 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
     };
   };
 
-  const textVariants: Variants = {
-    initial: {
-      opacity: 0,
-      x: reverse ? 25 : -25
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
+  // const textVariants: Variants = {
+  //   initial: {
+  //     opacity: 0,
+  //     x: reverse ? 25 : -25
+  //   },
+  //   animate: {
+  //     opacity: 1,
+  //     x: 0,
      
-    }
-  }
+  //   }
+  // }
 
 
   const nullVariants: Variants = {

@@ -1,33 +1,33 @@
 
 
-import React from 'react'
+
 import { useGeneralContext } from "../context/context";
-import frontUrl from '../../media/Front-of-building.jpg';
+import frontUrl from '../media/Front-of-building.jpg';
 
 
-import bathroom1 from '../../media/Bathroom-1.jpeg'
-import bathroom2 from '../../media/Bathroom-2.jpeg'
-import laundrySink from '../../media/new-imports/Laundry-sink.webp'
-import washer from '../../media/new-imports/Laundry-washer-dryer.webp'
-import balcony from '../../media/new-imports/Balcony-deck.webp'
-import bedroom1 from '../../media/new-imports/Bedroom-1.webp'
-import bedroom2 from '../../media/new-imports/Bedroom-2.webp'
-import garage from '../../media/new-imports/Garage-parking.webp'
-import fireplace from '../../media/new-imports/Gas-fireplace_stove.webp'
+import bathroom1 from '../media/Bathroom-1.jpeg'
+import bathroom2 from '../media/Bathroom-2.jpeg'
+import laundrySink from '../media/new-imports/Laundry-sink.webp'
+import washer from '../media/new-imports/Laundry-washer-dryer.webp'
+// import balcony from '../../media/new-imports/Balcony-deck.webp'
+// import bedroom1 from '../../media/new-imports/Bedroom-1.webp'
+// import bedroom2 from '../../media/new-imports/Bedroom-2.webp'
+import garage from '../media/new-imports/Garage-parking.webp'
+import fireplace from '../media/new-imports/Gas-fireplace_stove.webp'
 
-import lake from '../../media/new-imports/lake-view.webp'
-import lake2 from '../../media/new-imports/lake-view-2.webp'
+// import lake from '../../media/new-imports/lake-view.webp'
+// import lake2 from '../../media/new-imports/lake-view-2.webp'
 
-import deck from '../../media/new-imports/Living-room-deck.webp'
-import livingRoom from '../../media/new-imports/Living-room.webp'
-import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
+// import deck from '../../media/new-imports/Living-room-deck.webp'
+// import livingRoom from '../../media/new-imports/Living-room.webp'
+// import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
 
 
 import TextParallaxContentExample from "../components/parallaxText/parallaxText";
 
 import Navbar from "../components/navbar/navbar";
 
-import Carousel from "../components/carousel/carosuel";
+// import Carousel from "../components/carousel/carosuel";
 
 import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
 
@@ -41,7 +41,7 @@ import HomeSection from "../components/homeSection/homeSection";
 
 const Display = () => {
 
-    const front: string = '../../media/Front-of-building.jpg'
+    
 
     const navLinks = [
         {
@@ -55,28 +55,28 @@ const Display = () => {
     ]
 
    
-    const images3 = [
-        {
-            src:livingRoom,
-            alt:'A second photo of the living room of pheasant cove'
-        },
-        {
-            src:livingRoom2,
-            alt:'A second photo of the living room of pheasant cove'
-        },
-        {
-            src:deck,
-            alt:'The deck of Pheasant Cove'
-        },
-        {
-            src:lake,
-            alt:'The lake near pheasant Cove'
-        },
-        {
-            src:lake2,
-            alt:'The lake near pheasant Cove'
-        }
-    ]
+    // const images3 = [
+    //     {
+    //         src:livingRoom,
+    //         alt:'A second photo of the living room of pheasant cove'
+    //     },
+    //     {
+    //         src:livingRoom2,
+    //         alt:'A second photo of the living room of pheasant cove'
+    //     },
+    //     {
+    //         src:deck,
+    //         alt:'The deck of Pheasant Cove'
+    //     },
+    //     {
+    //         src:lake,
+    //         alt:'The lake near pheasant Cove'
+    //     },
+    //     {
+    //         src:lake2,
+    //         alt:'The lake near pheasant Cove'
+    //     }
+    // ]
 
     const scrollables = [
         {
@@ -102,20 +102,20 @@ const Display = () => {
 
     ]
 
-    const images2 = [
-        {
-            src:bedroom1,
-            alt:'Bedroom 1'
-        },
-        {
-            src:bedroom2,
-            alt:'Bedroom 2'
-        },
-        {
-            src:balcony,
-            alt:'Balcony'
-        }
-    ]
+    // const images2 = [
+    //     {
+    //         src:bedroom1,
+    //         alt:'Bedroom 1'
+    //     },
+    //     {
+    //         src:bedroom2,
+    //         alt:'Bedroom 2'
+    //     },
+    //     {
+    //         src:balcony,
+    //         alt:'Balcony'
+    //     }
+    // ]
 
 
     const images1 = [

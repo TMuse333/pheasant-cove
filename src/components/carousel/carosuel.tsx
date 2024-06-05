@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion, AnimatePresence } from 'framer-motion';
-// import { Link } from 'react-router-dom';
-import {StaticImageData} from 'next/image'
-import Image from 'next/image'
-import Draggable, { DraggableEvent, DraggableData } from 'react-draggable';
+import { Link } from 'react-router-dom';
+
 
 interface CarouselProps {
     images: {
@@ -234,11 +232,11 @@ className='absolute bottom-[10%]'
                             <p className="text-white text-center pl-5 pr-5 pt-5 md2:pr-0 pl-0 md2:text-left">
                                 {images[currentImage].description}
                                 <br />
-                                {/* {images[currentImage].link !== '' && (
+                                {images[currentImage].link !== '' && (
                                     <Link to={images[currentImage].link} className=''>
                                         <button className='mt-5 text-left'>Check it out</button>
                                     </Link>
-                                )} */}
+                                )}
                             </p>
                         </motion.div>
                     </AnimatePresence>

@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform, motionValue } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 // import laptop from '../../media/laptop.jpg'
 import {useGeneralContext} from '../../context/context'
-// import { Link } from "react-router-dom";
-import {StaticImageData} from 'next/image'
+import { Link } from "react-router-dom";
+
 
 interface ParallaxTextProps {
-        image:  StaticImageData;
+        image:  string;
         subheading: string;
         heading:string;
         destination:string;
@@ -22,7 +22,7 @@ title,description,hasDestination}) => {
   return (
     <div className="relative w-screen">
       <TextParallaxContent
-        imgUrl={image.src}
+        imgUrl={image}
         subheading={subheading}
         heading={heading}
 
@@ -208,7 +208,7 @@ const OverlayCopy = ({
       {description[1]}
       </p>
 
-      {/* {hasDestination && (
+      {hasDestination && (
 
     
       <Link to={destination}>
@@ -217,7 +217,7 @@ const OverlayCopy = ({
         Learn more <FiArrowUpRight className="inline" />
       </button>
       </Link>
-        )} */}
+        )}
     </div>
   </div>
     )

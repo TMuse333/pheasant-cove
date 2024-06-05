@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../carousel/carosuel";
-import ImageSlider from "../imageSlider/imageSlider";
+
 // import { closingStatment } from '../../data/data'
 // import dark from '../../media/dark-front.jpg'
 // import Closer from '../closer/closer'

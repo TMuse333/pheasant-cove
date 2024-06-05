@@ -3,17 +3,16 @@
 import React, { useState, } from 'react';
 import { Variants, motion } from 'framer-motion';
 import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
-import { useGeneralContext } from '../../context/context';
-import Image from 'next/image'
+// import { useGeneralContext } from '../../context/context';
 
-import {StaticImageData} from 'next/image'
+
 interface contentProps {
-  image: StaticImageData;
+  image: string;
   customText: React.ReactNode;
   description: string[] | null  ;
   reverse: boolean | null;
   mainTitle: string | null;
-  floatingImage: boolean;
+  // floatingImage: boolean;
   hasAnimation: boolean;
 }
 
@@ -23,7 +22,8 @@ const Content: React.FC<contentProps> = ({
   description,
   reverse,
   mainTitle,
-  floatingImage,
+ 
+
   hasAnimation,
 }) => {
   const [inView, setInView] = useState(false);
@@ -41,26 +41,26 @@ const Content: React.FC<contentProps> = ({
   const componentRef = useIntersectionObserver(setInView, options);
 
 
-  const imageVariants: Variants = {
-    initial: {
-      // x: reverse ? 180 : -150,
-      // opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      // x: reverse  && !isMobile? 50 : 0,
-      y: floatingImage ? [0, -5, 0] : 0,
-      transition: {
+  // const imageVariants: Variants = {
+  //   initial: {
+  //     // x: reverse ? 180 : -150,
+  //     // opacity: 0,
+  //   },
+  //   animate: {
+  //     opacity: 1,
+  //     // x: reverse  && !isMobile? 50 : 0,
+  //     y: floatingImage ? [0, -5, 0] : 0,
+  //     transition: {
     
-        y: {
-          delay: 2.45,
-          duration: 2,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        },
-      },
-    },
-  };
+  //       y: {
+  //         delay: 2.45,
+  //         duration: 2,
+  //         repeat: Infinity,
+  //         ease: 'easeInOut',
+  //       },
+  //     },
+  //   },
+  // };
 
   const textVariants = (delay: number): Variants => {
     return {
@@ -92,9 +92,9 @@ const Content: React.FC<contentProps> = ({
   }
 }
 
-const nullVariant: Variants = {
+// const nullVariant: Variants = {
 
-}
+// }
 
 
 
@@ -122,7 +122,7 @@ const nullVariant: Variants = {
       //  priority={true}
         className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
         md:w-[50vw] "
-        src={image.src}
+        src={image}
         alt='alt'
       />
       {/* </motion.div> */}

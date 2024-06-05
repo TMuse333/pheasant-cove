@@ -1,17 +1,17 @@
 
-import { useGeneralContext } from "@/context/context";
-import React, { useEffect, useState } from "react";
-import Image from 'next/image'
-import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
-import {StaticImageData} from 'next/image'
-import { motion } from 'framer-motion'
+import { useGeneralContext } from "../../context/context";
+import React, {   } from "react";
+
+// import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
+
+// import { motion } from 'framer-motion'
 
 interface props {
     title?:string 
     ,
     description?:string,
     images:{
-        src:StaticImageData ,
+        src:string ,
         alt:string
     }[],
 
@@ -38,17 +38,17 @@ const ScrollableCarousel:React.FC<props> =
         
     }
 
-    const [inView, setInView] = useState(false);
+//     const [inView, setInView] = useState(false);
 
 
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold:  0.8,
-  };
+//   const options = {
+//     root: null,
+//     rootMargin: '0px',
+//     threshold:  0.8,
+//   };
 
-  // Use the custom hook to get a ref and observe intersection
-  const componentRef = useIntersectionObserver(setInView, options);
+//   // Use the custom hook to get a ref and observe intersection
+//   const componentRef = useIntersectionObserver(setInView, options);
 
 
 
@@ -58,7 +58,7 @@ const ScrollableCarousel:React.FC<props> =
 
    
 
-        <section ref={componentRef}
+        <section 
         className={`relative w-screen
          ml-auto z-[4] mb-[5rem] mt-[5rem]
   
@@ -89,7 +89,7 @@ const ScrollableCarousel:React.FC<props> =
                 <img
                
                 
-                src={image.src.src}
+                src={image.src}
                 alt={image.alt}
                 className={`
                 ${clickedImage === index ? `

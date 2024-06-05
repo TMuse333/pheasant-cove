@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Link from "next/link";
+import {Link} from 'react-router-dom'
 
 interface NavbarProps {
     links: {
@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
     return (
         <nav className="fixed top-0 z-20 w-screen left-0 bg-gradient-to-b from-blue-900 to-blue-700 h-[100px] flex justify-between items-center">
             <div className="relative flex justify-between items-center w-screen lg:w-[80vw] max-w-[767px] lg:justify-evenly lg:items-stretch">
-                <Link href='/' passHref>
+                <Link to='/' >
                 <p className="ml-2 lg:text-2xl mr-auto lg:mr-0 pl-6 lg:pl-0 bg-gradient-to-b from-gray-200 to-gray-300 bg-clip-text text-transparent">
     Pheasant Cove
 </p>
@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                     >
                         {links.map((link, index) => (
                             <li key={index} className="text-lg mb-2 pl-2 pr-2 lg:mb-0 hover:text-red-400">
-                                <Link href={link.destination} passHref>
+                                <Link to={link.destination} >
                                     <p>{link.name}</p>
                                 </Link>
                             </li>

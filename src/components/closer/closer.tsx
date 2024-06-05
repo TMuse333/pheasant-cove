@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
 // import { Link } from "react-router-dom";
 
@@ -97,7 +97,7 @@ const Closer: React.FC<Props> = ({image,}) => {
             ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro aperiam dolorum iusto, quas laboriosam non amet sit culpa eveniet nam voluptatem aliquid deleniti commodi ad libero reprehenderit, aspernatur modi voluptatibus cum. Suscipit ea deserunt dolores, repellat eum molestias. Odit earum ea ipsum eius aliquid eaque, nulla laudantium libero vel!
                 <br/>
-                <Link href='/property'>
+                <Link to='/contact'>
             <button className=" text-left bg-orange-500 p-3
             rounded-xl mr-auto ml-auto mt-8">
                 Fill an application

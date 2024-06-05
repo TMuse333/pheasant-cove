@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Link from "next/link";
+import { Link } from 'react-router-dom';
 import { motion, useMotionTemplate, useMotionValue,
     animate } from "framer-motion";
 
@@ -83,7 +83,7 @@ const Footer:React.FC<links> = ({links}) => {
         {links.map((link,index) => (
 
 <Link key={index}
-href='/' passHref>
+to={link.destination} >
 
 
 
@@ -109,8 +109,8 @@ href='/' passHref>
       sm:text-2xl'>Pheasant Cove,
       The lake of the woods, Nova scotia</p>
       <Link 
-            href='https://q3designs.netlify.app'
-            passHref>
+            to='https://q3designs.netlify.app'
+            >
                 <motion.p
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
