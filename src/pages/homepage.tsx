@@ -111,6 +111,10 @@ customText={<TextFormat
  />
  {/* </div> */}
 
+ <div className={` h-[5px]
+                w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
+                mb-8 bg-orange-400`} />
+
  <Map/>
 
 

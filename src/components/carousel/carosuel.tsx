@@ -153,7 +153,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
            
                 flex flex-col md:flex-row  ml-auto mr-auto
                 justify-center items-center 
-                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[95vw] relative' : 'bg-black h-screen fixed top-0 left-0'}`}>
+                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[95vw] relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}>
 
                 <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription && !carouselClicked ? 'md:w-[55%]' : 'w-[100%]'}`}
                  role="region"
@@ -212,14 +212,19 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                             object-cover object-bottom z-[25]
                                             ${index === 5 ? 'object-top' : 'object-bottom'}
                                             ml-auto mr-auto`} />
+
+                                            {!carouselClicked && (
+
+                                            
                                             <button
                          aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
 className={` bg-gray-200 p-2 rounded-xl
-text-black ${carouselClicked ? 'fixed bottom-[10%] z-[25] left-[50%]' : ''}`}
+text-black `}
  onClick={handleCarouselClick}>
    {carouselClicked ? 'Collapse' : 'Expand'}
 </button>
+)}
                                            
 
 {hasDescription && !carouselClicked && !isDesktop &&(
@@ -305,6 +310,16 @@ text-black ${carouselClicked ? 'fixed bottom-[10%] z-[25] left-[50%]' : ''}`}
                             </p>
                         </motion.div>
                     </AnimatePresence>
+                )}
+
+                {carouselClicked && (
+                    <button className='fixed bottom-[10%] left-[50%]
+                    -translate-x-[50%] z-[100] bg-gray-200 p-2 rounded-xl
+                    text-black'
+                    onClick={handleCarouselClick}
+                    >
+                        Collapse
+                    </button>
                 )}
 
                

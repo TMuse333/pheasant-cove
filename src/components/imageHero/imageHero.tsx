@@ -19,7 +19,7 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
 
     return (
         <header className="flex w-screen flex flex-col relative
-        mt-10 sm:mt-5
+        mt-[8rem] md:mt-0
         md:flex-row 
         pb-10">
             <div className="md:w-[50vw] relative
@@ -33,7 +33,9 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
 
  
             <button className="bg-orange-400 p-3
-            rounded-lg">
+            rounded-lg hover:scale-[1.05]
+            hover:bg-white hover:text-orange-400 
+            transition-all">
                 Fill an application
             </button>
             </Link>

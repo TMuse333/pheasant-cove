@@ -126,9 +126,10 @@ const navLinks = [
         max-w-[400px]
         '
         >
-         <h1>Pheasant Cove</h1>
+         <h1 className='text-2xl md:text-4xl'>Pheasant Cove</h1>
           <h2 className='text-white text-2xl mt-5 pl-3 pr-3'>You have made an excellent choice</h2>
-          <p className="w-4/5 ml-auto mr-auto">Let&apos;s get in contact so we can see if your&apos;re a good fit!</p>
+          <p className="w-4/5 ml-auto mr-auto
+          mt-4 md:text-lg">Let&apos;s get in contact so we can see if your&apos;re a good fit!</p>
           <form onSubmit={sendEmail} ref={form}>
             <div className="mt-8 flex flex-col justify-center items-center
              pt-6 pb-6
@@ -164,7 +165,7 @@ const navLinks = [
             (optional)
         </p>
         <button className='bg-orange-400
-        p-3 rounded-xl'>Send Message</button>
+        p-3 rounded-xl'>Submit Application</button>
 
         </div>
   {/* <div className='absolute bottom-[-30%]'>

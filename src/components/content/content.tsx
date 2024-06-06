@@ -120,8 +120,8 @@ const Content: React.FC<contentProps> = ({
       
       <img
       //  priority={true}
-        className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] max-w-[768px]
-        md:w-[50vw] "
+        className="w-[90vw] h-[55vw] object-cover ml-auto mr-auto max-h-[667px] 
+        md:w-[50vw] md:max-w-[800px] "
         src={image}
         alt='alt'
       />

@@ -99,8 +99,11 @@ const Closer: React.FC<Props> = ({image,}) => {
                 <br/>
                 <Link to='/contact'>
             <button className=" text-left bg-orange-500 p-3
-            rounded-xl mr-auto ml-auto mt-8">
-                Fill an application
+            rounded-xl mr-auto ml-auto mt-8
+            hover:scale-[1.05]
+            hover:bg-white hover:text-orange-400 
+            transition-all">
+                Submit an application
             </button>
         </Link>
             </p>

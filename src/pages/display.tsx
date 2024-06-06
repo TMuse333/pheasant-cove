@@ -34,7 +34,8 @@ import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarou
 import HomeSection from "../components/homeSection/homeSection";
 import Footer from "../components/footer/footer";
 import Carousel from "../components/carousel/carosuel";
-
+import { accordionText } from "../data/data";
+import Accordion from "../components/accordion/accordion";
 
 
 
@@ -168,13 +169,14 @@ const Display = () => {
 links={navLinks}
 />
 
-<div style={{
+<div className="mt-8"
+style={{
     filter: clickedImage !== null ? 'blur(4px)' : 'none'
 }}>
 
 
 
-{/* <TextParallaxContentExample
+<TextParallaxContentExample
 image={frontUrl}
 heading='Pheasant Cove'
 subheading="Peaceful and quiet"
@@ -182,7 +184,7 @@ hasDestination={false}
 title=''
 description={[]}
 destination=''
-/> */}
+/>
 
 
 <HomeSection
@@ -205,6 +207,12 @@ title="Your title here"
 description="You can place a description here"
 images={scrollables}
 />
+
+<Accordion
+text={accordionText}
+intro='Optional FAQ section'
+description='You can place more facts about the property here'
+hasIntro={true}/>
 
 <Footer
 links={navLinks}

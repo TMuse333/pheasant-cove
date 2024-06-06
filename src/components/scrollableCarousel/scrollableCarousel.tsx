@@ -44,7 +44,7 @@ const ScrollableCarousel:React.FC<props> =
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold:  0.6,
+    threshold:  0.4,
   };
 
   // Use the custom hook to get a ref and observe intersection
