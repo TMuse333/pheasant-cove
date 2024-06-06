@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 // }
 
 import house from '../../media/Front-of-building.jpg'
-import Navbar from '../navbar/navbar';
+import Navbar from '../../components/navbar/navbar';
 
 
 interface InputField {
@@ -95,7 +95,7 @@ const navLinks = [
    
     
       <div className='w-screen h-screen flex justify-center items-center absolute top-10 left-0
-     bg-[#35465E]'
+     bg-radial-gradient from-blue-500 to-blue-900 text-white'
     //   style={{
     //     backgroundImage:`url(${bg})`,
     //     backgroundSize: 'cover',
@@ -108,7 +108,7 @@ const navLinks = [
       md:w-[50vw]  
      
       max-w-[650px] ml-auto
-      bg-black pt-3 pb-3 bg-opacity-70
+       pt-3 pb-3 bg-opacity-70
       rounded-3xl '>
        <h1 className='text-white
        text-4xl mb-4'>Pheasant Cove</h1>
@@ -131,22 +131,22 @@ const navLinks = [
           <p className="w-4/5 ml-auto mr-auto">Let&apos;s get in contact so we can see if your&apos;re a good fit!</p>
           <form onSubmit={sendEmail} ref={form}>
             <div className="mt-8 flex flex-col justify-center items-center
-            bg-gray-900 bg-opacity-100 pt-6 pb-6
+             pt-6 pb-6
              rounded-3xl">
             {inputFields.map((inputField, index) => (
   index === inputFields.length - 1 ? (
     <textarea
       key={index}
-      className=' border border-blue-400 bg-black rounded-xl text-white
+      className=' border border-orange-400  rounded-xl text-white
       focus:placeholder-gray-300 p-2 mb-3
-      w-[80vw] max-w-[400px]'
+      w-[80vw] max-w-[400px] bg-black'
       placeholder={inputField.placeholder}
       name={inputField.name}
     />
   ) : (
     <input
       key={index}
-      className=' border border-blue-400 bg-black rounded-xl text-white
+      className=' border border-orange-400 bg-black rounded-xl text-white
       focus:placeholder-gray-300 p-2 mb-3
       w-[80vw] max-w-[400px]'
       type="text"
@@ -163,7 +163,8 @@ const navLinks = [
             *Insert an inspirational quote here*
             (optional)
         </p>
-        <button>Send Message</button>
+        <button className='bg-orange-400
+        p-3 rounded-xl'>Send Message</button>
 
         </div>
   {/* <div className='absolute bottom-[-30%]'>

@@ -33,6 +33,7 @@ import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarou
 
 import HomeSection from "../components/homeSection/homeSection";
 import Footer from "../components/footer/footer";
+import Carousel from "../components/carousel/carosuel";
 
 
 
@@ -121,24 +122,25 @@ const Display = () => {
 
     const images1 = [
         {
-            url:bathroom1,
-            title:'Bathroom1',
-            description:'description',
-            link:'/'
+          url: bathroom1,
+          title: 'Bathroom1',
+          description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
+          link: '/'
         },
         {
-            url:bathroom2,
-            title:'Bathroom2',
-            description:'description',
-            link:'/'
+          url: bathroom2,
+          title: 'Bathroom2',
+          description: 'Step into luxury with this spacious bathroom that boasts a luxurious bathtub, stylish vanity area, and ample natural light. Pamper yourself with a spa-like experience in the comfort of your own home.',
+          link: '/'
         },
         {
-            url:washer,
-            title:'washer',
-            description:'description',
-            link:'/'
+          url: washer,
+          title: 'Washer',
+          description: 'Efficiency meets convenience in this laundry room equipped with state-of-the-art washer and dryer appliances. Make laundry day a breeze with this modern and functional setup.',
+          link: '/'
         }
-    ]
+      ];
+      
 
 
 
@@ -172,7 +174,7 @@ links={navLinks}
 
 
 
-<TextParallaxContentExample
+{/* <TextParallaxContentExample
 image={frontUrl}
 heading='Pheasant Cove'
 subheading="Peaceful and quiet"
@@ -180,14 +182,19 @@ hasDestination={false}
 title=''
 description={[]}
 destination=''
-/>
+/> */}
 
 
 <HomeSection
-title='Bathroom'
-description="We have smooth bathrooms"
+title='Your title here'
+description="You can place a description of your images if you want"
 images={images1}
 
+/>
+
+<Carousel
+images={images1}
+hasDescription={true}
 />
 
 

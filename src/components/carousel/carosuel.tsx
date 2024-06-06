@@ -31,6 +31,22 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
     const [carouselClicked, setCarouselClicked] = useState(false);
     const [isCoolDown, setIsCoolDown] = useState(false)
 
+    const [isDesktop, setIsDesktop ] = useState(window.innerWidth >= 865)
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth >= 865)
+        }
+        handleResize()
+
+        window.addEventListener('resize',handleResize)
+
+        return ()=> {
+            window.removeEventListener('resize',handleResize)
+        }
+    },[])
+
     const coolDownTime = 1000
 
     function handleCarouselClick() {
@@ -137,9 +153,9 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
            
                 flex flex-col md:flex-row  ml-auto mr-auto
                 justify-center items-center 
-                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[90vw] relative' : 'bg-black z-[90] h-screen fixed top-0 left-0'}`}>
+                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[95vw] relative' : 'bg-black h-screen fixed top-0 left-0'}`}>
 
-                <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription ? 'md:w-[60%]' : 'w-[100%]'}`}
+                <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription && !carouselClicked ? 'md:w-[55%]' : 'w-[100%]'}`}
                  role="region"
                  aria-labelledby="carousel-heading">
 
@@ -159,9 +175,10 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
 
                         
                                 {/*this dictates the height and width of the image*/}
-                                <div className={`
+                                <div    onClick={handleCarouselClick}
+                                className={` z-[33]
                                     ml-auto mr-auto mb-auto absolute top-0
-                                   
+                                      onClick={handleCarouselClick}
                                     ${!carouselClicked ? `w-[100vw] h-[80vw]
                                     max-h-[400px] 
                                     md:max-h-[620px]` : 'w-[100vw]  h-[100vw] '}
@@ -180,7 +197,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                 >
 
                                     <img
-                                  onClick={handleCarouselClick}
+                               
                                     alt='lol'
                                         src={image.url}
                                         className={`
@@ -192,12 +209,49 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                            
                                             max-w-[1400px] ml-auto mr-auto max-h-[900px]
                                            `}
-                                            object-cover object-bottom
+                                            object-cover object-bottom z-[25]
                                             ${index === 5 ? 'object-top' : 'object-bottom'}
                                             ml-auto mr-auto`} />
+                                            <button
+                         aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
 
+className={` bg-gray-200 p-2 rounded-xl
+text-black ${carouselClicked ? 'fixed bottom-[10%] z-[25] left-[50%]' : ''}`}
+ onClick={handleCarouselClick}>
+   {carouselClicked ? 'Collapse' : 'Expand'}
+</button>
+                                           
 
+{hasDescription && !carouselClicked && !isDesktop &&(
+                    <AnimatePresence mode='wait'>
+                        <motion.div
+                            key={currentImage}
+                            className="w-[100%] relative md:w-[50%] md:-translate-y-[5rem] ml-auto  mr-auto
+                            mt-3
+                             text-center
+                             pl-5 pr-5
+                            "
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.7 }}
+                        >
+                            <h1 className='  text-center text-5xl '>{images[currentImage].title}</h1>
+                            <p className="text-white text-center md:text-left mt-[3rem] md:pl-8
+                            text-lg sm:text-xl">
+                                {images[currentImage].description}
+                                <br />
+                                {/* {images[currentImage].link !== '' && (
+                                    <Link to={images[currentImage].link} className=''>
+                                        <button className='mt-5 text-left'>Check it out</button>
+                                    </Link>
+                                )} */}
+                            </p>
+                        </motion.div>
+                    </AnimatePresence>
+                )}
                                 </div>
+                             
                                 </React.Fragment>
                         ))}
 
@@ -207,35 +261,28 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                         <div className={`${!carouselClicked ? `
                         w-[100%] absolute top-0 h-[100%]
                         max-h-[550px]
-                       z-[20]
+                                   
                         max-w-[900px] ` : ' w-screen max-w-[1575px] h-screen relative'} 
+                        z-[45]
                         `}>
 
                             <button  aria-label="Previous image"
-                            className='bg-transparent p-0 absolute left-0 top-[50%] text-white'>
+                            className='bg-transparent p-0 absolute left-0 top-[25%] md:top-[50%] text-white'>
                                 <ChevronLeft onClick={handlePrevClick} size={40} />
                             </button>
                             <button aria-label="Next image"
-                            className='bg-transparent p-0 absolute right-0 top-[50%] text-white'>
+                            className='bg-transparent p-0 absolute right-0 top-[25%] md:top-[50%] text-white'>
                                 <ChevronRight onClick={handleNextClick} size={40} />
                             </button>
                           
                         </div>
-                        <button
-                         aria-label={carouselClicked ? 'Collapse carousel' : 'Expand carousel'}
-
-className='absolute bottom-[10%] bg-gray-200 p-2 rounded-xl
-text-black'
- onClick={handleCarouselClick}>
-   {carouselClicked ? 'Collapse' : 'Expand'}
-</button>
+                        
                        
 
                     </div>
 
                 </div>
-
-                {hasDescription && (
+                {hasDescription && isDesktop && (
                     <AnimatePresence mode='wait'>
                         <motion.div
                             key={currentImage}
@@ -245,19 +292,22 @@ text-black'
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.7 }}
                         >
-                            <h1 className='md2:text-left md2:pl-5 text-center'>{images[currentImage].title}</h1>
-                            <p className="text-white text-center pl-5 pr-5 pt-5 md2:pr-0 pl-0 md2:text-left">
+                            <h1 className='  text-center text-5xl '>{images[currentImage].title}</h1>
+                            <p className="text-white text-center md:text-left mt-[3rem] md:pl-8
+                            text-lg sm:text-xl">
                                 {images[currentImage].description}
                                 <br />
-                                {images[currentImage].link !== '' && (
+                                {/* {images[currentImage].link !== '' && (
                                     <Link to={images[currentImage].link} className=''>
                                         <button className='mt-5 text-left'>Check it out</button>
                                     </Link>
-                                )}
+                                )} */}
                             </p>
                         </motion.div>
                     </AnimatePresence>
                 )}
+
+               
             </section>
         </>
     );
