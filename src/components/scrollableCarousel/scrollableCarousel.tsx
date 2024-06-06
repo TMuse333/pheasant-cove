@@ -1,10 +1,10 @@
 
 import { useGeneralContext } from "../../context/context";
-import React, {   } from "react";
+import React, { useState  } from "react";
 
-// import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
+import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
 
-// import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 interface props {
     title?:string 
@@ -38,19 +38,31 @@ const ScrollableCarousel:React.FC<props> =
         
     }
 
-//     const [inView, setInView] = useState(false);
+    const [inView, setInView] = useState(false);
 
 
-//   const options = {
-//     root: null,
-//     rootMargin: '0px',
-//     threshold:  0.8,
-//   };
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold:  0.6,
+  };
 
-//   // Use the custom hook to get a ref and observe intersection
-//   const componentRef = useIntersectionObserver(setInView, options);
+  // Use the custom hook to get a ref and observe intersection
+  const componentRef = useIntersectionObserver(setInView, options);
 
-
+  const imageVariants = (delay: number) => ({
+    initial: {
+      y: -20,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+      },
+    },
+  });
 
 
     return (
@@ -58,7 +70,7 @@ const ScrollableCarousel:React.FC<props> =
 
    
 
-        <section 
+        <section ref={componentRef}
         className={`relative w-screen
          ml-auto z-[4] mb-[5rem] mt-[5rem]
   
@@ -88,6 +100,7 @@ const ScrollableCarousel:React.FC<props> =
             {images.map((image, index) => (
                 <img
                
+               
                 
                 src={image.src}
                 alt={image.alt}
@@ -109,11 +122,13 @@ const ScrollableCarousel:React.FC<props> =
                 z-[5]`}
                  object-cover
                  object-center
-               transition-transform
-                
+               transition-all
+               
                  ${clickedImage !== null
                 && clickedImage !== index ?
             'blur-[3px]' : ''}
+                    ${ !inView ? `
+                    opacity-0` : ' opacity-1'}
                 `}
                 key={index}
                 style={{

@@ -87,7 +87,7 @@ to={link.destination} >
 
 
 
-            <p className='mt-2 hover:text-gray-400 md:text-xl'>{link.name}</p>
+            <p className='mt-2 hover:text-orange-400 md:text-xl'>{link.name}</p>
             </Link>
 
 

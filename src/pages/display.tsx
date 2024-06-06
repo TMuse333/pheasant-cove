@@ -32,6 +32,7 @@ import Navbar from "../components/navbar/navbar";
 import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
 
 import HomeSection from "../components/homeSection/homeSection";
+import Footer from "../components/footer/footer";
 
 
 
@@ -45,12 +46,12 @@ const Display = () => {
 
     const navLinks = [
         {
-            name:'View Property',
-            destination:'display'
+            name:'Home',
+            destination:'/'
         },
         {
             name:'Contact Us',
-            destination:'contact'
+            destination:'/contact'
         }
     ]
 
@@ -196,6 +197,10 @@ images={images1}
 title="Your title here"
 description="You can place a description here"
 images={scrollables}
+/>
+
+<Footer
+links={navLinks}
 />
 
 

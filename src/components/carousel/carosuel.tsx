@@ -29,13 +29,19 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
     const [rightClicked, setRightClicked] = useState<boolean>(false);
     const [rightEdgeShift, setRightEdgeShift] = useState<number>(0);
     const [carouselClicked, setCarouselClicked] = useState(false);
+    const [isCoolDown, setIsCoolDown] = useState(false)
+
+    const coolDownTime = 1000
 
     function handleCarouselClick() {
         setCarouselClicked(!carouselClicked);
-        console.log('carousel clicked');
+       
     }
 
     function handlePrevClick() {
+
+        if(isCoolDown) return;
+
         setLeftClicked(true);
         setRightClicked(false);
 
@@ -45,9 +51,15 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
             setShift(prev => prev + 1);
             setCurrentImage(prev => prev - 1);
         }
+
+        setIsCoolDown(true);
+        setTimeout(() => setIsCoolDown(false), coolDownTime);
     }
 
     function handleNextClick() {
+
+        if(isCoolDown) return;
+
         setRightClicked(true);
         setLeftClicked(false);
         if (shift === -images.length + 1) {
@@ -57,6 +69,9 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
             setShift(prev => prev - 1);
             setCurrentImage(prev => prev + 1);
         }
+
+        setIsCoolDown(true);
+        setTimeout(() => setIsCoolDown(false), coolDownTime);
     }
 
     useEffect(() => {

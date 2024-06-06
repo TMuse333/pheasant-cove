@@ -39,7 +39,7 @@ export const Map = () => {
 
             <div className={` h-[5px]
                 w-[60vw] max-w-[800px] ml-auto mr-auto mt-5
-                mb-8 bg-gray-300`} />
+                mb-8 bg-orange-400`} />
         </>
     );
 };
