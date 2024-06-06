@@ -4,7 +4,7 @@ import React, { useState  } from "react";
 
 import useIntersectionObserver from '../intersectionObserver/intersectionObserver'
 
-import { motion, Variants } from 'framer-motion'
+// import { motion, Variants } from 'framer-motion'
 
 interface props {
     title?:string 
@@ -50,19 +50,7 @@ const ScrollableCarousel:React.FC<props> =
   // Use the custom hook to get a ref and observe intersection
   const componentRef = useIntersectionObserver(setInView, options);
 
-  const imageVariants = (delay: number) => ({
-    initial: {
-      y: -20,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: delay,
-      },
-    },
-  });
+
 
 
     return (
@@ -88,9 +76,10 @@ const ScrollableCarousel:React.FC<props> =
             </>
         )}
             <div className="w-[90vw]
-            overflow-scroll 
+            overflow-x-scroll 
+            overflow-y-auto
             flex 
-            ml-auto mr-auto
+            ml-auto
             sm:ml-0 sm:mr-0
            
             sm:w-screen
@@ -107,7 +96,7 @@ const ScrollableCarousel:React.FC<props> =
                 className={`
                 ${clickedImage === index ? `
                 fixed top-[10%] left-[50%]
-                -translate-x-[50%]
+                -translate-x-[500%]
                 h-[90vh]
                 z-[200]
                 w-[70vw]
@@ -118,6 +107,7 @@ const ScrollableCarousel:React.FC<props> =
                 relative
                 h-[80vw] max-w-[600px]
                 max-h-[500px]
+               
                 
                 z-[5]`}
                  object-cover
@@ -127,17 +117,22 @@ const ScrollableCarousel:React.FC<props> =
                  ${clickedImage !== null
                 && clickedImage !== index ?
             'blur-[3px]' : ''}
-                    ${ !inView ? `
-                    opacity-0` : ' opacity-1'}
+                   
                 `}
                 key={index}
                 style={{
-                    transform: clickedImage ! === index ? 
-                    'translateX(-50%)' : `translateX(
-                        ${index * 20}%
-                    )`,
+                    transform: `
+                      translateX(${clickedImage !== null && clickedImage == index ? '-50%' : `${index * 20}%`}) 
+                      translateY(${inView ? '0' : '-8rem'})
+                    `,
+                    transition: clickedImage === null ? 'transform 0.5s ease-in-out' : 'none', // Adjust the duration as needed
+                    transitionDelay: `transform ${index * 3}, opacity 10s`,
+                    opacity: inView ? 1 : 0,
+                    transitionProperty: 'transform, opacity',
+                    transitionDuration: '0.5s, 0.5s', // Adjust durations if needed
+                    transitionTimingFunction: 'ease-in-out, ease-in-out',
                    
-                }}
+                  }}
                 onClick={()=>handleImageClick(index)}
 
                 /> 

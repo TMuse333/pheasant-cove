@@ -6,7 +6,7 @@ import Navbar from "../components/navbar/navbar";
 import frontView from '../media/Front-of-building.jpg'
 import lake from '../media/lake-view.jpeg'
 import livingRoom from '../media/new-imports/Living-room.webp'
-import { content1 } from "../data/data";
+// import { content1 } from "../data/data";
 import Content from "../components/content/content";
 import TextFormat from "../components/textFormat/textFormat";
 import { Map } from "../components/map/map";

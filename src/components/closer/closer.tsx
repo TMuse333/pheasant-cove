@@ -95,7 +95,7 @@ const Closer: React.FC<Props> = ({image,}) => {
             md:text-center md:pl-0 md:pr-0 ml-auto
             mr-auto mt-10 text-lg
             ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro aperiam dolorum iusto, quas laboriosam non amet sit culpa eveniet nam voluptatem aliquid deleniti commodi ad libero reprehenderit, aspernatur modi voluptatibus cum. Suscipit ea deserunt dolores, repellat eum molestias. Odit earum ea ipsum eius aliquid eaque, nulla laudantium libero vel!
+              This can be your closing statement  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro aperiam dolorum iusto, quas laboriosam non amet sit culpa eveniet nam voluptatem aliquid deleniti commodi ad libero reprehenderit, aspernatur modi voluptatibus cum. Suscipit ea deserunt dolores, repellat eum molestias. Odit earum ea ipsum eius aliquid eaque, nulla laudantium libero vel!
                 <br/>
                 <Link to='/contact'>
             <button className=" text-left bg-orange-500 p-3
