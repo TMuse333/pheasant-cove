@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
     }
 
     return (
-        <nav className="fixed top-0 z-20 w-screen left-0 bg-gradient-to-b from-blue-900 to-blue-700 h-[100px] flex justify-between items-center
+        <nav className="fixed top-0 z-[200] w-screen left-0 bg-gradient-to-b from-blue-900 to-blue-700 h-[100px] flex justify-between items-center
         text-white">
             <div className="relative flex justify-between items-center w-screen  lg:w-[80vw] ">
             <Link to='/' >

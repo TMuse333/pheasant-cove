@@ -151,11 +151,11 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
             aria-label="Image carousel"
                 className={`w-screen  
            
-                flex flex-col md:flex-row  ml-auto mr-auto
+                flex flex-col   ml-auto mr-auto
                 justify-center items-center 
                 mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[95vw] relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}>
 
-                <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription && !carouselClicked ? 'md:w-[55%]' : 'w-[100%]'}`}
+                <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription && !carouselClicked ? '' : 'w-[100%]'}`}
                  role="region"
                  aria-labelledby="carousel-heading">
 
@@ -167,7 +167,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                         max-w-[900px] 
                         max-h-[420px]
                        ` : 'w-screen  h-[80vh]'}
-                         overflow-hidden`}>
+                         overflow-hidden `}>
 
                         {images.map((image, index) => (
                           <React.Fragment
@@ -178,7 +178,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                 <div    onClick={handleCarouselClick}
                                 className={` z-[33]
                                     ml-auto mr-auto mb-auto absolute top-0
-                                      onClick={handleCarouselClick}
+                                      
                                     ${!carouselClicked ? `w-[100vw] h-[80vw]
                                     max-h-[400px] 
                                     md:max-h-[620px]` : 'w-[100vw]  h-[100vw] '}
@@ -209,8 +209,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                            
                                             max-w-[1400px] ml-auto mr-auto max-h-[900px]
                                            `}
-                                            object-cover object-bottom z-[25]
-                                            ${index === 5 ? 'object-top' : 'object-bottom'}
+                                            object-cover object-right z-[25]
+                                         
                                             ml-auto mr-auto`} />
 
                                             {!carouselClicked && (
@@ -235,6 +235,8 @@ text-black `}
                             mt-3
                              text-center
                              pl-5 pr-5
+                             pt-8
+                             pb-[100rem]
                             "
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -313,7 +315,7 @@ text-black `}
                 )}
 
                 {carouselClicked && (
-                    <button className='fixed bottom-[10%] left-[50%]
+                    <button className='fixed bottom-[2%] left-[50%]
                     -translate-x-[50%] z-[100] bg-gray-200 p-2 rounded-xl
                     text-black'
                     onClick={handleCarouselClick}

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 interface ParallaxTextProps {
-        image:  string;
+        image: string;
         subheading: string;
         heading:string;
         destination:string;
@@ -16,7 +16,7 @@ interface ParallaxTextProps {
         hasDestination:boolean
 }
 
- const TextParallaxContentExample: React.FC<ParallaxTextProps>
+export const TextParallaxContentExample: React.FC<ParallaxTextProps>
  = ({image,subheading, heading, destination,
 title,description,hasDestination}) => {
   return (
@@ -62,7 +62,7 @@ const TextParallaxContent = ({
         // paddingRight: IMG_PADDING,
       }}
     >
-      <div className="relative h-[100vh]">
+      <div className="relative h-[150vh]">
         <StickyImage 
         imgUrl={imgUrl}
        />
@@ -223,5 +223,3 @@ const OverlayCopy = ({
     )
   }
   
-
-  export default TextParallaxContentExample

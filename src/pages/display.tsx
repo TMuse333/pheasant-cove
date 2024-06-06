@@ -23,7 +23,7 @@ import fireplace from '../media/new-imports/Gas-fireplace_stove.webp'
 // import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
 
 
-import TextParallaxContentExample from "../components/parallaxText/parallaxText";
+import {TextParallaxContentExample } from "../components/parallaxText/parallaxText";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -161,7 +161,7 @@ const Display = () => {
 
     return (
         <section className="absolute top-0 left-0
-        overflow-x-hidden text-white
+         text-white
     bg-radial-gradient from-blue-500 to-blue-900
 " onClick={handleExitClick}
 >
@@ -194,10 +194,10 @@ images={images1}
 
 />
 
-<Carousel
+{/* <Carousel
 images={images1}
-hasDescription={true}
-/>
+hasDescription={false}
+/> */}
 
 
 </div>
