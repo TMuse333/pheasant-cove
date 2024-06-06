@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 interface CarouselProps {
