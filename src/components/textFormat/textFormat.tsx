@@ -30,7 +30,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
         opacity: 1,
         x: 0,
         transition: {
-          delay: index * 0.3
+          delay: index * 0.2
         }
       }
     };
@@ -95,7 +95,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
         {points.map((point, index) => (
           <motion.li className="text-white disc-none mb-2"
            key={index} 
-          variants={isAnimated ? pointVariants(index) : nullVariants}
+          variants={isAnimated ? pointVariants(index ) : nullVariants}
            initial="initial" 
            animate={isVisible ? "animate" : "initial"}
            >
@@ -113,7 +113,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
         transition-all"
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ delay: points.length * 0.3 }}
+        transition={{ delay: points.length * 0.2 }}
       >
         Learn more
       </motion.button>

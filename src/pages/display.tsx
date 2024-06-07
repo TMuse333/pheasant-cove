@@ -33,7 +33,7 @@ import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarou
 
 import HomeSection from "../components/homeSection/homeSection";
 import Footer from "../components/footer/footer";
-import Carousel from "../components/carousel/carosuel";
+
 import { accordionText } from "../data/data";
 import Accordion from "../components/accordion/accordion";
 
