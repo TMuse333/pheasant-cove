@@ -75,7 +75,7 @@ export const mapText = {
             description:'With an 11 minute drive to the 102 bypass you can get to the city quickly'
         },
         {
-            title:'Quite Area',
+            title:'Quiet Area',
             description:`You will not be bothered by the city noise out here, you can enjoy peaceful nights.`
         }
     ]
