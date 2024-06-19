@@ -392,3 +392,13 @@ export const occupantsQuestions = [
         choices: ['Yes', 'No']
     }
 ];
+
+// export const delacarationQuestions = [
+//     {
+//         question:'Applicants name',
+//         placeholder:'Enter your name here'
+//     },
+//     {
+//         question:
+//     }
+// ]

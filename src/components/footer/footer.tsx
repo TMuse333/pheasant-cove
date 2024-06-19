@@ -64,7 +64,7 @@ const Footer:React.FC<links> = ({links}) => {
   return (
     <>
     <footer className='w-[calc(100vw-5px)]
-      relative mt-[8rem] 
+      relative mt-[8rem]  text-white
   pb-12
       ml-auto mr-auto
       text-center

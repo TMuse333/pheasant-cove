@@ -71,7 +71,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
   return (
     <motion.article
       ref={componentRef}
-      className="w-[70vw] pl-5 pr-5 relative mt-5 
+      className="w-[90vw] pl-5 pr-5 relative mt-5 
    ml-auto mr-auto
     
 

@@ -34,17 +34,19 @@ const terms1 =
 const Closer: React.FC<Props> = ({image,}) => {
 
     return (
-        <section style={{
+        
+        <section 
+        style={{
             backgroundImage:`url(${image})`,
             
         }}
         className={`w-screen text-white 
         relative flex flex-col items-center justify-start
-        bg-center pb-12
+        bg-center pb-12 
         `}
   
         >
-            <div className=" mt-8 max-w-[1400px] ml-auto mr-auto"
+            <div className=" mt-8  ml-auto mr-auto"
             // style={{ backgroundColor: 'rgba(128, 128, 128, 0.7)' }}
             >
             <h1 className="text-center mb-12
@@ -57,6 +59,8 @@ const Closer: React.FC<Props> = ({image,}) => {
 
             <div className="flex flex-col
             sm:flex-row w-[100%] sm:justify-around">
+
+      <div className="w-screen max-w-[1400px] ml-auto mr-auto flex justify-around items-center">
 
       
 
@@ -75,7 +79,7 @@ const Closer: React.FC<Props> = ({image,}) => {
 
             <section className="bg-radial-gradient from-blue-700 to-blue-700  mb-4
             pt-5 pb-5 pl-3 w-[90vw] max-w-[450px]  h-[350px]
-            sm:w-[40vw] border-2 border-orange-400 mr-auto ml-auto">
+            sm:w-[40vw]  border-2 border-orange-400 mr-auto ml-auto bg-blue-900">
                 <ul className="list-disc ml-5">
 
                
@@ -88,21 +92,22 @@ const Closer: React.FC<Props> = ({image,}) => {
                  </ul>
 
             </section>
+            </div>
 
             </div>
 
             <p className="text-left pl-5 pr-5 w-[90vw]
             md:text-center md:pl-0 md:pr-0 ml-auto
-            mr-auto mt-10 text-lg
+            mr-auto mt-10 text-lg max-w-[1000px]
             ">
               This can be your closing statement  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro aperiam dolorum iusto, quas laboriosam non amet sit culpa eveniet nam voluptatem aliquid deleniti commodi ad libero reprehenderit, aspernatur modi voluptatibus cum. Suscipit ea deserunt dolores, repellat eum molestias. Odit earum ea ipsum eius aliquid eaque, nulla laudantium libero vel!
                 <br/>
                 <Link to='/contact'>
-            <button className=" text-left bg-orange-500 p-3
+            <button className=" text-left bg-orange-500 p-3 
             rounded-xl mr-auto ml-auto mt-8
             hover:scale-[1.05]
             hover:bg-white hover:text-orange-400 
-            transition-all">
+            transition-all md:text-center">
                 Submit an application
             </button>
         </Link>

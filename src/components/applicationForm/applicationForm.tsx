@@ -8,6 +8,8 @@ import {generalLeaseTerms,applicationQuestions,
     emergencyQuestions,occupantsQuestions
 
 } from '../../data/data'
+
+import Footer from "../footer/footer";
 const ApplicationForm = () => {
 
     interface MaritalStatus {
@@ -55,8 +57,8 @@ const ApplicationForm = () => {
     links={navLinks}
     />
  
-        <section className="absolute top-[13%] left-0  bg-radial-gradient from-blue-500 to-blue-900
-        w-screen
+        <section className="absolute top-[10%] left-0  bg-radial-gradient from-blue-500 to-blue-900
+        w-screen overflow-x-hidden pt-8
         
        " >
 
@@ -73,8 +75,8 @@ const ApplicationForm = () => {
 
               <h1 className="text-white text-4xl mb-4 mt-4">General Lease Terms</h1>
 
-              <div className="w-[99vw] border border-black ml-auto mr-auto
-              bg-gray-400 rounded-xl">
+              <div className="w-[99vw] sm:w-[80vw] border border-black ml-auto mr-auto
+              bg-[#8591a1] rounded-xl ml-auto mr-auto max-w-[1400px]">
 
                 <ul className="pt-5">
                     {generalLeaseTerms.map((term, index) => (
@@ -82,7 +84,7 @@ const ApplicationForm = () => {
                             <div 
                             key={index}
                             className={`w-full flex justify-between
-                            mb-5 ${index % 2 !== 0 ? 'bg-gray-500' : ''}`}>
+                            mb-5 ${index % 2 !== 0 ? 'bg-[#7a8491]' : ''}`}>
                                 <p className="w-[40%]">{term.term}</p>
                                 <p className="w-[60%]">{term.condition}</p>
                             </div>
@@ -91,71 +93,11 @@ const ApplicationForm = () => {
                 </ul>
               </div>
 
-              <h1 className="text-white text-4xl mb-4 mt-4">Applicant Information</h1>
-
-              <ul className="pt-5">
-                    {applicationQuestions.map((question, index) => (
-                        <li key={index} className="mb-4 w-[90vw] ml-auto mr-auto">
-                            <label className="block text-white text-left mb-2">
-                                {question.question}
-                            </label>
-                            <input
-                                type="text"
-                                placeholder={question.placeholder}
-                                className="w-full p-2 rounded"
-                            />
-                        </li>
-                    ))}
-
-                    <h2 className="text-white text-2xl text-left ml-5 mb-3">Marital Status</h2>
-
-                    <div className="w-full  ml-5">
-
-                    
-
-<div className="flex items-center mb-2 ">
-                                <input
-                                    type="checkbox"
-                                    checked={maritalStatus.single}
-                                    onChange={() => handleMaritalStatusChange('single')}
-                                />
-                                <label className="text-white ml-2">Single</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input
-                                    type="checkbox"
-                                    checked={maritalStatus.married}
-                                    onChange={() => handleMaritalStatusChange('married')}
-                                />
-                                <label className="text-white ml-2">Married</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input
-                                    type="checkbox"
-                                    checked={maritalStatus.commonLaw}
-                                    onChange={() => handleMaritalStatusChange('commonLaw')}
-                                />
-                                <label className="text-white ml-2">Common-Law</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input
-                                    type="checkbox"
-                                    checked={maritalStatus.other}
-                                    onChange={() => handleMaritalStatusChange('other')}
-                                />
-                                <label className="text-white ml-2 ">Other</label>
-                                {maritalStatus.other && (
-                                    <input
-                                        type="text"
-                                        value={otherStatus}
-                                        onChange={(e) => setOtherStatus(e.target.value)}
-                                        placeholder="Please specify"
-                                        className="ml-2 p-2 rounded"
-                                    />
-                                )}
-                            </div>
-                            </div>
-                </ul>
+              <InputForm
+                questions={applicationQuestions}
+title='Applicant information'
+                />
+             
 
                 <InputForm
                 questions={applicationQuestions2}
@@ -187,21 +129,55 @@ Equifax personal credit score or copies of the applicant’s previous year’s t
 />
 
 <InputForm
+title="Character reference"
 questions={characterQuestions}
 />
 
 <InputForm
+title="Proof of income"
+description="This application requires proof of income. Acceptable proof includes but is not limited to an employer’s or bank
+manager’s confirmation of the applicant’s ability to meet the monthly rent requirements, a copy of an official
+Equifax personal credit score or copies of the applicant’s previous year’s tax return."
 questions={proofOfIncomeQuestions}
 />
 
 <InputForm
+title="Nearest Friend or Relative incase of Emergency"
 questions={emergencyQuestions}
 />
 
 <InputForm
+title="Other occupants"
 questions={occupantsQuestions}
 />
 
+<section className="text-white w-[90vw] max-w-[1400px] ml-auto mr-auto
+">
+
+
+
+<h1 className="text-3xl mb-6 sm:text-4xl">Declaration and authorization</h1>
+
+<p className="text-lg mb-6 text-left ml-4">I declare that the information I have provided is true and correct and contains no misrepresentations.
+If misrepresentations are found after a residential lease agreement is entered into between the
+landlord and Applicant, the Landlord shall have the option to terminate the residential lease
+agreement and seek all available remedies.</p>
+
+<p className="text-lg mb-6 text-left ml-4">
+The Applicant authorizes the Landlord to verify all references and facts, including but not limited to
+current and previous landlords, employers and personal references. The Applicant understands that
+incomplete or incorrect information provided in the application may cause a delay in processing or
+may result in the denial of the application.
+</p>
+
+<h2 className="text-xl text-left ml-5">Applicants name</h2>
+<div className=" mt-8 w-[95vw] mr-auto ml-4 h-[3px] bg-black
+max-w-[700px]"></div>
+
+<h2 className="text-xl text-left ml-5 mt-7">Applicants Signature</h2>
+<div className=" mt-8 w-[95vw] mr-auto ml-4  h-[3px] bg-black mb-8
+max-w-[700px]"></div>
+</section>
 
 
 
@@ -210,9 +186,14 @@ questions={occupantsQuestions}
 
 
 
-            
+<Footer
+links={navLinks}
+
+/>     
 
         </section>
+
+
         </>
     )
 }
