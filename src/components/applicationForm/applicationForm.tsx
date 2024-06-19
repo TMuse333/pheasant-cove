@@ -1,7 +1,21 @@
 import Navbar from "../navbar/navbar"
+import { useState } from "react"
+import InputForm from "../inputForm/inputForm";
+import {generalLeaseTerms,applicationQuestions,
+    applicationQuestions2, currentAddressQuestions,
+    employmentQuestions,otherSourcesOfIncomeQuestions,
+    proofOfIncomeQuestions,characterQuestions,
+    emergencyQuestions,occupantsQuestions
 
-
+} from '../../data/data'
 const ApplicationForm = () => {
+
+    interface MaritalStatus {
+        single: boolean;
+        married: boolean;
+        commonLaw: boolean;
+        other: boolean;
+    }
 
 
     const navLinks = [
@@ -15,70 +29,25 @@ const ApplicationForm = () => {
         }
     ]
 
-    const generalLeaseTerms = [
-        {
-            term:'Type of accommodation',
-            condition:'Independent building on same property as owner'
-        },
-        {
-            term:'Property address',
-            condition:'106 Ashley Court, Hubley B3Z 1P6'
-        },
-        {
-            term:'Parking',
-            condition:'Ample outdoor parking space and one large, heated garage stall'
-        },
-        {
-            term:'Storage',
-            condition:"Ample space for storage in garage stall"
-        },
-        {
-            term:'Type of lease',
-            condition:'One-year fixed term beginning June 1, 2025'
-        },
-        {
-            term:'Monthly rent payment:',
-            condition:'$2,600 payable on or before the 1st of each month',
 
-        },
-        {
-            term:'Initial security deposit:',
-            condition:'$1,300 payable prior to initial occupancy'
-        },
-        {
-            term:'Pets:',
-            condition:'Pets are not permitted'
-        },
-        {
-            term:'Smoking:',
-            condition:'Smoking or vaping of tobacco, cannabis or other controlled substances is not permitted'
+    const [maritalStatus, setMaritalStatus] = useState({
+        single: false,
+        married: false,
+        commonLaw: false,
+        other: false
+    });
+    const [otherStatus, setOtherStatus] = useState('');
 
-           
-        }
-    ]
+    const handleMaritalStatusChange = (status: keyof MaritalStatus) => {
+        setMaritalStatus((prevStatus) => ({
+            ...prevStatus,
+            [status]: !prevStatus[status]
+        }));
+    };
 
 
-    const applicationQuestions = [
-       {
-        question:'Applicant name',
-        // placeholder:'Enter name here'
-       },
-       {
-        question:'Date of birth'
-       },
-       {
-        question:"Email"
-       },
-       {
-        question:'Telephone number'
-       },
-       {
-        question:'Work phone'
-       },
-       {
-        question:'Present address'
-       }
-    ]
+
+
 
     return (
         <>
@@ -126,18 +95,117 @@ const ApplicationForm = () => {
 
               <ul className="pt-5">
                     {applicationQuestions.map((question, index) => (
-                        <li key={index} className="mb-4">
+                        <li key={index} className="mb-4 w-[90vw] ml-auto mr-auto">
                             <label className="block text-white text-left mb-2">
                                 {question.question}
                             </label>
                             <input
                                 type="text"
-                                placeholder={`Enter ${question.question.toLowerCase()} here`}
+                                placeholder={question.placeholder}
                                 className="w-full p-2 rounded"
                             />
                         </li>
                     ))}
+
+                    <h2 className="text-white text-2xl text-left ml-5 mb-3">Marital Status</h2>
+
+                    <div className="w-full  ml-5">
+
+                    
+
+<div className="flex items-center mb-2 ">
+                                <input
+                                    type="checkbox"
+                                    checked={maritalStatus.single}
+                                    onChange={() => handleMaritalStatusChange('single')}
+                                />
+                                <label className="text-white ml-2">Single</label>
+                            </div>
+                            <div className="flex items-center mb-2">
+                                <input
+                                    type="checkbox"
+                                    checked={maritalStatus.married}
+                                    onChange={() => handleMaritalStatusChange('married')}
+                                />
+                                <label className="text-white ml-2">Married</label>
+                            </div>
+                            <div className="flex items-center mb-2">
+                                <input
+                                    type="checkbox"
+                                    checked={maritalStatus.commonLaw}
+                                    onChange={() => handleMaritalStatusChange('commonLaw')}
+                                />
+                                <label className="text-white ml-2">Common-Law</label>
+                            </div>
+                            <div className="flex items-center mb-2">
+                                <input
+                                    type="checkbox"
+                                    checked={maritalStatus.other}
+                                    onChange={() => handleMaritalStatusChange('other')}
+                                />
+                                <label className="text-white ml-2 ">Other</label>
+                                {maritalStatus.other && (
+                                    <input
+                                        type="text"
+                                        value={otherStatus}
+                                        onChange={(e) => setOtherStatus(e.target.value)}
+                                        placeholder="Please specify"
+                                        className="ml-2 p-2 rounded"
+                                    />
+                                )}
+                            </div>
+                            </div>
                 </ul>
+
+                <InputForm
+                questions={applicationQuestions2}
+                description='Enter the make of your car down below '
+                />
+
+                <InputForm
+                questions={employmentQuestions}
+                title='Current employment'
+                />
+
+                <InputForm
+                questions={currentAddressQuestions}
+                title='Current address'
+                />
+
+                <InputForm
+                questions={otherSourcesOfIncomeQuestions}
+                title='Other sources of income'
+                />
+
+
+<InputForm
+questions={proofOfIncomeQuestions}
+title='Proof of income'
+description="This application requires proof of income. Acceptable proof includes but is not limited to an employer’s or bank
+manager’s confirmation of the applicant’s ability to meet the monthly rent requirements, a copy of an official
+Equifax personal credit score or copies of the applicant’s previous year’s tax return."
+/>
+
+<InputForm
+questions={characterQuestions}
+/>
+
+<InputForm
+questions={proofOfIncomeQuestions}
+/>
+
+<InputForm
+questions={emergencyQuestions}
+/>
+
+<InputForm
+questions={occupantsQuestions}
+/>
+
+
+
+
+
 
 
 
