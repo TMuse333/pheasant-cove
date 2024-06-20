@@ -1,5 +1,5 @@
 import Navbar from "../navbar/navbar"
-import { useState } from "react"
+// import { useState } from "react"
 import InputForm from "../inputForm/inputForm";
 import {generalLeaseTerms,applicationQuestions,
     applicationQuestions2, currentAddressQuestions,
@@ -12,12 +12,12 @@ import {generalLeaseTerms,applicationQuestions,
 import Footer from "../footer/footer";
 const ApplicationForm = () => {
 
-    interface MaritalStatus {
-        single: boolean;
-        married: boolean;
-        commonLaw: boolean;
-        other: boolean;
-    }
+    // interface MaritalStatus {
+    //     single: boolean;
+    //     married: boolean;
+    //     commonLaw: boolean;
+    //     other: boolean;
+    // }
 
 
     const navLinks = [
@@ -32,20 +32,20 @@ const ApplicationForm = () => {
     ]
 
 
-    const [maritalStatus, setMaritalStatus] = useState({
-        single: false,
-        married: false,
-        commonLaw: false,
-        other: false
-    });
-    const [otherStatus, setOtherStatus] = useState('');
+    // const [ setMaritalStatus] = useState({
+    //     single: false,
+    //     married: false,
+    //     commonLaw: false,
+    //     other: false
+    // });
+    // const [otherStatus, setOtherStatus] = useState('');
 
-    const handleMaritalStatusChange = (status: keyof MaritalStatus) => {
-        setMaritalStatus((prevStatus) => ({
-            ...prevStatus,
-            [status]: !prevStatus[status]
-        }));
-    };
+    // const handleMaritalStatusChange = (status: keyof MaritalStatus) => {
+    //     setMaritalStatus((prevStatus) => ({
+    //         ...prevStatus,
+    //         [status]: !prevStatus[status]
+    //     }));
+    // };
 
 
 
