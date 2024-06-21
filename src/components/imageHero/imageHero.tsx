@@ -26,9 +26,9 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
             md:flex md:flex-col md:justify-center md:items-center
             mb-8 text-center">
 
-          <p className="mt-4 sm:text-xl pr-4 pl-4">A newly built home that has never been used before</p>
+          <p className="mt-4 sm:text-xl pr-4 pl-4">Welcome to</p>
             <h1 className="text-4xl mb-4 mt-4 sm:text-6xl bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent custom-glow">Pheasant Cove</h1>
-            <p className="text-2xl mb-4 sm:text-3xl">Place address Here</p>
+            <p className="text-2xl mb-4 sm:text-3xl">106 Ashley Court, Hubley B3Z 1P6</p>
             <Link to='contact'  >
 
  
