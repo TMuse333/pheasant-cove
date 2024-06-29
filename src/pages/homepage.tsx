@@ -17,6 +17,7 @@ import angle from '../media/new-imports/Front-of-building.webp'
 import deck from '../media/new-imports/Living-room-deck.webp'
 import kitchen from '../media/new-imports/Kitchen.webp'
 import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
+import Herobanner2 from "../components/herobanner2.tsx/herobanner2";
   const Home = () => {
 
   const navLinks = [
@@ -27,6 +28,22 @@ import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarou
     {
         name:'Contact Us',
         destination:'contact'
+    },
+    {
+      name:'buildings',
+      destination:''
+    },
+    {
+      name:'lease',
+      destination:''
+    },
+    {
+      name:'showings',
+      destination:''
+    },
+    {
+      name:'contact us',
+      destination:''
     }
 ]
 
@@ -71,6 +88,8 @@ links={navLinks}
 <ImageHero
 images={images}
 />
+<h2 className="text-lg sm:text-xl">As a spirit animal, the pheasant represents self-expression, creativity, abundance and renewal</h2>
+{/* <Herobanner2/> */}
 
 <div className={` h-[5px]
                 w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5

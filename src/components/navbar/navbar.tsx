@@ -41,7 +41,11 @@ object-cover hover:scale-[1.05] transition-transform"/>
                         <div className="h-[3px] bg-white w-[20px]" />
                     </div>
                     <ul
-                        className={`text-left fixed right-[5%] top-[70px] overflow-hidden transition-[height] flex flex-col items-center justify-center rounded-lg w-[140px] lg:bg-transparent lg:w-auto lg:relative lg:overflow-auto lg:top-auto lg:right-auto lg:flex-row ${subMenuClicked ? 'h-[120px] bg-radial-gradient from-blue-500 to-blue-900 p-0' : 'h-[0px] p-0 lg:h-auto'}`}
+                        className={` text-left fixed right-[5%] top-[70px]
+                         overflow-hidden transition-[height] flex flex-col items-center
+                          justify-center rounded-lg w-[140px]  lg:w-auto
+                         lg:relative lg:overflow-auto lg:top-auto lg:right-auto
+                          lg:flex-row ${subMenuClicked ? 'h-[120px] bg-radial-gradient from-blue-500 to-blue-900 p-0' : 'h-[0px] p-0 lg:h-auto'}`}
                     >
                         {links.map((link, index) => (
                             <li key={index} className="text-lg mb-2 pl-2 pr-2 lg:mb-0 hover:text-orange-400

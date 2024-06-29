@@ -67,7 +67,7 @@ const Closer: React.FC<Props> = ({image,}) => {
             <section className="bg-radial-gradient from-blue-600 to-blue-700 mb-4
             pt-5 pb-5 pl-3 w-[90vw] max-w-[450px] h-[350px]
             sm:w-[40vw] border-2 border-orange-400 mr-auto ml-auto mb-8">
-                <ul className="list-disc ml-5">
+                <ul className="list-disc ml-5 text-left">
                 {terms1.map((term, index) => (
                     <li className="mb-4"
                     key={index}>
@@ -80,7 +80,7 @@ const Closer: React.FC<Props> = ({image,}) => {
             <section className="bg-radial-gradient from-blue-700 to-blue-700  mb-4
             pt-5 pb-5 pl-3 w-[90vw] max-w-[450px]  h-[350px]
             sm:w-[40vw]  border-2 border-orange-400 mr-auto ml-auto bg-blue-900">
-                <ul className="list-disc ml-5">
+                <ul className="list-disc ml-5 text-left">
 
                
             {terms2.map((term, index) => (
