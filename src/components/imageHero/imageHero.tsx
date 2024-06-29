@@ -33,7 +33,8 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
 
             <img src={pheasant}
             className='object-cover w-[50vw]
-            ml-auto mr-auto '/>
+            ml-auto mr-auto hidden md:inline
+            max-w-[475px] max-h-[311px]'/>
 
 
 
