@@ -16,6 +16,9 @@ export default {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
       },
+      fontFamily:{
+        arima: ['"Arima Madras"', 'cursive'],
+      }
     },
   },
   plugins: [],

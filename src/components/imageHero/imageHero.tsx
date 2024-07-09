@@ -3,9 +3,16 @@ import {Link} from 'react-router-dom'
 import pheasant from '../../media/pheasant-removebg-preview.png'
 interface HeroProps {
     images: string[];
+    carouselImages:{
+        url:  string,
+      
+        title: string,
+        description: string,
+        link: string
+    }[]
 }
 
-const ImageHero: React.FC<HeroProps> = ({ images }) => {
+const ImageHero: React.FC<HeroProps> = ({ images, carouselImages }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -28,7 +35,7 @@ const ImageHero: React.FC<HeroProps> = ({ images }) => {
             mb-8 text-center">
 
           {/* <p className="mt-4 sm:text-xl pr-4 pl-4">Welcome to</p> */}
-            <h1 className="text-4xl mb-4 mt-4 sm:text-6xl bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent custom-glow">Welcome to Pheasant Cove</h1>
+            <h1 className="text-4xl md:w-4/5 ml-auto mr-auto             mb-4 mt-4 sm:text-6xl bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent custom-glow">Welcome to Pheasant Cove</h1>
             {/* <p className="text-2xl mb-4 sm:text-3xl">106 Ashley Court, Hubley B3Z 1P6</p> */}
 
             <img src={pheasant}

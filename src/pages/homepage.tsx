@@ -18,6 +18,12 @@ import deck from '../media/new-imports/Living-room-deck.webp'
 import kitchen from '../media/new-imports/Kitchen.webp'
 import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
 import Herobanner2 from "../components/herobanner2.tsx/herobanner2";
+
+import bathroom1 from '../media/Bathroom-1.jpeg'
+import bathroom2 from '../media/Bathroom-2.jpeg'
+import laundrySink from '../media/new-imports/Laundry-sink.webp'
+import washer from '../media/new-imports/Laundry-washer-dryer.webp'
+import ContentCarousel from "../components/contentCarousel/contentCarousel";
   const Home = () => {
 
   const navLinks = [
@@ -54,6 +60,27 @@ const images = [
   
 ]
 
+const images1 = [
+  {
+    url: bathroom1,
+    title: 'Bathroom1',
+    description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
+    link: '/'
+  },
+  {
+    url: bathroom2,
+    title: 'Bathroom2',
+    description: 'Step into luxury with this spacious bathroom that boasts a luxurious bathtub, stylish vanity area, and ample natural light. Pamper yourself with a spa-like experience in the comfort of your own home.',
+    link: '/'
+  },
+  {
+    url: washer,
+    title: 'Washer',
+    description: 'Efficiency meets convenience in this laundry room equipped with state-of-the-art washer and dryer appliances. Make laundry day a breeze with this modern and functional setup.',
+    link: '/'
+  }
+];
+
 const scrollableImages = [
     {
         src:frontView,
@@ -87,7 +114,13 @@ links={navLinks}
 />
 <ImageHero
 images={images}
+carouselImages={images1}
 />
+
+<ContentCarousel
+images={images1}
+/>
+
 <h2 className="text-lg sm:text-xl">As a spirit animal, the pheasant represents self-expression, creativity, abundance and renewal</h2>
 {/* <Herobanner2/> */}
 

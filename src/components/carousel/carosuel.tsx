@@ -153,7 +153,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
            
                 flex flex-col   ml-auto mr-auto
                 justify-center items-center 
-                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[95vw] relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}>
+                mb-5 ${!carouselClicked ? 'max-w-[1300px] md:w-[50vw] relative' : 'bg-black h-screen fixed top-0 left-0 z-[95]'}`}>
 
                 <div className={`mt-10 ml-auto mr-auto flex relative ${hasDescription && !carouselClicked ? '' : 'w-[100%]'}`}
                  role="region"
@@ -203,7 +203,9 @@ const Carousel: React.FC<CarouselProps> = ({ images, hasDescription,
                                         className={`
                                             ${!carouselClicked ? ` w-[100%] 
                                             max-w-[805px]
+                                            p-5
                                             max-h-[624px]
+                                            translate-y-[5.5rem]
                                             h-[100%]`
                                             : `w-[100vw] 
                                            
