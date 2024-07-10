@@ -24,6 +24,7 @@ import bathroom2 from '../media/Bathroom-2.jpeg'
 import laundrySink from '../media/new-imports/Laundry-sink.webp'
 import washer from '../media/new-imports/Laundry-washer-dryer.webp'
 import ContentCarousel from "../components/contentCarousel/contentCarousel";
+
   const Home = () => {
 
   const navLinks = [
@@ -65,19 +66,22 @@ const images1 = [
     url: bathroom1,
     title: 'Bathroom1',
     description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
-    link: '/'
+    link: '/',
+    imageIndex:0
   },
   {
     url: bathroom2,
     title: 'Bathroom2',
     description: 'Step into luxury with this spacious bathroom that boasts a luxurious bathtub, stylish vanity area, and ample natural light. Pamper yourself with a spa-like experience in the comfort of your own home.',
-    link: '/'
+    link: '/',
+    imageIndex:1
   },
   {
     url: washer,
     title: 'Washer',
     description: 'Efficiency meets convenience in this laundry room equipped with state-of-the-art washer and dryer appliances. Make laundry day a breeze with this modern and functional setup.',
-    link: '/'
+    link: '/',
+    imageIndex:2
   }
 ];
 
@@ -112,23 +116,26 @@ const scrollableImages = [
 <Navbar
 links={navLinks}
 />
-<ImageHero
+{/* <ImageHero
 images={images}
 carouselImages={images1}
-/>
+/> */}
+
+{/* <Carousel
+images={images1}
+hasDescription={true}/> */}
 
 <ContentCarousel
 images={images1}
 />
 
-<h2 className="text-lg sm:text-xl">As a spirit animal, the pheasant represents self-expression, creativity, abundance and renewal</h2>
-{/* <Herobanner2/> */}
+{/* <h2 className="text-lg sm:text-xl">As a spirit animal, the pheasant represents self-expression, creativity, abundance and renewal</h2>
+
 
 <div className={` h-[5px]
                 w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
                 mb-8 bg-orange-400`} />
 
-{/* <div className=" bg-radial-gradient from-blue-500 to-blue-900 w-screen"> */}
 
 <h1 className="text-center bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
            text-4xl sm:text-5xl font-semibold"> Welcome to Pheasant Cove</h1>
@@ -141,7 +148,7 @@ images={images1}
 
 <ScrollableCarousel
 images={scrollableImages}
-/>
+/> */}
 
 {/* <Content
 {...content1}

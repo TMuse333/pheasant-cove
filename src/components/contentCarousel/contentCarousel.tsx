@@ -5,11 +5,11 @@ import pheasant from '../../media/pheasant-removebg-preview.png'
 
 interface CarouselProps {
     images: {
-        url:  string,
-      
-        title: string,
-        description: string,
-        link: string
+        url:string,
+        
+        title:string,
+        description:string
+        link:string
     }[],
     hasDescription?: boolean
    
@@ -24,14 +24,18 @@ const ContentCarousel:React.FC<CarouselProps> = (
 
 
     return (
-        <section className="ml-auto mr-auto w-screen
+        <section className="  mt-[10rem]
+        ml-auto mr-auto w-screen
         flex flex-col md:flex-row w-screen ml-auto mr-auto
          justify-center items-center 
-         h-[620px]">
+ bg-green-200">
             <div className="md:w-[40vw]
             bg-radial-gradient from-blue-300 to-blue-700 
-            h-[620px]
-            mb-auto ml-auto mr-auto mt-auto
+        
+            ml-auto mr-auto 
+            h-[100vw]
+            max-h-[620px]
+           
             
             ">
                 <h1 className="font-arima text-black text-3xl md:text-5xl">Welcome to pheasant cove</h1>
@@ -40,8 +44,12 @@ const ContentCarousel:React.FC<CarouselProps> = (
             ml-auto mr-auto 
             max-w-[475px] max-h-[311px]'/>
             </div>
+
+
+
             <Carousel
             images={images}/>
+           
 
         </section>
     )
