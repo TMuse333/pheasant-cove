@@ -24,6 +24,7 @@ import bathroom2 from '../media/Bathroom-2.jpeg'
 import laundrySink from '../media/new-imports/Laundry-sink.webp'
 import washer from '../media/new-imports/Laundry-washer-dryer.webp'
 import ContentCarousel from "../components/contentCarousel/contentCarousel";
+import Carousel from "../components/carousel/carosuel";
 
   const Home = () => {
 
@@ -119,6 +120,11 @@ links={navLinks}
 {/* <ImageHero
 images={images}
 carouselImages={images1}
+/> */}
+
+{/* <Carousel
+images={images1}
+hasDescription={true}
 /> */}
 
 {/* <Carousel

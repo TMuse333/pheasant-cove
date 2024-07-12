@@ -177,21 +177,22 @@ hasDescription}) =>{
         <>
 
         <section
-        className=' w-[50vw] max-w-[1300px] relative
-        flex flex-col md2:flex-row ml-auto mr-auto
-bg-red-200
+        className='w-[90vw] md:w-[50vw] max-w-[1300px] relative
+        flex flex-col md:flex-row ml-auto mr-auto
+
+mt-auto
         
     
           justify-center items-center
-         max-h-[620px]
+         max-h-[640px]
 
-        mb-5'>
+        '>
 
       
 
-       <div className={`mt-10
+       <div className={`
         flex 
-       relative w-[50vw]
+       relative w-[90vw] md:w-[50vw]
        
       
        `
@@ -201,10 +202,10 @@ bg-red-200
         <section className='flex relative
         justify-center items-center ml-auto
         mr-auto w-[100vw]
-        w-[70vw]
+        
        
        h-[100vw]
-        sm:h-[50vw]
+        
         max-w-[900px]
          z-3
       max-h-[600px]
@@ -217,10 +218,10 @@ bg-red-200
             <>
 
             {/*this dictates the height and width of the image*/}
-   <div className={`w-[90vw] 
-   sm:w-[70vw]
+   <div className={`w-[100vw] 
+   
 h-full
-sm:h-[50vw]
+
 mt-auto
      ml-auto
    mr-auto
@@ -256,13 +257,12 @@ mt-auto
        
         src={image.url}
        className={`w-full 
-            max-w-[900px]
+           
            max-h-[620px]
            mt-auto
            top-0
-       h-[100%] object-cover
-       ${index === 5 ?
-    'object-top' : 'object-bottom'}
+       h-[100%] object-contain
+       
       
        
        ml-auto mr-auto`}/>
@@ -273,13 +273,13 @@ mt-auto
    </>
    
         ))}
-<div className='relative z-3 
+ <div className='relative z-3 
 w-[100vw] flex justify-between
 items-center
 
 max-h-[434px]
 ////sm:w-[70vw]
-max-w-[900px]
+
 
 md:top-auto
 
@@ -291,13 +291,14 @@ md:top-auto
             onClick={handlePrevClick}
             size={40}/>
         </button>
+        
        
         <button className=' bg-transparent p-0'>
             <ChevronRight
             size={40}
             onClick={handleNextClick}/>
         </button>
-        </div>
+        </div> 
 
           
         

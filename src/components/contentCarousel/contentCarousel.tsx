@@ -28,13 +28,16 @@ const ContentCarousel:React.FC<CarouselProps> = (
         ml-auto mr-auto w-screen
         flex flex-col md:flex-row w-screen ml-auto mr-auto
          justify-center items-center 
- bg-green-200">
-            <div className="md:w-[40vw]
+">
+            <div className="w-[75vw]
+            md:w-[40vw]
             bg-radial-gradient from-blue-300 to-blue-700 
         
+        h-[50vw]
             ml-auto mr-auto 
-            h-[100vw]
+          
             max-h-[620px]
+           mt-auto
            
             
             ">
