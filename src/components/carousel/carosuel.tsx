@@ -13,7 +13,6 @@ interface CarouselProps {
       
     }[],
     hasDescription?:boolean
-    
 
 }
 
@@ -177,8 +176,9 @@ hasDescription}) =>{
         <>
 
         <section
-        className='w-[90vw] md:w-[50vw] max-w-[1300px] relative
+        className='w-[90vw] md:w-[50vw] max-w-[500px] relative
         flex flex-col md:flex-row ml-auto mr-auto
+        
 
 mt-auto
         
@@ -263,6 +263,7 @@ mt-auto
            top-0
        h-[100%] object-contain
        
+       
       
        
        ml-auto mr-auto`}/>
@@ -280,7 +281,7 @@ items-center
 max-h-[434px]
 ////sm:w-[70vw]
 
-
+max-w-[550px]
 md:top-auto
 
 '>

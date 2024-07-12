@@ -25,6 +25,7 @@ import laundrySink from '../media/new-imports/Laundry-sink.webp'
 import washer from '../media/new-imports/Laundry-washer-dryer.webp'
 import ContentCarousel from "../components/contentCarousel/contentCarousel";
 import Carousel from "../components/carousel/carosuel";
+import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
 
   const Home = () => {
 
@@ -38,21 +39,10 @@ import Carousel from "../components/carousel/carosuel";
         destination:'contact'
     },
     {
-      name:'buildings',
-      destination:''
-    },
-    {
-      name:'lease',
-      destination:''
-    },
-    {
-      name:'showings',
-      destination:''
-    },
-    {
-      name:'contact us',
-      destination:''
+      name:'The accommodation',
+      destination:'accommodation'
     }
+  
 ]
 
 const images = [
@@ -117,52 +107,15 @@ const scrollableImages = [
 <Navbar
 links={navLinks}
 />
-{/* <ImageHero
-images={images}
-carouselImages={images1}
-/> */}
 
-{/* <Carousel
-images={images1}
-hasDescription={true}
-/> */}
-
-{/* <Carousel
-images={images1}
-hasDescription={true}/> */}
 
 <ContentCarousel
 images={images1}
+content={<Welcome/>}
+bottomContent={<BottomWelcomeText/>}
 />
 
-{/* <h2 className="text-lg sm:text-xl">As a spirit animal, the pheasant represents self-expression, creativity, abundance and renewal</h2>
 
-
-<div className={` h-[5px]
-                w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
-                mb-8 bg-orange-400`} />
-
-
-<h1 className="text-center bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
-           text-4xl sm:text-5xl font-semibold"> Welcome to Pheasant Cove</h1>
-
-           <p className="text-left mt-8
-           w-4/5 max-w-[1200px] sm:text-lg md:text-xl">
-           The Halifax Municipality now permits a second residence of not more than 80 square metres on the same lot as the main house.  The backyard suite of this newly-developed waterfront property is offered for lease.
-           </p>
-
-
-<ScrollableCarousel
-images={scrollableImages}
-/> */}
-
-{/* <Content
-{...content1}
-image={frontView}
-/> */}
-{/* </div> */}
-
-{/* <div className=" bg-radial-gradient from-blue-500 to-blue-900 w-screen"> */}
 <Content
 hasAnimation={false}
 reverse={true}
@@ -174,7 +127,7 @@ customText={<TextFormat
  isAnimated={true}
  reverse={true}/>}
  />
- {/* </div> */}
+
 
  <div className={` h-[5px]
                 w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
@@ -183,8 +136,7 @@ customText={<TextFormat
  <Map/>
 
 
-<Closer
-image={dark}/>
+
 
 
 <Footer

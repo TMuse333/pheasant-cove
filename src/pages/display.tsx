@@ -36,6 +36,8 @@ import Footer from "../components/footer/footer";
 
 import { accordionText } from "../data/data";
 import Accordion from "../components/accordion/accordion";
+import ContentCarousel from "../components/contentCarousel/contentCarousel";
+import { BottomText2, LuxuryLiving } from "../components/welcome/welcome";
 
 
 
@@ -176,7 +178,7 @@ style={{
 
 
 
-<TextParallaxContentExample
+{/* <TextParallaxContentExample
 image={frontUrl}
 heading='Pheasant Cove'
 subheading="Peaceful and quiet"
@@ -192,6 +194,12 @@ title='Your title here'
 description="You can place a description of your images if you want"
 images={images1}
 
+/> */}
+
+<ContentCarousel
+images={images1}
+content={<LuxuryLiving/>}
+bottomContent={<BottomText2/>}
 />
 
 {/* <Carousel

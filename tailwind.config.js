@@ -17,7 +17,7 @@ export default {
           'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
       },
       fontFamily:{
-        arima: ['"Arima Madras"', 'cursive'],
+        arima: ['"Arima Madurai"', 'cursive'],
       }
     },
   },

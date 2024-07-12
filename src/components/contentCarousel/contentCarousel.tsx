@@ -1,7 +1,7 @@
 
 import React from "react";
 import Carousel from "../carousel/carosuel";
-import pheasant from '../../media/pheasant-removebg-preview.png'
+
 
 interface CarouselProps {
     images: {
@@ -11,41 +11,45 @@ interface CarouselProps {
         description:string
         link:string
     }[],
-    hasDescription?: boolean
+    hasDescription?: boolean,
+    content:React.ReactNode
+    bottomContent:React.ReactNode
    
  
 }
 
 
 const ContentCarousel:React.FC<CarouselProps> = (
-    {images}
+    {images, content, bottomContent}
 ) => {
 
 
 
     return (
+
+        <>
         <section className="  mt-[10rem]
         ml-auto mr-auto w-screen
-        flex flex-col md:flex-row w-screen ml-auto mr-auto
+        flex flex-col md:flex-row 
          justify-center items-center 
+         max-w-[1500px] 
 ">
             <div className="w-[75vw]
-            md:w-[40vw]
-            bg-radial-gradient from-blue-300 to-blue-700 
-        
-        h-[50vw]
+            md:w-[50vw]
+           
+          
+        mb-4 md:mb-0
+        md:h-[68vw]
             ml-auto mr-auto 
           
-            max-h-[620px]
+            max-h-[600px]
            mt-auto
-           
+           bg-gradient-to-b from-blue-300 to-blue-500
+mb-auto           
             
             ">
-                <h1 className="font-arima text-black text-3xl md:text-5xl">Welcome to pheasant cove</h1>
-                <img src={pheasant}
-            className='object-cover w-[40vw]
-            ml-auto mr-auto 
-            max-w-[475px] max-h-[311px]'/>
+               
+            {content}
             </div>
 
 
@@ -55,6 +59,10 @@ const ContentCarousel:React.FC<CarouselProps> = (
            
 
         </section>
+
+      {bottomContent}
+
+        </>
     )
 }
 
