@@ -73,18 +73,33 @@ const ApplicationForm = () => {
             see if you're a good fit for us</h2>
               </section>
 
+<section className="flex flex-col lg:flex-row w-[90vw]
+lg:w-screen
+ ml-auto mr-auto
+">
+
+
+              <section className="lg:w-[50vw]
+              flex flex-col justify-center items-center
+             ">
+
+             
+
               <h1 className="text-white text-4xl mb-4 mt-4">General Lease Terms</h1>
 
-              <div className="w-[99vw] sm:w-[80vw] border border-black ml-auto mr-auto
-              bg-[#8591a1] rounded-xl ml-auto mr-auto max-w-[1400px]">
+              <div className="w-[99vw] lg:w-[45vw] border border-black ml-auto mr-auto
+             bg-gradient-to-b from-blue-300 to-blue-500 rounded-xl  max-w-[800px]
+             border border-black ">
 
-                <ul className="pt-5">
+                <ul className="pt-5 ml-auto mr-auto
+                bg-gradient-to-b from-blue-300 to-blue-500
+                mb-auto ">
                     {generalLeaseTerms.map((term, index) => (
                         
                             <div 
                             key={index}
                             className={`w-full flex justify-between
-                            mb-5 ${index % 2 !== 0 ? 'bg-[#7a8491]' : ''}`}>
+                            mb-5 ${index % 2 !== 0 ? 'bg-blue-300' : ''}`}>
                                 <p className="w-[40%]">{term.term}</p>
                                 <p className="w-[60%]">{term.condition}</p>
                             </div>
@@ -92,6 +107,11 @@ const ApplicationForm = () => {
                     ))}
                 </ul>
               </div>
+              </section>
+<div className="lg:w-[50vw] h-screen overflow-y-scroll
+border border-black rounded-md mt-6
+mb-8">
+
 
               <InputForm
                 questions={applicationQuestions}
@@ -150,6 +170,8 @@ questions={emergencyQuestions}
 title="Other occupants"
 questions={occupantsQuestions}
 />
+</div>
+</section>
 
 <section className="text-white w-[90vw] max-w-[1400px] ml-auto mr-auto
 ">

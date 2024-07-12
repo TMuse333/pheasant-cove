@@ -7,7 +7,7 @@ export const Welcome = () => {
 
     return (
         <>
-        <div className="w-[75vw]
+        <div className="w-screen
             md:w-[50vw]
            
           
@@ -52,7 +52,8 @@ export const BottomWelcomeText = () => {
 export const LuxuryLiving = () => {
 
     return (
-        <div className="w-[75vw]
+        <div className="w-screen
+        mt-4 md:mt-0
         md:w-[50vw]
        
       
@@ -61,13 +62,13 @@ export const LuxuryLiving = () => {
         ml-auto mr-auto 
       flex
         max-h-[600px]
-       mt-auto
+       md:mt-auto
        bg-gradient-to-b from-blue-300 to-blue-500
 mb-auto           
         
         ">
         <p className='font-arima mt-auto mb-auto text-2xl p-3
-        text-black md:text-4xl mt-5'>Executive luxury living
+        text-black md:text-4xl mt-5 '>Executive luxury living
             in a natural setting less than a 15-minute 
             drive from the amenities of the Bayers Lake shopping malls and the Bayers Lake Community Outpatient Centre
         </p>
@@ -79,10 +80,11 @@ export const BottomText2 = () => {
 
     return (
 
-    <div className='flex max-w-[1200px] items-center '>
+    <div className='flex max-w-[1200px] items-center 
+    bg-gradient-to-b from-blue-500 to-blue-800'>
         <img src={pheasant}
         className='w-[20vw] object-cover'/>
-        <p className='text-sm text-left'>A backyard suite is an independent dwelling
+        <p className='text-sm text-left sm:text-lg'>A backyard suite is an independent dwelling
             of not more than 80 square metres located
             on the same PID as the main house </p>
     </div>

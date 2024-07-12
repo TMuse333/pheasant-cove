@@ -33,24 +33,12 @@ const ContentCarousel:React.FC<CarouselProps> = (
         flex flex-col md:flex-row 
          justify-center items-center 
          max-w-[1500px] 
+         flex-col-reverse
 ">
-            <div className="w-[75vw]
-            md:w-[50vw]
            
-          
-        mb-4 md:mb-0
-        md:h-[68vw]
-            ml-auto mr-auto 
-          
-            max-h-[600px]
-           mt-auto
-           bg-gradient-to-b from-blue-300 to-blue-500
-mb-auto           
-            
-            ">
                
             {content}
-            </div>
+            
 
 
 

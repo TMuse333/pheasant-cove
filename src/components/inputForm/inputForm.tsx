@@ -15,15 +15,16 @@ interface InputFormProps {
 
 const InputForm: React.FC<InputFormProps> = ({ title, description, questions }) => {
     return (
-        <div className="text-white w-[80vw] max-w-[1500px] mx-auto my-8 p-6 rounded-lg
-        ml-auto mr-auto">
+        <div className="text-white w-[80vw]
+        lg:w-[50vw] max-w-[400px]  p-6 rounded-lg
+        ml-auto mr-auto ">
             {title && <h2 className="text-3xl mb-4 sm:text-4xl md:text-5xl">{title}</h2>}
             {description && <p className="text-lg mb-6 w-[100%] text-left
             md:text-2xl sm:text-xl
             ">{description}</p>}
             <ul className="pt-5">
                 {questions.map((question, index) => (
-                    <li key={index} className="mb-4 w-full max-w-[1500px]">
+                    <li key={index} className="mb-4 w-full max-w-[400px]">
                         <label className="block text-left mb-2 text-lg md:text-xl ">
                             {question.question}
                         </label>
