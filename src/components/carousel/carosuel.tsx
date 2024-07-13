@@ -38,11 +38,6 @@ hasDescription}) =>{
     const [rightEdgeShift, setRightEdgeShift] = useState<number>(0)
 
 
-    // const updatedImages = images.map((image, ) => ({
-    //     ...image,
-    //     transformValue: (shift * 100) + (100 * image.imageIndex)
-    // }));
-
     const shouldHaveTransition = (index:number) => {
         return (
           (index === 0 && rightEdgeShift === 100 && !leftClicked) ||
@@ -55,16 +50,29 @@ hasDescription}) =>{
           (shift === -images.length + 2 && index === 0 && leftClicked)
         );
       };
-      
-      // Example usage in a component
-      
-      
-      
-      
-      
 
- 
+      const [cooldown, setCooldown] = useState(false);
+
+    useEffect(() => {
+        let cooldownTimer: NodeJS.Timeout;
+        if (cooldown) {
+            cooldownTimer = setTimeout(() => {
+                setCooldown(false);
+            }, 750); // Adjust the cooldown duration (in milliseconds) as needed
+        }
+
+        return () => {
+            clearTimeout(cooldownTimer);
+        };
+    }, [cooldown]);
+
+      
+       
     function handlePrevClick(){
+
+        if(cooldown){
+            return
+        }
 
         setLeftClicked(true)
        setRightClicked(false)
@@ -76,9 +84,15 @@ hasDescription}) =>{
             setShift(prev => prev +1)
             setCurrentImage(prev => prev - 1)
         }
+
+        setCooldown(true)
     }
 
     function handleNextClick(){
+
+        if(cooldown){
+            return
+        }
 
         setRightClicked(true)
         setLeftClicked(false)
@@ -92,6 +106,8 @@ hasDescription}) =>{
             setCurrentImage(prev => prev + 1)
             // setCurrentImage(prev => prev + 1)
         }
+
+        setCooldown(true)
        
        
 
@@ -104,7 +120,7 @@ hasDescription}) =>{
                 
                 ){
                    
-                    console.warn('carousel wrapping!')
+                    // console.warn('carousel wrapping!')
                 }
                 else{
                     
@@ -154,23 +170,17 @@ hasDescription}) =>{
        
         setLeftEdgeShift((shift * 100)
         +(100 * (images.length -1)))
-        // console.warn('the left edge case is not longer true')
+       
       }
 
     
 
 
 
-    console.log('shift',shift)
-    // console.log('left edge shift',leftEdgeShift)
-    // console.log('current image',currentImage)
+    
 
 
         },[leftEdgeCase,shift,currentImage,leftClicked])
-
-        // ( updatedImages[index].transformValue === 0 || (updatedImages[index].transformValue === 100 && image.imageIndex !== images.length -1)
-        // || image.imageIndex === 0 && leftClicked
-        // ) && (leftClicked && updatedImages[index].transformValue !== 100)
 
     return (
         <>
@@ -178,38 +188,24 @@ hasDescription}) =>{
         <section
         className='w-[90vw] md:w-[50vw] max-w-[500px] relative
         flex flex-col md:flex-row ml-auto mr-auto
-        
-
 mt-auto
-        
-    
           justify-center items-center
          max-h-[640px]
 
         '>
-
-      
-
        <div className={`
         flex 
-       relative w-[90vw] md:w-[50vw]
-       
-      
-       `
+       relative w-[90vw] md:w-[50vw]`
        }>
        
       
         <section className='flex relative
         justify-center items-center ml-auto
         mr-auto w-[100vw]
-        
-       
-       h-[100vw]
-        
+       h-[100vw] 
         max-w-[900px]
          z-3
       max-h-[600px]
-       
         overflow-hidden
         '>
 
@@ -218,32 +214,9 @@ mt-auto
             <>
 
             {/*this dictates the height and width of the image*/}
-   <div className={`w-[100vw] 
-   
-h-full
-
-mt-auto
-     ml-auto
-   mr-auto
-   mb-auto
-   
- top-0
-   absolute  
-
-
-
-
-
-                
-
-
-        
-      
-    
-  
+   <div className={`w-[100vw]  
+h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute  
  ${shouldHaveTransition(index) ? '' : 'transition-transform duration-1000'}
-
-
    `}
    key={index}
    style={{
@@ -287,22 +260,23 @@ md:top-auto
 '>
      
         <button className='bg-transparent p-0
+        hover:scale-[1.5] hover:text-blue-300
+        transition-all
 '>
         <ChevronLeft
             onClick={handlePrevClick}
-            size={40}/>
+            size={50}/>
         </button>
         
        
-        <button className=' bg-transparent p-0'>
+        <button className=' bg-transparent p-0
+         hover:scale-[1.5] hover:text-blue-300
+         transition-all'>
             <ChevronRight
-            size={40}
+            size={50}
             onClick={handleNextClick}/>
         </button>
         </div> 
-
-          
-        
 
          </section>
      

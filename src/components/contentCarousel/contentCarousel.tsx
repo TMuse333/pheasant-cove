@@ -14,13 +14,14 @@ interface CarouselProps {
     hasDescription?: boolean,
     content:React.ReactNode
     bottomContent:React.ReactNode
+    reverse?:boolean
    
  
 }
 
 
 const ContentCarousel:React.FC<CarouselProps> = (
-    {images, content, bottomContent}
+    {images, content, bottomContent,reverse}
 ) => {
 
 
@@ -28,14 +29,15 @@ const ContentCarousel:React.FC<CarouselProps> = (
     return (
 
         <>
-        <section className="  mt-[8rem]
+        <section className={` mt-[8rem]
         md:mt-[6rem]
         ml-auto mr-auto w-screen
-        flex flex-col md:flex-row 
+        flex ${reverse ? 'flex-col-reverse' : 'flex-col '}
+        md:flex-row 
          justify-center items-center 
          max-w-[1500px] 
          
-">
+    `}>
            
                
             {content}

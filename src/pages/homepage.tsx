@@ -38,7 +38,7 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
         destination:'contact'
     },
     {
-      name:'The accommodation',
+      name:'The Accommodation',
       destination:'accommodation'
     }
   

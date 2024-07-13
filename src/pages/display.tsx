@@ -200,6 +200,7 @@ images={images1}
 images={images1}
 content={<LuxuryLiving/>}
 bottomContent={<BottomText2/>}
+reverse={true}
 />
 
 {/* <Carousel

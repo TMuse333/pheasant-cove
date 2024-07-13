@@ -17,11 +17,12 @@ export const Welcome = () => {
           
             max-h-[600px]
            mt-auto
-           bg-gradient-to-b from-blue-300 to-blue-500
+           bg-gradient-to-b from-blue-300 to-blue-800
 mb-auto           
             
             ">
-          <h1 className="font-arima text-black text-5xl md:text-7xl">Welcome to pheasant cove</h1>
+          <h1 className="font-arima text-black text-5xl md:text-6xl
+          mt-8 md:pl-6 md:pr-6">Welcome to pheasant cove</h1>
                 <img src={pheasant}
             className='object-contain w-[40vw]
             ml-auto mr-auto 
@@ -68,7 +69,7 @@ mb-auto
         
         ">
         <p className='font-arima mt-auto mb-auto text-2xl p-3
-        text-black md:text-4xl mt-5 '>Executive luxury living
+        text-black md:text-4xl mt-5 ml-auto mr-auto'>Executive luxury living
             in a natural setting less than a 15-minute 
             drive from the amenities of the Bayers Lake shopping malls and the Bayers Lake Community Outpatient Centre
         </p>
@@ -80,8 +81,9 @@ export const BottomText2 = () => {
 
     return (
 
-    <div className='flex max-w-[1200px] items-center 
-    bg-gradient-to-b from-blue-500 to-blue-800'>
+    <div className='flex max-w-[1400px] items-center 
+    bg-gradient-to-b from-blue-500 to-blue-800
+    ml-auto mr-auto'>
         <img src={pheasant}
         className='w-[20vw] object-cover'/>
         <p className='text-sm text-left sm:text-lg'>A backyard suite is an independent dwelling
