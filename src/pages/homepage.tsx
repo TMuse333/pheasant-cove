@@ -1,30 +1,29 @@
 
 
-import ImageHero from "../components/imageHero/imageHero";
+// import ImageHero from "../components/imageHero/imageHero";
 import Navbar from "../components/navbar/navbar";
 
-import frontView from '../media/Front-of-building.jpg'
-import lake from '../media/lake-view.jpeg'
-import livingRoom from '../media/new-imports/Living-room.webp'
+// import frontView from '../media/Front-of-building.jpg'
+// import lake from '../media/lake-view.jpeg'
+// import livingRoom from '../media/new-imports/Living-room.webp'
 // import { content1 } from "../data/data";
 import Content from "../components/content/content";
 import TextFormat from "../components/textFormat/textFormat";
 import { Map } from "../components/map/map";
-import Closer from "../components/closer/closer";
-import dark from '../media/dark-front.jpg'
+
 import Footer from "../components/footer/footer";
 import angle from '../media/new-imports/Front-of-building.webp'
-import deck from '../media/new-imports/Living-room-deck.webp'
-import kitchen from '../media/new-imports/Kitchen.webp'
-import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
-import Herobanner2 from "../components/herobanner2.tsx/herobanner2";
+// import deck from '../media/new-imports/Living-room-deck.webp'
+// import kitchen from '../media/new-imports/Kitchen.webp'
+// import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
+// import Herobanner2 from "../components/herobanner2.tsx/herobanner2";
 
 import bathroom1 from '../media/Bathroom-1.jpeg'
 import bathroom2 from '../media/Bathroom-2.jpeg'
-import laundrySink from '../media/new-imports/Laundry-sink.webp'
+// import laundrySink from '../media/new-imports/Laundry-sink.webp'
 import washer from '../media/new-imports/Laundry-washer-dryer.webp'
 import ContentCarousel from "../components/contentCarousel/contentCarousel";
-import Carousel from "../components/carousel/carosuel";
+// import Carousel from "../components/carousel/carosuel";
 import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
 
   const Home = () => {
@@ -45,12 +44,12 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
   
 ]
 
-const images = [
-  frontView,
-  livingRoom,
-  lake,
+// const images = [
+//   frontView,
+//   livingRoom,
+//   lake,
   
-]
+// ]
 
 const images1 = [
   {
@@ -76,24 +75,24 @@ const images1 = [
   }
 ];
 
-const scrollableImages = [
-    {
-        src:frontView,
-        alt:'The front view of Pheasant Cove'
-    },
-    {
-        src:kitchen,
-        alt:"The kitchen of Pheasant Cove"
-    },
-    {
-        src:livingRoom,
-        alt:'An image of the living room of Pheasant Cove'
-    },
-    {
-        src:deck,
-        alt:'The deck of Pheasant Cove'
-    }
-]
+// const scrollableImages = [
+//     {
+//         src:frontView,
+//         alt:'The front view of Pheasant Cove'
+//     },
+//     {
+//         src:kitchen,
+//         alt:"The kitchen of Pheasant Cove"
+//     },
+//     {
+//         src:livingRoom,
+//         alt:'An image of the living room of Pheasant Cove'
+//     },
+//     {
+//         src:deck,
+//         alt:'The deck of Pheasant Cove'
+//     }
+// ]
 
 
 

@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
 import pheasant from '../../media/pheasant-removebg-preview.png'
 interface HeroProps {
     images: string[];
-    carouselImages:{
-        url:  string,
-      
-        title: string,
-        description: string,
-        link: string
-    }[]
+
 }
 
-const ImageHero: React.FC<HeroProps> = ({ images, carouselImages }) => {
+const ImageHero: React.FC<HeroProps> = ({ images, }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {

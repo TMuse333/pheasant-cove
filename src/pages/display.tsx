@@ -2,7 +2,7 @@
 
 
 import { useGeneralContext } from "../context/context";
-import frontUrl from '../media/Front-of-building.jpg';
+// import frontUrl from '../media/Front-of-building.jpg';
 
 
 import bathroom1 from '../media/Bathroom-1.jpeg'
@@ -23,7 +23,7 @@ import fireplace from '../media/new-imports/Gas-fireplace_stove.webp'
 // import livingRoom2 from '../../media/new-imports/Living-room-2.webp'
 
 
-import {TextParallaxContentExample } from "../components/parallaxText/parallaxText";
+// import {TextParallaxContentExample } from "../components/parallaxText/parallaxText";
 
 import Navbar from "../components/navbar/navbar";
 
@@ -31,7 +31,7 @@ import Navbar from "../components/navbar/navbar";
 
 import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
 
-import HomeSection from "../components/homeSection/homeSection";
+// import HomeSection from "../components/homeSection/homeSection";
 import Footer from "../components/footer/footer";
 
 import { accordionText } from "../data/data";

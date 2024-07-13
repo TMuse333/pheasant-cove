@@ -1,4 +1,4 @@
-import React from "react";
+
 import pheasant from '../../media/pheasant-removebg-preview.png'
 import home from '../../media/new-imports/Front-of-building.webp'
 

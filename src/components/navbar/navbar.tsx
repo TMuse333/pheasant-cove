@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom'
-import logo from '../../media/new-imports/nobg-pheasant-white-text.png'
+// import logo from '../../media/new-imports/nobg-pheasant-white-text.png'
 interface NavbarProps {
     links: {
         name: string,
