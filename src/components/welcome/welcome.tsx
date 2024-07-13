@@ -25,7 +25,7 @@ mb-auto
                 <img src={pheasant}
             className='object-contain w-[40vw]
             ml-auto mr-auto 
-            scale-[2]
+           
             mb-[3rem]
             sm:scale-[1]
             max-w-[475px] max-h-[311px]

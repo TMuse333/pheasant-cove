@@ -34,10 +34,10 @@ lg:hidden"/>
              
                 <div
                     className={`fixed right-[5%] top-[45px] flex flex-col justify-center
-                     items-center lg:relative lg:top-auto lg:right-auto`}
+                     items-center md:relative md:top-auto md:right-auto`}
                     onClick={handleSubmenuClick}
                 >
-                    <div className="md:hidden w-[140px] lg:w-auto flex flex-col justify-center items-center">
+                    <div className="md:hidden w-[140px] md:w-auto flex flex-col justify-center items-center">
                         <div className="h-[3px] bg-white w-[20px] mb-1" />
                         <div className="h-[3px] bg-white w-[20px] mb-1" />
                         <div className="h-[3px] bg-white w-[20px]" />
