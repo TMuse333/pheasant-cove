@@ -37,6 +37,7 @@ const ContentCarousel:React.FC<CarouselProps> = (
          justify-center items-center 
          max-w-[1500px] 
          
+         
     `}>
            
                

@@ -14,7 +14,7 @@ export const Welcome = () => {
         mb-4 md:mb-0
         md:h-[68vw]
             ml-auto mr-auto 
-          
+          max-w-[620px]
             max-h-[600px]
            mt-auto
            bg-gradient-to-b from-blue-300 to-blue-800
@@ -42,7 +42,9 @@ export const BottomWelcomeText = () => {
         <p className='text-2xl mt-3
         sm:text-3xl sm:pr-4 sm:pl-4
          font-arima
-        pt-3 pb-3 bg-gradient-to-b from-blue-500 to-blue-800'>
+        pt-3 pb-3 bg-gradient-to-b from-blue-500 to-blue-800
+        rounded-xl
+         '>
             The backyard suite at Pheasant Cove is now offered for a one-year,
             fixed term lease
         </p>
@@ -65,7 +67,8 @@ export const LuxuryLiving = () => {
         max-h-[600px]
        md:mt-auto
        bg-gradient-to-b from-blue-300 to-blue-500
-mb-auto           
+mb-auto
+max-w-[1500px]            
         
         ">
         <p className='font-arima mt-auto mb-auto text-2xl p-3
@@ -86,7 +89,9 @@ export const BottomText2 = () => {
     ml-auto mr-auto'>
         <img src={pheasant}
         className='w-[20vw] object-cover'/>
-        <p className='text-sm text-left sm:text-lg'>A backyard suite is an independent dwelling
+        <p className='text-sm text-left sm:text-lg 
+        w-screen
+        max-w-[1500px] '>A backyard suite is an independent dwelling
             of not more than 80 square metres located
             on the same PID as the main house </p>
     </div>
