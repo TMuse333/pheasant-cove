@@ -30,11 +30,11 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
 
   const navLinks = [
     {
-        name:'View Property',
+        name:'The Property',
         destination:'display'
     },
     {
-        name:'Contact Us',
+        name:'The Lease',
         destination:'contact'
     },
     {

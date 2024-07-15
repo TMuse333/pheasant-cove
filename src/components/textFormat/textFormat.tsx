@@ -72,7 +72,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
     <motion.article
       ref={componentRef}
       className="w-[90vw] pl-5 pr-5 relative mt-5 
-   ml-auto mr-auto
+   ml-auto mr-auto font-arima 
     
 
  
@@ -107,7 +107,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
 
          <motion.button
         className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
-        p-2 rounded-xl
+        p-2 
         hover:scale-[1.05]
         hover:bg-white hover:text-orange-400 
         transition-all"

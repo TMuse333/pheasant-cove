@@ -69,6 +69,7 @@ const Footer:React.FC<links> = ({links}) => {
       ml-auto mr-auto
       text-center
       bg-radial-gradient from-blue-700 to-blue-900
+      font-arima 
     '>
       <div className="
       pt-8

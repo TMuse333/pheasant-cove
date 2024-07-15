@@ -61,7 +61,7 @@ const ScrollableCarousel:React.FC<props> =
         <section ref={componentRef}
         className={`relative w-screen
          ml-auto z-[4] mb-[5rem] mt-[5rem]
-  
+         font-arima 
         
        `} >
 

@@ -30,12 +30,13 @@ const ContentCarousel:React.FC<CarouselProps> = (
 
         <>
         <section className={` mt-[8rem]
+        
         md:mt-[6rem]
         ml-auto mr-auto w-screen
         flex ${reverse ? 'flex-col-reverse' : 'flex-col '}
         md:flex-row 
          justify-center items-center 
-         max-w-[1500px] 
+         max-w-[1000px] 
          
          
     `}>

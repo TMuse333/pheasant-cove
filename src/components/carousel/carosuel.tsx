@@ -202,9 +202,11 @@ mt-auto
         <section className='flex relative
         justify-center items-center ml-auto
         mr-auto w-[100vw]
+        md:w-[50vw]
        h-[100vw] 
-        max-w-[900px]
+        max-w-[500px]
          z-3
+        
       max-h-[600px]
         overflow-hidden
         '>
@@ -214,8 +216,9 @@ mt-auto
             <>
 
             {/*this dictates the height and width of the image*/}
-   <div className={`w-[100vw]  
+   <div className={`w-full  
 h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute  
+
  ${shouldHaveTransition(index) ? '' : 'transition-transform duration-1000'}
    `}
    key={index}
@@ -254,7 +257,7 @@ items-center
 max-h-[434px]
 ////sm:w-[70vw]
 
-max-w-[550px]
+max-w-[450px]
 md:top-auto
 
 '>

@@ -64,7 +64,7 @@ hasIntro,intro,description}) => {
     return (
         <>
         <article className='flex flex-col justify-start items-center
-        mb-5'>
+        mb-5 font-arima '>
 
        
         {hasIntro && (

@@ -54,8 +54,12 @@ const Display = () => {
             destination:'/'
         },
         {
-            name:'Contact Us',
-            destination:'/contact'
+            name:'The Lease',
+            destination:'contact'
+        },
+        {
+            name:'The Accommodation',
+            destination:'?'
         }
     ]
 
