@@ -59,7 +59,7 @@ const ApplicationForm = () => {
  
         <section className="absolute top-[10%] left-0  bg-radial-gradient from-blue-500 to-blue-900
         w-screen overflow-x-hidden pt-8
-        
+        font-arima
        " >
 
 
@@ -170,6 +170,11 @@ questions={emergencyQuestions}
 title="Other occupants"
 questions={occupantsQuestions}
 />
+
+<button className="bg-orange-500 p-4 mb-4
+text-white">
+    Submit Application
+</button>
 </div>
 </section>
 

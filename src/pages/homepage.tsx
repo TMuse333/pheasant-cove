@@ -35,7 +35,7 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
     },
     {
         name:'The Lease',
-        destination:'contact'
+        destination:'lease'
     },
     {
       name:'The Accommodation',

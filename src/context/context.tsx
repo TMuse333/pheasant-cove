@@ -8,15 +8,19 @@ interface GeneralContextType {
   setTextYPosition: React.Dispatch<React.SetStateAction<number>>;
   isMobile: boolean;
   setIsMobile: React.Dispatch<React.SetStateAction<boolean>>;
-  setSecondCircleComplete:React.Dispatch<React.SetStateAction<boolean[]>>;
+  setSecondCircleComplete: React.Dispatch<React.SetStateAction<boolean[]>>;
   secondCircleComplete: boolean[];
   isMobile2: boolean;
   setIsMobile2: React.Dispatch<React.SetStateAction<boolean>>;
   handleCircleComplete: (index: number, value: boolean) => void;
-  count:number,
-  setCount:React.Dispatch<React.SetStateAction<number>>
-  clickedImage:number | null,
-  setClickedImage:React.Dispatch<React.SetStateAction<number | null>>
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+  clickedImage: number | null;
+  setClickedImage: React.Dispatch<React.SetStateAction<number | null>>;
+
+  // State for application form questions
+  applicationFormState: Record<string, string>;
+  setApplicationFormState: React.Dispatch<React.SetStateAction<Record<string, string>>>;
 }
 
 // Create the context
@@ -24,31 +28,23 @@ export const GeneralContext = createContext<GeneralContextType | undefined>(unde
 
 // Create a provider component
 export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize the value state
   const [textYPosition, setTextYPosition] = useState<number>(0);
-
-  const [count, setCount] = useState(0)
-
-  // Detect mobile devices
+  const [count, setCount] = useState(0);
   const [isMobile, setIsMobile] = useState<boolean>(true);
-
   const [isMobile2, setIsMobile2] = useState<boolean>(true);
-
-  const [clickedImage, setClickedImage] = useState<number | null>(null)
-
+  const [clickedImage, setClickedImage] = useState<number | null>(null);
   const [secondCircleComplete, setSecondCircleComplete] = useState<boolean[]>(
     Array.from({ length: 7 }, () => false)
   );
+  const [applicationFormState, setApplicationFormState] = useState<Record<string, string>>({});
 
   const handleCircleComplete = (index: number, value: boolean) => {
     setSecondCircleComplete((prev) => {
-      const newState = [...prev]; // Create a copy of the previous state array
-      newState[index] = value; // Update the value at the specified index
-      return newState; // Return the new state array
+      const newState = [...prev];
+      newState[index] = value;
+      return newState;
     });
   };
-  
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,9 +84,12 @@ export const ContextProvider: React.FC<{ children: ReactNode }> = ({ children })
     isMobile2,
     setIsMobile2,
     handleCircleComplete,
-    count, setCount,
+    count,
+    setCount,
     clickedImage,
-    setClickedImage
+    setClickedImage,
+    applicationFormState,
+    setApplicationFormState
   };
 
   return <GeneralContext.Provider value={contextValue}>{children}</GeneralContext.Provider>;
