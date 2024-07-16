@@ -6,6 +6,9 @@ interface Question {
     placeholder?: string;
     multipleChoices?: boolean;
     choices?: string[];
+    isEmail?: boolean;
+    isPhoneNumber?: boolean;
+    required?:boolean
 }
 
 interface InputFormProps {
@@ -23,10 +26,11 @@ const InputForm: React.FC<InputFormProps> = ({ title, description, questions }) 
             [question]: value
         }));
     };
+    
 
-    // useEffect(()=> {
-    //     console.log(applicationFormState)
-    // },[applicationFormState])
+    // useEffect(() => {
+    //     console.log(applicationFormState);
+    // }, [applicationFormState]);
 
     return (
         <div className="text-white w-[80vw] lg:w-[50vw] max-w-[400px] p-6 rounded-lg ml-auto mr-auto ">

@@ -99,122 +99,141 @@ export const closingStatment = {
 
 export const generalLeaseTerms = [
     {
-        term:'Type of accommodation',
-        condition:'Independent building on same property as owner'
+        term: 'Type of accommodation',
+        condition: 'Independent building on same property as owner'
     },
     {
-        term:'Property address',
-        condition:'106 Ashley Court, Hubley B3Z 1P6'
+        term: 'Property address',
+        condition: '106 Ashley Court, Hubley B3Z 1P6'
     },
     {
-        term:'Parking',
-        condition:'Ample outdoor parking space and one large, heated garage stall'
+        term: 'Parking',
+        condition: 'Ample outdoor parking space and one large, heated garage stall'
     },
     {
-        term:'Storage',
-        condition:"Ample space for storage in garage stall"
+        term: 'Storage',
+        condition: "Ample space for storage in garage stall"
     },
     {
-        term:'Type of lease',
-        condition:'One-year fixed term beginning June 1, 2025'
+        term: 'Type of lease',
+        condition: 'One-year fixed term beginning June 1, 2025'
     },
     {
-        term:'Monthly rent payment:',
-        condition:'$2,600 payable on or before the 1st of each month',
-
+        term: 'Monthly rent payment:',
+        condition: '$2,600 payable on or before the 1st of each month'
     },
     {
-        term:'Initial security deposit:',
-        condition:'$1,300 payable prior to initial occupancy'
+        term: 'Initial security deposit:',
+        condition: '$1,300 payable prior to initial occupancy'
     },
     {
-        term:'Pets:',
-        condition:'Pets are not permitted'
+        term: 'Pets:',
+        condition: 'Pets are not permitted'
     },
     {
-        term:'Smoking:',
-        condition:'Smoking or vaping of tobacco, cannabis or other controlled substances is not permitted'
-
-       
+        term: 'Smoking:',
+        condition: 'Smoking or vaping of tobacco, cannabis or other controlled substances is not permitted'
     }
-]
+];
+
 
 
 export const applicationQuestions = [
     {
         question: 'Applicant name',
-        placeholder: 'Enter name here'
+        placeholder: 'Enter applicant name here',
+        required: true,
     },
     {
-        question: 'Date of birth',
-        placeholder: 'Enter date of birth here'
+        question: 'Applicant date of birth',
+        placeholder: 'Enter applicant date of birth here',
+        required: true,
     },
     {
-        question: "Email",
-        placeholder: 'Enter email here'
+        question: "Applicant email",
+        placeholder: 'Enter applicant email here',
+        isEmail: true,
+        required: true,
     },
     {
-        question: 'Telephone number',
-        placeholder: 'Enter telephone number here'
+        question: 'Applicant telephone number',
+        placeholder: 'Enter applicant telephone number here',
+        isPhoneNumber: true,
+        required: true,
     },
     {
-        question: 'Work phone',
-        placeholder: 'Enter work phone here'
+        question: 'Applicant work phone',
+        placeholder: 'Enter applicant work phone here',
+        isPhoneNumber: true,
+        required: true,
     },
     {
-        question: 'Present address',
-        placeholder: 'Enter present address here'
+        question: 'Applicant present address',
+        placeholder: 'Enter applicant present address here',
+        required: true,
     },
     {
-        question: 'For how long?',
-        placeholder: 'Enter duration here'
+        question: 'Applicant duration at present address',
+        placeholder: 'Enter duration here',
+        required: true,
     }
 ];
 
-
 export const applicationQuestions2 = [
     {
-        question: 'Make of model',
-        placeholder: 'Enter make of model here'
+        question: 'Vehicle make and model',
+        placeholder: 'Enter vehicle make and model here',
+        required: true,
     },
     {
-        question: 'Year',
-        placeholder: 'Enter year here'
+        question: 'Vehicle year',
+        placeholder: 'Enter vehicle year here',
+        required: true,
     },
     {
-        question: 'License plate',
-        placeholder: 'Enter license plate here'
+        question: 'Vehicle license plate',
+        placeholder: 'Enter vehicle license plate here',
+        required: true,
     },
     {
-        question: 'Color',
-        placeholder: 'Enter color here'
+        question: 'Vehicle color',
+        placeholder: 'Enter vehicle color here',
+        required: true,
     }
 ];
 
 export const currentAddressQuestions = [
     {
         question: 'Current address',
-        placeholder: 'Enter current address here'
+        placeholder: 'Enter current address here',
+        required: true,
     },
     {
-        question: 'How long at this current address',
-        placeholder: 'Enter duration at current address here'
+        question: 'Current address duration',
+        placeholder: 'Enter duration at current address here',
+        required: true,
     },
     {
-        question: 'Name of current landlord',
-        placeholder: 'Enter name of current landlord here'
+        question: 'Current landlord name',
+        placeholder: 'Enter current landlord name here',
+        required: true,
     },
     {
-        question: 'Phone number of current landlord',
-        placeholder: 'Enter phone number of current landlord here'
+        question: 'Current landlord phone number',
+        placeholder: 'Enter current landlord phone number here',
+        isPhoneNumber: true,
+        required: true,
     },
     {
-        question: 'Name of previous landlord',
-        placeholder: 'Enter name of previous landlord here'
+        question: 'Previous landlord name',
+        placeholder: 'Enter previous landlord name here',
+        required: true,
     },
     {
-        question: 'Phone number of previous landlord',
-        placeholder: 'Enter phone number of previous landlord here'
+        question: 'Previous landlord phone number',
+        placeholder: 'Enter previous landlord phone number here',
+        isPhoneNumber: true,
+        required: true,
     }
 ];
 
@@ -222,161 +241,200 @@ export const employmentQuestions = [
     {
         question: 'Employment status',
         multipleChoices: true,
-        choices: ['Full-time', 'Part-time', 'Student', 'Unemployed', 'Retired']
+        choices: ['Full-time', 'Part-time', 'Student', 'Unemployed', 'Retired'],
+        required: true,
     },
     {
         question: 'Present employer',
-        placeholder: 'Enter present employer here'
+        placeholder: 'Enter present employer here',
+        required: true,
     },
     {
         question: 'Years employed',
-        placeholder: 'Enter years employed here'
+        placeholder: 'Enter years employed here',
+        required: true,
     },
     {
         question: 'Employer’s address',
-        placeholder: 'Enter employer’s address here'
+        placeholder: 'Enter employer’s address here',
+        required: true,
     },
     {
         question: 'Position / work performed',
-        placeholder: 'Enter position / work performed here'
+        placeholder: 'Enter position / work performed here',
+        required: true,
     },
     {
         question: 'Supervisor’s name',
-        placeholder: 'Enter supervisor’s name here'
+        placeholder: 'Enter supervisor’s name here',
+        required: true,
     },
     {
-        question: 'Phone number',
-        placeholder: 'Enter phone number here'
+        question: 'Supervisor’s phone number',
+        placeholder: 'Enter supervisor’s phone number here',
+        isPhoneNumber: true,
+        required: true,
     },
     {
         question: 'Date hired',
-        placeholder: 'Enter date hired here'
+        placeholder: 'Enter date hired here',
+        required: true,
     },
     {
         question: 'Monthly income',
-        placeholder: 'Enter monthly income here'
+        placeholder: 'Enter monthly income here',
+        required: true,
     }
 ];
 
 export const otherSourcesOfIncomeQuestions = [
     {
-        question: 'Source',
-        placeholder: 'Enter source of income here'
+        question: 'Income source 1',
+        placeholder: 'Enter source of income here',
+        required: true,
     },
     {
-        question: 'Monthly amount',
-        placeholder: 'Enter monthly amount here'
+        question: 'Monthly amount 1',
+        placeholder: 'Enter monthly amount here',
+        required: true,
     },
     {
-        question: 'Source',
-        placeholder: 'Enter source of income here'
+        question: 'Income source 2',
+        placeholder: 'Enter source of income here',
+        required: true,
     },
     {
-        question: 'Monthly amount',
-        placeholder: 'Enter monthly amount here'
+        question: 'Monthly amount 2',
+        placeholder: 'Enter monthly amount here',
+        required: true,
     }
 ];
 
-
 export const proofOfIncomeQuestions = [
     {
-        question: 'Name of bank and branch location',
-        placeholder: 'Enter name of bank and branch location here'
+        question: 'Bank name and branch location',
+        placeholder: 'Enter name of bank and branch location here',
+        required: true,
     },
     {
         question: 'Bank manager’s name',
-        placeholder: 'Enter bank manager’s name here'
+        placeholder: 'Enter bank manager’s name here',
+        required: true,
     },
     {
-        question: 'Phone number',
-        placeholder: 'Enter phone number here'
+        question: 'Bank manager’s phone number',
+        placeholder: 'Enter bank manager’s phone number here',
+        isPhoneNumber: true,
+        required: true,
     },
     {
         question: 'Bank account number',
-        placeholder: 'Enter bank account number here'
+        placeholder: 'Enter bank account number here',
+        required: true,
     },
     {
         question: 'Credit rating',
-        placeholder: 'Enter credit rating here'
+        placeholder: 'Enter credit rating here',
+        required: true,
     }
 ];
 
 export const characterQuestions = [
     {
-        question:'Name'
+        question: 'Character reference name',
+        placeholder: 'Enter name here',
+        required: true,
     },
     {
-        question:'Phone number'
+        question: 'Character reference phone number',
+        placeholder: 'Enter phone number here',
+        required: true,
     },
     {
-        question:"Relationship"
+        question: 'Character reference relationship',
+        placeholder: 'Enter relationship here',
+        required: true,
     },
     {
-        question:'Known for how long'
-    }
-]
-
-export const emergencyQuestions = [
-    {
-        question:'Name'
-    },
-    {
-        question:'Phone number'
-    },
-    {
-        question:"Relationship"
-    },
-    {
-        question:'Phone number'
-    }
-]
-
-export const occupantsQuestions = [
-    {
-        question: '1. Name',
-        placeholder: 'Enter name here'
-    },
-    {
-        question: 'Phone number',
-        placeholder: 'Enter phone number here'
-    },
-    {
-        question: 'Relationship',
-        placeholder: 'Enter relationship here'
-    },
-    {
-        question: 'Age',
-        placeholder: 'Enter age here'
-    },
-    {
-        question: '2. Name',
-        placeholder: 'Enter name here'
-    },
-    {
-        question: 'Phone number',
-        placeholder: 'Enter phone number here'
-    },
-    {
-        question: 'Relationship',
-        placeholder: 'Enter relationship here'
-    },
-    {
-        question: 'Age',
-        placeholder: 'Enter age here'
-    },
-    {
-        question: 'Do you regard any of these occupants as a co-applicant who would share equally in all provisions of the lease?',
-        multipleChoices: true,
-        choices: ['Yes', 'No']
+        question: 'Character reference known for how long',
+        placeholder: 'Enter duration here',
+        required: true,
     }
 ];
 
-// export const delacarationQuestions = [
-//     {
-//         question:'Applicants name',
-//         placeholder:'Enter your name here'
-//     },
-//     {
-//         question:
-//     }
-// ]
+export const emergencyQuestions = [
+    {
+        question: 'Emergency contact name',
+        placeholder: 'Enter name here',
+        required: true,
+    },
+    {
+        question: 'Emergency contact phone number',
+        placeholder: 'Enter phone number here',
+        isPhoneNumber: true,
+        required: true,
+    },
+    {
+        question: 'Emergency contact relationship',
+        placeholder: 'Enter relationship here',
+        required: true,
+    },
+    {
+        question: 'Emergency contact second phone number',
+        placeholder: 'Enter phone number here',
+        isPhoneNumber: true,
+        required: true,
+    }
+];
+
+export const occupantsQuestions = [
+    {
+        question: 'Occupant 1 name',
+        placeholder: 'Enter name here',
+        required: true,
+    },
+    {
+        question: 'Occupant 1 phone number',
+        placeholder: 'Enter phone number here',
+        isPhoneNumber: true,
+        required: true,
+    },
+    {
+        question: 'Occupant 1 relationship',
+        placeholder: 'Enter relationship here',
+        required: true,
+    },
+    {
+        question: 'Occupant 1 age',
+        placeholder: 'Enter age here',
+        required: true,
+    },
+    {
+        question: 'Occupant 2 name',
+        placeholder: 'Enter name here',
+        required: true,
+    },
+    {
+        question: 'Occupant 2 phone number',
+        placeholder: 'Enter phone number here',
+        isPhoneNumber: true,
+        required: true,
+    },
+    {
+        question: 'Occupant 2 relationship',
+        placeholder: 'Enter relationship here',
+        required: true,
+    },
+    {
+        question: 'Occupant 2 age',
+        placeholder: 'Enter age here',
+        required: true,
+    },
+    {
+        question: 'Co-applicant status',
+        multipleChoices: true,
+        choices: ['Yes', 'No'],
+        required: true,
+    }
+];
+

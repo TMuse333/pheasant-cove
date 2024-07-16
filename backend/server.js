@@ -1,10 +1,9 @@
-// server.js
-
 import express from 'express';
-import nodemailer from 'nodemailer';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import transporter from './emailSender.js'
+import {generateEmailHtml} from './emailTemplate.js'
 
 dotenv.config();
 
@@ -17,22 +16,15 @@ app.use(bodyParser.json());
 app.post('/sendApplication', async (req, res) => {
     const { formData } = req.body;
 
-    let transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: false,
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-        },
-    });
+    // Assuming the applicant's email is in formData.email
+    const applicantEmail = formData['Applicant email']; // Change this according to your form data structure
 
     let mailOptions = {
-        from: `"Application Form" <${process.env.EMAIL_USER}>`,
-        to: 'recipient@example.com',
+        from: `"Application Form" <${applicantEmail}>`, // Set the sender as the applicant's email
+        to: 'q3visualdesigns@gmail.com', // Your email address
         subject: 'New Application Form Submission',
         text: JSON.stringify(formData, null, 2),
-        html: `<pre>${JSON.stringify(formData, null, 2)}</pre>`,
+        html: generateEmailHtml(formData), 
     };
 
     try {
@@ -42,6 +34,7 @@ app.post('/sendApplication', async (req, res) => {
         res.status(500).json({ message: 'Failed to send email', error });
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

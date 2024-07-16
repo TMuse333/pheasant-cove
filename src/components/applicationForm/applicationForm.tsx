@@ -10,15 +10,11 @@ import {generalLeaseTerms,applicationQuestions,
 } from '../../data/data'
 
 import Footer from "../footer/footer";
+import axios from 'axios'
+import { useGeneralContext } from "../../context/context";
+
+import { useState, useEffect } from "react";
 const ApplicationForm = () => {
-
-    // interface MaritalStatus {
-    //     single: boolean;
-    //     married: boolean;
-    //     commonLaw: boolean;
-    //     other: boolean;
-    // }
-
 
     const navLinks = [
         {
@@ -30,22 +26,104 @@ const ApplicationForm = () => {
             destination:'/display'
         }
     ]
+    const {applicationFormState} = useGeneralContext()
+    const [missingFields, setMissingFields] = useState<string[]>([]);
+    useEffect(() => {
+        const initialMissing = requiredFields.filter(field => {
+            const isRequired = applicationQuestions.find(q => q.question === field)?.required;
+            return isRequired; // Start with all required fields
+        });
+    
+        const missing = initialMissing.filter(field => {
+            const value = applicationFormState[field]?.trim();
+            return !value; // Check for empty values
+        });
+    
+        setMissingFields(missing);
+        console.log('The missing fields', missing);
+    }, [applicationFormState]);
+    
 
 
-    // const [ setMaritalStatus] = useState({
-    //     single: false,
-    //     married: false,
-    //     commonLaw: false,
-    //     other: false
-    // });
-    // const [otherStatus, setOtherStatus] = useState('');
 
-    // const handleMaritalStatusChange = (status: keyof MaritalStatus) => {
-    //     setMaritalStatus((prevStatus) => ({
-    //         ...prevStatus,
-    //         [status]: !prevStatus[status]
-    //     }));
-    // };
+const requiredFields = [
+    'Applicant name',
+    'Date of birth',
+    'Applicant email',
+    'Telephone number',
+    'Work phone',
+    'Present address',
+    'For how long?',
+    'Make of model',
+    'Year',
+    'License plate',
+    'Color',
+    'Current address',
+    'How long at this current address',
+    'Name of current landlord',
+    'Phone number of current landlord',
+    'Name of previous landlord',
+    'Phone number of previous landlord',
+    'Employment status',
+    'Present employer',
+    'Years employed',
+    'Employer’s address',
+    'Position / work performed',
+    'Supervisor’s name',
+    'Phone number',
+    'Date hired',
+    'Monthly income',
+    // Add other required fields as necessary
+];
+
+const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    console.log('the data sent',applicationFormState)
+
+    // Check for missing fields
+    // const missingFields = requiredFields.filter(field => !applicationFormState[field]);
+    
+    // if (missingFields.length > 0) {
+    //     console.log(missingFields)
+    //     alert(`Please fill out the following fields: ${missingFields.join(', ')}`);
+    //     return; // Stop submission if there are missing fields
+    // }
+
+    // Validate email and phone number formats
+    const email = applicationFormState['Applicant email'];
+    const phoneNumber = applicationFormState['Telephone number'];
+    const workPhone = applicationFormState['Work phone'];
+
+    // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    //     alert('Please enter a valid email address.');
+    //     return;
+    // }
+
+    // if (!/^\d{10}$/.test(phoneNumber)) {
+    //     alert('Please enter a valid phone number (10 digits).');
+    //     return;
+    // }
+
+    // if (!/^\d{10}$/.test(workPhone)) {
+    //     alert('Please enter a valid work phone number (10 digits).');
+    //     return;
+    // }
+
+    try {
+        const response = await axios.post('http://localhost:9000/sendApplication', { formData: applicationFormState });
+        console.log(response.data);
+        alert('Application submitted successfully!');
+    } catch (error) {
+        console.error('Error submitting application:', error);
+        alert('Failed to submit application.');
+    }
+};
+
+
+
+ 
+    
 
 
 
@@ -140,13 +218,7 @@ title='Applicant information'
                 />
 
 
-<InputForm
-questions={proofOfIncomeQuestions}
-title='Proof of income'
-description="This application requires proof of income. Acceptable proof includes but is not limited to an employer’s or bank
-manager’s confirmation of the applicant’s ability to meet the monthly rent requirements, a copy of an official
-Equifax personal credit score or copies of the applicant’s previous year’s tax return."
-/>
+
 
 <InputForm
 title="Character reference"
@@ -171,7 +243,8 @@ title="Other occupants"
 questions={occupantsQuestions}
 />
 
-<button className="bg-orange-500 p-4 mb-4
+<button onClick={handleSubmit}
+className="bg-orange-500 p-4 mb-4
 text-white">
     Submit Application
 </button>

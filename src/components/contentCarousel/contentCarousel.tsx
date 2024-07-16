@@ -36,7 +36,7 @@ const ContentCarousel:React.FC<CarouselProps> = (
         flex ${reverse ? 'flex-col-reverse' : 'flex-col '}
         md:flex-row 
          justify-center items-center 
-         max-w-[1000px] 
+         max-w-[1200px] 
          
          
     `}>

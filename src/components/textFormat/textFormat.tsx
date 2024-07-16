@@ -107,7 +107,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
 
          <motion.button
         className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
-        p-2 
+        p-2 border border-white
         hover:scale-[1.05]
         hover:bg-white hover:text-orange-400 
         transition-all"

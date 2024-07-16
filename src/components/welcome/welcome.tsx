@@ -13,8 +13,8 @@ export const Welcome = () => {
           
         mb-4 md:mb-0
         md:h-[68vw]
-            ml-auto mr-auto 
-          max-w-[620px]
+             mr-auto 
+          max-w-[500px]
             max-h-[600px]
            mt-auto
            bg-gradient-to-b from-blue-300 to-blue-800
@@ -39,8 +39,11 @@ mb-auto
 export const BottomWelcomeText = () => {
 
     return (
+        <div className='w-screen max-w-[1200px] '>
+
+        
         <p className='text-2xl mt-3
-        sm:text-3xl sm:pr-4 sm:pl-4
+        sm:text-3xl 
          font-arima
         pt-3 pb-3 bg-gradient-to-b from-blue-500 to-blue-800
        
@@ -48,6 +51,7 @@ export const BottomWelcomeText = () => {
             The backyard suite at Pheasant Cove is now offered for a one-year,
             fixed-term lease.
         </p>
+        </div>
     )
 }
 

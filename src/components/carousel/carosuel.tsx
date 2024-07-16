@@ -16,6 +16,7 @@ interface CarouselProps {
 
 }
 
+const WIDTH = '90vw'
 
 
 const Carousel:React.FC<CarouselProps> = ({images,
@@ -187,7 +188,7 @@ hasDescription}) =>{
 
         <section
         className='w-[90vw] md:w-[50vw] max-w-[500px] relative
-        flex flex-col md:flex-row ml-auto mr-auto
+        flex flex-col md:flex-row ml-auto 
 mt-auto
           justify-center items-center
          max-h-[640px]
@@ -217,6 +218,7 @@ mt-auto
 
             {/*this dictates the height and width of the image*/}
    <div className={`w-full  
+   bg-red-200
 h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute  
 
  ${shouldHaveTransition(index) ? '' : 'transition-transform duration-1000'}
@@ -226,7 +228,7 @@ h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute
     transform: `translateX(${index === images.length - 1 ? leftEdgeShift : 
         index === 0 ? rightEdgeShift :
         (shift * 100) + (100 * index)}%)`,
-    // transitionTimingFunction: 'cubic-bezier(0.48, -0.25, 0.17, 1.33)',
+    
    }}
 >
        <img
@@ -237,7 +239,7 @@ h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute
            max-h-[620px]
            mt-auto
            top-0
-       h-[100%] object-contain
+       h-[100%] object-cover
        
        
       
@@ -257,7 +259,7 @@ items-center
 max-h-[434px]
 ////sm:w-[70vw]
 
-max-w-[450px]
+max-w-[500px]
 md:top-auto
 
 '>
