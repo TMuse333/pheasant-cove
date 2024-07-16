@@ -187,8 +187,8 @@ hasDescription}) =>{
         <>
 
         <section
-        className='w-[90vw] md:w-[50vw] max-w-[500px] relative
-        flex flex-col md:flex-row ml-auto 
+        className='w-[90vw] md:w-[45vw] max-w-[500px] relative
+        flex flex-col md:flex-row ml-auto mr-auto md:ml-0
 mt-auto
           justify-center items-center
          max-h-[640px]
@@ -196,7 +196,7 @@ mt-auto
         '>
        <div className={`
         flex 
-       relative w-[90vw] md:w-[50vw]`
+       relative w-[90vw] md:w-[43vw] `
        }>
        
       

@@ -14,7 +14,8 @@ export const Welcome = () => {
         mb-4 md:mb-0
         md:h-[68vw]
              mr-auto 
-          max-w-[500px]
+             ml-auto
+          md:max-w-[500px]
             max-h-[600px]
            mt-auto
            bg-gradient-to-b from-blue-300 to-blue-800
@@ -24,7 +25,8 @@ mb-auto
           <h1 className="font-arima text-black text-5xl md:text-6xl
           mt-8 md:mt-[4rem] md:pl-8 md:pr-6">Welcome to pheasant cove</h1>
                 <img src={pheasant}
-            className='object-contain w-[40vw]
+            className='object-contain w-[80vw]
+            md:w-[45vw]
             ml-auto mr-auto 
            
             mb-[3rem]

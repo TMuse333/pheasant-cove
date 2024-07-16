@@ -29,9 +29,9 @@ const ContentCarousel:React.FC<CarouselProps> = (
     return (
 
         <>
-        <section className={` mt-[8rem]
+        <section className={` mt-[3rem]
         
-        md:mt-[6rem]
+        md:mt-[6rem] 
         ml-auto mr-auto w-screen
         flex ${reverse ? 'flex-col-reverse' : 'flex-col '}
         md:flex-row 
