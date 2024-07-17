@@ -81,7 +81,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     console.log('the data sent',applicationFormState)
 
     try {
-        const response = await axios.post('../../../netlify/functions/sendApplication', { formData: applicationFormState });
+        const response = await axios.post('/.netlify/functions/sendApplication', { formData: applicationFormState });
         console.log(response.data);
         alert('Application submitted successfully!');
     } catch (error) {
