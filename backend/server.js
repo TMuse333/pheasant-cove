@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import transporter from './emailSender.js'
-import {generateEmailHtml} from './emailTemplate.js'
+import {generateEmailHtml} from '../netlify/functions/emailTemplate.js'
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ app.post('/sendApplication', async (req, res) => {
 
     let mailOptions = {
         from: `"Application Form" <${applicantEmail}>`, // Set the sender as the applicant's email
-        to: 'q3visualdesigns@gmail.com', // Your email address
+        to: 'thomaslmusial@gmail.com', // Your email address
         subject: 'New Application Form Submission',
         text: JSON.stringify(formData, null, 2),
         html: generateEmailHtml(formData), 
