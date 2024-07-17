@@ -29,7 +29,7 @@ mb-auto
             md:w-[45vw]
             ml-auto mr-auto 
            
-            mb-[3rem]
+            mt-auto
             sm:scale-[1]
             max-w-[475px] max-h-[311px]
             h-[50vw]'/> 
@@ -99,7 +99,7 @@ export const BottomText2 = () => {
      '>
         <img src={pheasant}
         className='w-[20vw] object-cover
-        max-w-[290px] '/>
+         '/>
         <p className='text-sm text-left sm:text-lg 
     
         max-w-[1500px] '>A backyard suite is an independent dwelling

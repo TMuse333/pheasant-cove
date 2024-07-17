@@ -88,7 +88,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
       {/* <div className={`${reverse ? 'md:-translate-x-0' : 'md:translate-x-6'}`}> */}
       <motion.h1 className="text-2xl pb-5 text-center ml-0 bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent 
            text-3xl sm:text-5xl font-semibold ">
-       Accommodations</motion.h1>
+       Accommodation</motion.h1>
    
       <motion.ul className="text-left  pl-4 pt-5 list-disc pr-5
      ">
