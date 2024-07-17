@@ -16,7 +16,6 @@ interface CarouselProps {
 
 }
 
-const WIDTH = '90vw'
 
 
 const Carousel:React.FC<CarouselProps> = ({images,

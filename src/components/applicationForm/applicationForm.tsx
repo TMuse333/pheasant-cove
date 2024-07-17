@@ -13,7 +13,6 @@ import Footer from "../footer/footer";
 import axios from 'axios'
 import { useGeneralContext } from "../../context/context";
 
-import { useState, useEffect } from "react";
 const ApplicationForm = () => {
 
     const navLinks = [
@@ -27,91 +26,62 @@ const ApplicationForm = () => {
         }
     ]
     const {applicationFormState} = useGeneralContext()
-    const [missingFields, setMissingFields] = useState<string[]>([]);
-    useEffect(() => {
-        const initialMissing = requiredFields.filter(field => {
-            const isRequired = applicationQuestions.find(q => q.question === field)?.required;
-            return isRequired; // Start with all required fields
-        });
+    // const [missingFields, setMissingFields] = useState<string[]>([]);
+    // useEffect(() => {
+    //     const initialMissing = requiredFields.filter(field => {
+    //         const isRequired = applicationQuestions.find(q => q.question === field)?.required;
+    //         return isRequired; // Start with all required fields
+    //     });
     
-        const missing = initialMissing.filter(field => {
-            const value = applicationFormState[field]?.trim();
-            return !value; // Check for empty values
-        });
+    //     const missing = initialMissing.filter(field => {
+    //         const value = applicationFormState[field]?.trim();
+    //         return !value; // Check for empty values
+    //     });
     
-        setMissingFields(missing);
-        console.log('The missing fields', missing);
-    }, [applicationFormState]);
+    //     setMissingFields(missing);
+    //     console.log('The missing fields', missing);
+    // }, [applicationFormState]);
     
 
 
 
-const requiredFields = [
-    'Applicant name',
-    'Date of birth',
-    'Applicant email',
-    'Telephone number',
-    'Work phone',
-    'Present address',
-    'For how long?',
-    'Make of model',
-    'Year',
-    'License plate',
-    'Color',
-    'Current address',
-    'How long at this current address',
-    'Name of current landlord',
-    'Phone number of current landlord',
-    'Name of previous landlord',
-    'Phone number of previous landlord',
-    'Employment status',
-    'Present employer',
-    'Years employed',
-    'Employer’s address',
-    'Position / work performed',
-    'Supervisor’s name',
-    'Phone number',
-    'Date hired',
-    'Monthly income',
-    // Add other required fields as necessary
-];
+// const requiredFields = [
+//     'Applicant name',
+//     'Date of birth',
+//     'Applicant email',
+//     'Telephone number',
+//     'Work phone',
+//     'Present address',
+//     'For how long?',
+//     'Make of model',
+//     'Year',
+//     'License plate',
+//     'Color',
+//     'Current address',
+//     'How long at this current address',
+//     'Name of current landlord',
+//     'Phone number of current landlord',
+//     'Name of previous landlord',
+//     'Phone number of previous landlord',
+//     'Employment status',
+//     'Present employer',
+//     'Years employed',
+//     'Employer’s address',
+//     'Position / work performed',
+//     'Supervisor’s name',
+//     'Phone number',
+//     'Date hired',
+//     'Monthly income',
+//     // Add other required fields as necessary
+// ];
 
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     console.log('the data sent',applicationFormState)
 
-    // Check for missing fields
-    // const missingFields = requiredFields.filter(field => !applicationFormState[field]);
-    
-    // if (missingFields.length > 0) {
-    //     console.log(missingFields)
-    //     alert(`Please fill out the following fields: ${missingFields.join(', ')}`);
-    //     return; // Stop submission if there are missing fields
-    // }
-
-    // Validate email and phone number formats
-    const email = applicationFormState['Applicant email'];
-    const phoneNumber = applicationFormState['Telephone number'];
-    const workPhone = applicationFormState['Work phone'];
-
-    // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    //     alert('Please enter a valid email address.');
-    //     return;
-    // }
-
-    // if (!/^\d{10}$/.test(phoneNumber)) {
-    //     alert('Please enter a valid phone number (10 digits).');
-    //     return;
-    // }
-
-    // if (!/^\d{10}$/.test(workPhone)) {
-    //     alert('Please enter a valid work phone number (10 digits).');
-    //     return;
-    // }
-
     try {
-        const response = await axios.post('http://localhost:9000/sendApplication', { formData: applicationFormState });
+        const response = await axios.post('/.netlify/functions/sendApplication', { formData: applicationFormState });
         console.log(response.data);
         alert('Application submitted successfully!');
     } catch (error) {
@@ -119,16 +89,6 @@ const handleSubmit = async (e: React.FormEvent) => {
         alert('Failed to submit application.');
     }
 };
-
-
-
- 
-    
-
-
-
-
-
     return (
         <>
             <Navbar

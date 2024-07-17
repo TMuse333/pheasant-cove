@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useGeneralContext } from '../../context/context';
 
 interface Question {
