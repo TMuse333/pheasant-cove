@@ -105,10 +105,10 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
         <Link to='display'>
 
 
-         <motion.button
+         {/* <motion.button
         className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
-        p-2 border border-white
-        hover:scale-[1.05]
+        p-2 border-2 border-white
+        hover:scale-[1.05] hover:border-orange-400
         hover:bg-white hover:text-orange-400 
         transition-all"
         initial={{ opacity: 0 }}
@@ -116,7 +116,7 @@ const TextFormat: React.FC<TextFormatProps> = ({ isAnimated, reverse  }) => {
         transition={{ delay: points.length * 0.2 }}
       >
         Learn more
-      </motion.button>
+      </motion.button> */}
       </Link>
       </motion.ul>
       {/* </div> */}

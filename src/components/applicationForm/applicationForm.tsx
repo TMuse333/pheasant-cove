@@ -204,14 +204,17 @@ questions={occupantsQuestions}
 />
 
 <button onClick={handleSubmit}
-className="bg-orange-500 p-4 mb-4
-text-white">
+ className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
+ p-2 border-2 border-white text-white
+ hover:scale-[1.05] hover:border-orange-400
+ hover:bg-white hover:text-orange-400 
+ transition-all">
     Submit Application
 </button>
 </div>
 </section>
 
-<section className="text-white w-[90vw] max-w-[1400px] ml-auto mr-auto
+{/* <section className="text-white w-[90vw] max-w-[1400px] ml-auto mr-auto
 ">
 
 
@@ -237,7 +240,7 @@ max-w-[700px]"></div>
 <h2 className="text-xl text-left ml-5 mt-7">Applicants Signature</h2>
 <div className=" mt-8 w-[95vw] mr-auto ml-4  h-[3px] bg-black mb-8
 max-w-[700px]"></div>
-</section>
+</section> */}
 
 
 

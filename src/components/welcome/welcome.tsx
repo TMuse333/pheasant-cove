@@ -90,16 +90,18 @@ export const BottomText2 = () => {
 
     return (
 
-    <div className='flex ]
-    w-full items-center 
+    <div className='flex 
+   items-center 
+    w-[95vw]
     bg-gradient-to-b from-blue-500 to-blue-800
     ml-auto mr-auto  
-        max-w-[1458px] 
-    lg:translate-x-[-0.75rem] '>
+        max-w-[1200px] 
+     '>
         <img src={pheasant}
-        className='w-[20vw] object-cover'/>
+        className='w-[20vw] object-cover
+        max-w-[290px] '/>
         <p className='text-sm text-left sm:text-lg 
-        w-screen
+    
         max-w-[1500px] '>A backyard suite is an independent dwelling
             of not more than 80 square metres located
             on the same PID as the main house </p>
