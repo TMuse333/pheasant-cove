@@ -38,7 +38,7 @@ export const Map = () => {
             </section>
 
             <div className={` h-[5px]
-                w-[60vw] max-w-[800px] ml-auto mr-auto mt-5
+                w-[60vw] max-w-[1200px] ml-auto mr-auto mt-[3rem]
                 mb-8 bg-orange-400`} />
         </>
     );
