@@ -95,7 +95,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     links={navLinks}
     />
  
-        <section className="absolute top-[10%] left-0  bg-radial-gradient from-blue-500 to-blue-900
+        <section className="absolute top-[5%] left-0  bg-radial-gradient from-blue-500 to-blue-900
         w-screen overflow-x-hidden pt-8
         font-arima
        " >
@@ -105,9 +105,9 @@ const handleSubmit = async (e: React.FormEvent) => {
             mr-auto pt-5 text-center">
 
           
-            <h1 className="text-white text-3xl ">Submit an application</h1>
+            <h1 className="text-white text-3xl md:text-5xl">Submit an application</h1>
             <h2 className="text-white w-[80vw] ml-auto mr-auto
-            mt-5">Fill out the following for to
+            mt-5 md:text-xl">Fill out the following for to
             see if you're a good fit for us</h2>
               </section>
 
