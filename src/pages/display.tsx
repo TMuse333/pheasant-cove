@@ -55,7 +55,7 @@ const Display = () => {
         },
         {
             name:'The Lease',
-            destination:'contact'
+            destination:'lease'
         },
         {
             name:'The Accommodation',

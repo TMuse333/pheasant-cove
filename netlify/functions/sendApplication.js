@@ -25,6 +25,7 @@ export const handler = async (event) => {
 
     try {
         body = JSON.parse(event.body);
+        // console.log('the body',body)
     } catch (error) {
         return {
             statusCode: 400,
@@ -33,6 +34,8 @@ export const handler = async (event) => {
     }
 
     const { formData } = body;
+
+    // console.log('form data',formData)
 
     if (!formData || !formData['Applicant email']) {
         return {
