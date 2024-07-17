@@ -5,10 +5,10 @@ import { generateEmailHtml } from './emailTemplate.js';
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email service provider
+  service: 'gmail',
   auth: {
-    user: 'q3visualdesigns@gmail.com', // Your email address
-    pass: process.env.EMAIL_PASSWORD, // Your email password or application-specific password
+    user: 'q3visualdesigns@gmail.com',
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 
@@ -21,29 +21,30 @@ transporter.verify((error, success) => {
 });
 
 export const handler = async (event) => {
-  const body = JSON.parse(event.body);
-  const { formData } = body;
-
-  const applicantEmail = formData['Applicant email'];
-
-  let mailOptions = {
-    from: `"Application Form" <${applicantEmail}>`, // Set the sender as the applicant's email
-    to: 'thomaslmusial@gmail.com', // Your email address
-    subject: 'New Application Form Submission',
-    text: JSON.stringify(formData, null, 2),
-    html: generateEmailHtml(formData),
-  };
-
   try {
+    const body = JSON.parse(event.body);
+    const { formData } = body;
+
+    const applicantEmail = formData['Applicant email'];
+
+    let mailOptions = {
+      from: `"Application Form" <${applicantEmail}>`,
+      to: 'thomaslmusial@gmail.com',
+      subject: 'New Application Form Submission',
+      text: JSON.stringify(formData, null, 2),
+      html: generateEmailHtml(formData),
+    };
+
     let info = await transporter.sendMail(mailOptions);
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Email sent', info }),
     };
   } catch (error) {
+    console.error('Error in handler:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Failed to send email', error }),
+      body: JSON.stringify({ message: 'Failed to send email', error: error.message }),
     };
   }
 };
