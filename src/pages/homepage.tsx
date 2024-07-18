@@ -3,7 +3,7 @@
 // import ImageHero from "../components/imageHero/imageHero";
 import Navbar from "../components/navbar/navbar";
 
-// import frontView from '../media/Front-of-building.jpg'
+import frontView from '../media/Front-of-building.jpg'
 // import lake from '../media/lake-view.jpeg'
 // import livingRoom from '../media/new-imports/Living-room.webp'
 // import { content1 } from "../data/data";
@@ -52,6 +52,13 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
 // ]
 
 const images1 = [
+  {
+    url:frontView,
+    title: 'Bathroom1',
+    description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
+    link: '/',
+    imageIndex:0
+  },
   {
     url: bathroom1,
     title: 'Bathroom1',
