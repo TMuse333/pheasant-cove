@@ -9,7 +9,8 @@ export const Welcome = () => {
         <>
         <div className="w-screen
             md:w-[45vw]
-           
+           w-[90vw] pr-4 pl-4
+           md:pl-0 pr-0
           
         mb-4 md:mb-0
         md:h-[68vw]

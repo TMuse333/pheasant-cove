@@ -125,9 +125,9 @@ lg:w-screen
 
               <h1 className="text-white text-4xl mb-4 mt-4">General Lease Terms</h1>
 
-              <div className="w-[99vw] lg:w-[45vw] border border-black ml-auto mr-auto
+              <div className="w-[99vw] lg:w-[45vw] border border-black 
              bg-gradient-to-b from-blue-300 to-blue-500 rounded-xl  max-w-[800px]
-             border border-black ">
+             border border-black md:mb-auto ">
 
                 <ul className="pt-5 ml-auto mr-auto
                 bg-gradient-to-b from-blue-300 to-blue-500

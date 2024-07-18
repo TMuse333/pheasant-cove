@@ -37,10 +37,10 @@ import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
         name:'The Lease',
         destination:'lease'
     },
-    {
-      name:'The Accommodation',
-      destination:'accommodation'
-    }
+    // {
+    //   name:'The Accommodation',
+    //   destination:'accommodation'
+    // }
   
 ]
 
