@@ -9,7 +9,7 @@ export const Welcome = () => {
         <>
         <div className="w-screen
             md:w-[45vw]
-            h-[90vw]
+           
             md:h-[45vw]
            w-[90vw] pr-4 pl-4
            md:pl-0 pr-0
@@ -21,7 +21,7 @@ export const Welcome = () => {
           md:max-w-[500px]
             max-h-[500px]
            mt-auto
-           bg-gradient-to-b from-blue-300 to-blue-800
+           md:bg-gradient-to-b from-blue-300 to-blue-800
 mb-auto           
             
             ">
@@ -29,9 +29,9 @@ mb-auto
           mt-8 md:mt-[4rem] md:pl-8 md:pr-6">Welcome to pheasant cove</h1>
                 <img src={pheasant}
             className='object-contain w-[40vw]
-            md:w-[25vw]
+            md:w-[50vw]
             ml-auto mr-auto 
-           md:absolute md:top-[35%]
+           md:absolute md:top-[36%]
            md:right-[-10%]
             mt-auto
             sm:scale-[1]

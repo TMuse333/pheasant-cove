@@ -26,6 +26,10 @@ import ContentCarousel from "../components/contentCarousel/contentCarousel";
 // import Carousel from "../components/carousel/carosuel";
 import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
 
+import p1front from '../media/new/p1front.webp'
+import p1pheasant from '../media/new/p1pheasant1.webp'
+import p1cove from '../media/new/p1cove.webp'
+
   const Home = () => {
 
   const navLinks = [
@@ -82,6 +86,29 @@ const images1 = [
   }
 ];
 
+const p1 = [
+  {
+    url:p1pheasant,
+    title:'The front of pheasant cove',
+    description:'front of cove',
+    link:''
+  },
+
+  {
+    url:p1front,
+    title:'The front of pheasant cove',
+    description:'front of cove',
+    link:''
+  },
+  {
+    url:p1cove,
+    title:'The front of pheasant cove',
+    description:'front of cove',
+    link:''
+  }
+
+]
+
 // const scrollableImages = [
 //     {
 //         src:frontView,
@@ -116,13 +143,13 @@ links={navLinks}
 
 
 <ContentCarousel
-images={images1}
+images={p1}
 content={<Welcome/>}
 bottomContent={<BottomWelcomeText/>}
 />
 
 
-<Content
+{/* <Content
 hasAnimation={false}
 reverse={true}
 image={angle}
@@ -132,14 +159,14 @@ description={['']}
 customText={<TextFormat
  isAnimated={true}
  reverse={true}/>}
- />
+ /> */}
 
 
- <div className={` h-[5px]
+ {/* <div className={` h-[5px]
                 w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
                 mb-8 bg-orange-400`} />
 
- <Map/>
+ <Map/> */}
 
 
 

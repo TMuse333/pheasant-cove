@@ -17,13 +17,17 @@ interface CarouselProps {
 const ContentCarousel: React.FC<CarouselProps> = ({ images, content, bottomContent, reverse }) => {
   return (
     <>
+    <section>
+
+  
       <section className={`mt-[3rem] md:mt-[6rem] ml-auto mr-auto w-screen flex ${reverse ? 'flex-col-reverse' : 'flex-col'} 
-      md:flex-row  bg-red-200 justify-center items-center
+      md:flex-row   justify-center items-center
       md:max-h-[500px] max-w-[1200px]`}>
         {content}
         <Carousel images={images} />
       </section>
       {bottomContent}
+      </section>
     </>
   );
 }
