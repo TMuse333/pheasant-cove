@@ -182,153 +182,64 @@ hasDescription}) =>{
 
         },[leftEdgeCase,shift,currentImage,leftClicked])
 
-    return (
-        <>
-
-        <section
-        className='w-[90vw] md:w-[45vw] max-w-[500px] relative
-        flex flex-col md:flex-row ml-auto mr-auto md:ml-0
-mt-auto
-          justify-center items-center
-         max-h-[640px]
-
-        '>
-       <div className={`
-        flex 
-       relative w-[90vw] md:w-[43vw] `
-       }>
-       
-      
-        <section className='flex relative
-        justify-center items-center ml-auto
-        mr-auto w-[100vw]
-        md:w-[50vw]
-       h-[100vw] 
-        max-w-[500px]
-         z-3
-        
-      max-h-[600px]
-        overflow-hidden
-        '>
-
-       
-        {images.map((image,index) => (
+        return (
             <>
-
-            {/*this dictates the height and width of the image*/}
-   <div className={`w-full  
-   bg-red-200
-h-full mt-auto ml-auto mr-auto mb-auto top-0 absolute  
-
- ${shouldHaveTransition(index) ? '' : 'transition-transform duration-1000'}
-   `}
-   key={index}
-   style={{
-    transform: `translateX(${index === images.length - 1 ? leftEdgeShift : 
-        index === 0 ? rightEdgeShift :
-        (shift * 100) + (100 * index)}%)`,
-    
-   }}
->
-       <img
-       
-        src={image.url}
-       className={`w-full 
-           
-           max-h-[620px]
-           mt-auto
-           top-0
-       h-[100%] object-cover
-       
-       
-      
-       
-       ml-auto mr-auto`}/>
-   </div>
-
-
-
-   </>
-   
-        ))}
- <div className='relative z-3 
-w-[100vw] flex justify-between
-items-center
-
-max-h-[434px]
-////sm:w-[70vw]
-
-max-w-[500px]
-md:top-auto
-
-'>
-     
-        <button className='bg-transparent p-0
-        hover:scale-[1.5] hover:text-blue-300
-        transition-all
-'>
-        <ChevronLeft
-            onClick={handlePrevClick}
-            size={50}/>
-        </button>
+              <section className='w-[90vw] md:w-[45vw] h-[90vw] md:h-[45vw] max-w-[500px] md:max-h-[500px]  relative mb-auto flex flex-col md:flex-row ml-auto mr-auto md:ml-0 mt-auto justify-center items-center'>
+                <div className='flex relative w-[90vw] md:w-[45vw] max-w-[500px]
+                 h-[90vw] md:h-[45vw] md:max-h-[500px]'>
+                  <section className='flex relative justify-center items-center ml-auto mr-auto w-[100vw] md:w-[50vw] max-w-[500px] z-3 overflow-hidden aspect-square'>
+                    {images.map((image, index) => (
+                      <div
+                        className={`w-full h-full absolute ${shouldHaveTransition(index) ? '' : 'transition-transform duration-1000'} mt-auto mb-auto top-0`}
+                        key={index}
+                        style={{
+                          transform: `translateX(${index === images.length - 1 ? leftEdgeShift : index === 0 ? rightEdgeShift : (shift * 100) + (100 * index)}%)`,
+                        }}
+                      >
+                        <img
+                          src={image.url}
+                          className='top-0 w-full h-full object-cover
+                          '
+                        />
+                      </div>
+                    ))}
+                    <div className='relative z-3 w-full flex justify-between items-center h-full'>
+                      <button className='bg-transparent p-0 hover:scale-[1.5] hover:text-blue-300 transition-all'>
+                        <ChevronLeft onClick={handlePrevClick} size={50} />
+                      </button>
+                      <button className='bg-transparent p-0 hover:scale-[1.5] hover:text-blue-300 transition-all'>
+                        <ChevronRight size={50} onClick={handleNextClick} />
+                      </button>
+                    </div>
+                  </section>
+                </div>
         
-       
-        <button className=' bg-transparent p-0
-         hover:scale-[1.5] hover:text-blue-300
-         transition-all'>
-            <ChevronRight
-            size={50}
-            onClick={handleNextClick}/>
-        </button>
-        </div> 
-
-         </section>
-     
-       </div>
-
-       {hasDescription && (
-      <AnimatePresence mode='wait'>
-      <motion.div
-        key={currentImage}
-        className="w-[100%] relative
-         md2:w-[50%] md:-translate-y-[5rem]
-    ml-auto
-    md2:-translate-x-[2rem]
-        mr-auto
-  "
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.7 }} // Adjust duration as needed
-      >
-        <h1 className='md2:text-left
-        md2:pl-5'>{images[currentImage].title}</h1>
-        <p className="text-white
-        text-center pl-5 pr-5 pt-5
-        md2:pr-0 pl-0 md2:text-left
-       ">{images[currentImage].description}
-       <br/>
-       {images[currentImage].link !== '' &&  (
-        <Link to={images[currentImage].link }
-        className=''>
-         <button className='mt-5
-         text-left'
-         >Check it out</button>
-        </Link>
-       )}
-</p>
-
-      
-      </motion.div>
-
-    </AnimatePresence>
-       )}
-       </section>
-
-
+                {hasDescription && (
+                  <AnimatePresence mode='wait'>
+                    <motion.div
+                      key={currentImage}
+                      className='w-full md2:w-[50%] md:-translate-y-[5rem] ml-auto mr-auto'
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.7 }} // Adjust duration as needed
+                    >
+                      <h1 className='md2:pl-5'>{images[currentImage].title}</h1>
+                      <p className='text-white text-center pl-5 pr-5 pt-5 md2:pr-0 pl-0 md2:text-left'>
+                        {images[currentImage].description}
+                        <br />
+                        {images[currentImage].link !== '' && (
+                          <Link to={images[currentImage].link}>
+                            <button className='mt-5 text-left'>Check it out</button>
+                          </Link>
+                        )}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+              </section>
             </>
-   
-    )
+          );
 }
 
 export default Carousel

@@ -9,15 +9,17 @@ export const Welcome = () => {
         <>
         <div className="w-screen
             md:w-[45vw]
+            h-[90vw]
+            md:h-[45vw]
            w-[90vw] pr-4 pl-4
            md:pl-0 pr-0
           
         mb-4 md:mb-0
-        md:h-[68vw]
+   relative
              mr-auto 
              ml-auto
           md:max-w-[500px]
-            max-h-[600px]
+            max-h-[500px]
            mt-auto
            bg-gradient-to-b from-blue-300 to-blue-800
 mb-auto           
@@ -26,14 +28,16 @@ mb-auto
           <h1 className="font-arima text-black text-5xl md:text-6xl
           mt-8 md:mt-[4rem] md:pl-8 md:pr-6">Welcome to pheasant cove</h1>
                 <img src={pheasant}
-            className='object-contain w-[80vw]
-            md:w-[45vw]
+            className='object-contain w-[40vw]
+            md:w-[25vw]
             ml-auto mr-auto 
-           
+           md:absolute md:top-[35%]
+           md:right-[-10%]
             mt-auto
             sm:scale-[1]
             max-w-[475px] max-h-[311px]
-            h-[50vw]'/> 
+            h-[50vw]
+            mb-auto'/> 
             </div>
             </>
     )
