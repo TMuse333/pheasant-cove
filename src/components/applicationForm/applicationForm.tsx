@@ -1,4 +1,4 @@
-import Navbar from "../navbar/navbar"
+
 // import { useState } from "react"
 import InputForm from "../inputForm/inputForm";
 import {generalLeaseTerms,applicationQuestions,
@@ -9,22 +9,13 @@ import {generalLeaseTerms,applicationQuestions,
 
 } from '../../data/data'
 
-import Footer from "../footer/footer";
+
 import axios from 'axios'
 import { useGeneralContext } from "../../context/context";
 
 const ApplicationForm = () => {
 
-    const navLinks = [
-        {
-            name:'Home',
-            destination:'/'
-        },
-        {
-            name:'View Property',
-            destination:'/display'
-        }
-    ]
+
     const {applicationFormState} = useGeneralContext()
     // const [missingFields, setMissingFields] = useState<string[]>([]);
     // useEffect(() => {
