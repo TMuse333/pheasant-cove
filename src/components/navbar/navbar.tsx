@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 
 interface NavbarProps {
     links: {
@@ -15,11 +14,16 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
         setSubMenuClicked(!subMenuClicked);
     }
 
+    function scrollToSection(destination: string) {
+        const element = document.getElementById(destination);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <nav className="fixed top-0 z-[200] w-screen left-0 bg-gradient-to-b from-blue-900 to-blue-800 h-[50px] flex justify-between items-center text-white">
-            <div className="relative flex justify-between items-center w-screen ml-auto mr-auto 
-             sm:justify-center font-arima 
-">
+            <div className="relative flex justify-between items-center w-screen ml-auto mr-auto sm:justify-center font-arima">
                 <div
                     className={`fixed right-[5%] top-[15px] flex flex-col justify-center items-center sm:relative sm:top-auto sm:right-auto`}
                     onClick={handleSubmenuClick}
@@ -36,9 +40,9 @@ const Navbar: React.FC<NavbarProps> = ({ links }) => {
                     >
                         {links.map((link, index) => (
                             <li key={index} className="text-lg mb-2 pl-2 pr-2 sm:mb-0 hover:text-orange-400 sm:border sm:border-white sm:bg-blue-800 sm:pr-6 sm:pl-6">
-                                <Link to={link.destination}>
-                                    <p>{link.name}</p>
-                                </Link>
+                                <button onClick={() => scrollToSection(link.destination)}>
+                                    {link.name}
+                                </button>
                             </li>
                         ))}
                     </ul>

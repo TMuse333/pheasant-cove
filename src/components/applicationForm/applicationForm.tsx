@@ -91,11 +91,12 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
     return (
         <>
-            <Navbar
+            {/* <Navbar
     links={navLinks}
-    />
+    /> */}
  
-        <section className="absolute top-[5%] left-0  bg-radial-gradient from-blue-500 to-blue-900
+        <section id='application'
+        className="  bg-radial-gradient from-blue-500 to-blue-900
         w-screen overflow-x-hidden pt-8
         font-arima
        " >
@@ -249,10 +250,10 @@ max-w-[700px]"></div>
 
 
 
-<Footer
+{/* <Footer
 links={navLinks}
 
-/>     
+/>      */}
 
         </section>
 

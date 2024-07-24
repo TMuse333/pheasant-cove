@@ -1,90 +1,57 @@
 
 
-// import ImageHero from "../components/imageHero/imageHero";
+
 import Navbar from "../components/navbar/navbar";
 
-import frontView from '../media/Front-of-building.jpg'
-// import lake from '../media/lake-view.jpeg'
-// import livingRoom from '../media/new-imports/Living-room.webp'
-// import { content1 } from "../data/data";
-import Content from "../components/content/content";
-import TextFormat from "../components/textFormat/textFormat";
-import { Map } from "../components/map/map";
-
 import Footer from "../components/footer/footer";
-import angle from '../media/new-imports/Front-of-building.webp'
-// import deck from '../media/new-imports/Living-room-deck.webp'
-// import kitchen from '../media/new-imports/Kitchen.webp'
-// import ScrollableCarousel from "../components/scrollableCarousel/scrollableCarousel";
-// import Herobanner2 from "../components/herobanner2.tsx/herobanner2";
 
-import bathroom1 from '../media/Bathroom-1.jpeg'
-import bathroom2 from '../media/Bathroom-2.jpeg'
-// import laundrySink from '../media/new-imports/Laundry-sink.webp'
-import washer from '../media/new-imports/Laundry-washer-dryer.webp'
 import ContentCarousel from "../components/contentCarousel/contentCarousel";
-// import Carousel from "../components/carousel/carosuel";
-import {BottomWelcomeText, Welcome} from "../components/welcome/welcome";
+
+import {BottomText2, BottomWelcomeText, LuxuryLiving, Welcome} from "../components/welcome/welcome";
 
 import p1front from '../media/new/p1front.webp'
 import p1pheasant from '../media/new/p1pheasant1.webp'
 import p1cove from '../media/new/p1cove.webp'
 
+import image1 from '../media/page2/p2-3.webp'
+import image2 from '../media/page2/p2-4.webp'
+import image3 from '../media/page2/p2-4.webp'
+import image5 from '../media/page2/p2-5.webp'
+import image56 from '../media/page2/p2-56.jpeg'
+import image6 from '../media/page2/p2-6.webp'
+import image7 from '../media/page2/p2-7.webp'
+import image8 from '../media/page2/p2-8.webp'
+import image9 from '../media/page2/p2-9.webp'
+import image10 from '../media/page2/p2-10.webp'
+import image11 from '../media/page2/p2-11.webp'
+import image12 from '../media/page2/p2-12.webp'
+import image13 from '../media/page2/p2-13.webp'
+import image14 from '../media/page2/p2-14.webp'
+import image15 from '../media/page2/p2-15.webp'
+import ApplicationForm from "../components/applicationForm/applicationForm";
+
   const Home = () => {
 
   const navLinks = [
     {
-        name:'The Property',
-        destination:'display'
+        name:'Home',
+        destination:'home'
+    },
+    {
+      name:'The Accommodation',
+      destination:'accommodation'
     },
     {
         name:'The Lease',
-        destination:'lease'
+        destination:'application'
     },
-    // {
-    //   name:'The Accommodation',
-    //   destination:'accommodation'
-    // }
+   
   
 ]
 
-// const images = [
-//   frontView,
-//   livingRoom,
-//   lake,
-  
-// ]
 
-const images1 = [
-  {
-    url:frontView,
-    title: 'Bathroom1',
-    description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
-    link: '/',
-    imageIndex:0
-  },
-  {
-    url: bathroom1,
-    title: 'Bathroom1',
-    description: 'A modern and well-lit bathroom featuring sleek fixtures and elegant design elements. Enjoy a refreshing shower experience in this beautifully crafted space.',
-    link: '/',
-    imageIndex:0
-  },
-  {
-    url: bathroom2,
-    title: 'Bathroom2',
-    description: 'Step into luxury with this spacious bathroom that boasts a luxurious bathtub, stylish vanity area, and ample natural light. Pamper yourself with a spa-like experience in the comfort of your own home.',
-    link: '/',
-    imageIndex:1
-  },
-  {
-    url: washer,
-    title: 'Washer',
-    description: 'Efficiency meets convenience in this laundry room equipped with state-of-the-art washer and dryer appliances. Make laundry day a breeze with this modern and functional setup.',
-    link: '/',
-    imageIndex:2
-  }
-];
+
+
 
 const p1 = [
   {
@@ -109,28 +76,101 @@ const p1 = [
 
 ]
 
-// const scrollableImages = [
-//     {
-//         src:frontView,
-//         alt:'The front view of Pheasant Cove'
-//     },
-//     {
-//         src:kitchen,
-//         alt:"The kitchen of Pheasant Cove"
-//     },
-//     {
-//         src:livingRoom,
-//         alt:'An image of the living room of Pheasant Cove'
-//     },
-//     {
-//         src:deck,
-//         alt:'The deck of Pheasant Cove'
-//     }
-// ]
+const p2 = [
+  {
+    url: image1,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image2,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image3,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image5,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image56,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image6,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image7,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image8,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image9,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image10,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image11,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image12,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image13,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image14,
+    title: '',
+    description: '',
+    link: ''
+  },
+  {
+    url: image15,
+    title: '',
+    description: '',
+    link: ''
+  }
+];
 
 
 
-// bg-[#35465E]
   return (
     <main className="absolute top-0 left-0 overflow-x-hidden
     bg-radial-gradient from-blue-500 to-blue-900
@@ -143,30 +183,23 @@ links={navLinks}
 
 
 <ContentCarousel
+id='home'
 images={p1}
 content={<Welcome/>}
 bottomContent={<BottomWelcomeText/>}
 />
 
+<ContentCarousel
+id='accommodation'
+images={p2}
+content={<LuxuryLiving/>}
+bottomContent={<BottomText2/>}
+/>
 
-{/* <Content
-hasAnimation={false}
-reverse={true}
-image={angle}
-mainTitle=''
-
-description={['']}
-customText={<TextFormat
- isAnimated={true}
- reverse={true}/>}
- /> */}
+<ApplicationForm/>
 
 
- {/* <div className={` h-[5px]
-                w-[80vw] max-w-[1200px] ml-auto mr-auto mt-5
-                mb-8 bg-orange-400`} />
 
- <Map/> */}
 
 
 

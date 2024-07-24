@@ -205,6 +205,7 @@ images={images1}
 content={<LuxuryLiving/>}
 bottomContent={<BottomText2/>}
 reverse={true}
+id='lol'
 />
 
 {/* <Carousel

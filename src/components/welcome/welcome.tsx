@@ -11,18 +11,18 @@ export const Welcome = () => {
             md:w-[45vw]
            
             md:h-[45vw]
-           w-[90vw] pr-4 pl-4
-           md:pl-0 pr-0
-          
-        mb-4 md:mb-0
-   relative
-             mr-auto 
-             ml-auto
+           w-[90vw] 
           md:max-w-[500px]
             max-h-[500px]
            mt-auto
            md:bg-gradient-to-b from-blue-300 to-blue-800
-mb-auto           
+mb-auto      pr-4 pl-4
+md:pl-0 pr-0
+
+mb-4 md:mb-0
+relative
+  mr-auto 
+  ml-auto     
             
             ">
           <h1 className="font-arima text-black text-5xl md:text-6xl
@@ -66,17 +66,16 @@ export const BottomWelcomeText = () => {
 export const LuxuryLiving = () => {
 
     return (
-        <div className="w-screen
+        <div className="
         mt-4 md:mt-0
-        md:w-[50vw]
-       
-      
-    mb-4 md:mb-0
-    md:h-[68vw]
-        ml-auto mr-auto 
-      flex
-        max-h-[600px]
-       md:mt-auto
+        w-screen
+        md:w-[45vw]
+       mr-auto ml-auto
+        md:h-[45vw]
+       w-[90vw] 
+      md:max-w-[500px]
+        max-h-[500px]
+       mt-auto
        bg-gradient-to-b from-blue-300 to-blue-800
 mb-auto
 max-w-[500px]            
