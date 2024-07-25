@@ -129,7 +129,7 @@ lg:w-screen
                             <div 
                             key={index}
                             className={`w-full flex justify-between
-                            mb-5 ${index % 2 !== 0 ? 'bg-blue-300' : ''}`}>
+                            mb-5 `}>
                                 <p className="w-[40%]">{term.term}</p>
                                 <p className="w-[60%]">{term.condition}</p>
                             </div>

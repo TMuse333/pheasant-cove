@@ -81,14 +81,52 @@ mb-auto
 max-w-[500px]            
         
         ">
-        <p className='font-arima mt-auto mb-auto text-2xl p-3
-        text-black md:text-4xl mt-5 ml-auto mr-auto'>Executive luxury living
-            in a natural setting less than a 15-minute 
-            drive from the amenities of the Bayers Lake shopping malls and the Bayers Lake Community Outpatient Centre
-        </p>
+        <ul style={{ listStyleType: 'disc' }} 
+        className=' font-arima mt-auto mb-auto text-sm 
+        text-white md:text-lg mt-5 ml-auto mr-auto text-left
+        pl-8'>
+            <li className='pr-4'>
+            One bedroom, executive apartment in an
+independent building
+            </li>
+            <li>
+            New construction, new furnishings and appliances
+• Large, second storey deck, abundant light and
+windows, interesting woodland views 
+            </li>
+            <li>
+            New appliances and high-end finishes and fixtures
+            </li>
+            <li>Heat pump for year-around heating/cooling
+
+            </li>
+            <li>
+            Gas fireplace/stove for back-up heat and cosy
+atmosphere
+            </li>
+            <li>
+            Large, heated garage bay for indoor parking and
+extra storage
+            </li>
+            <li>
+            Garage-level laundry facility with new stacked
+washer/dryer
+            </li>
+            <li>
+            Less than a 15-minute drive from the Bayers Lake
+shopping malls and amenities
+            </li>
+        </ul>
         </div>
     )
 }
+
+const handleScroll = () => {
+    const element = document.getElementById('home');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
 export const BottomText2 = () => {
 
@@ -103,7 +141,10 @@ export const BottomText2 = () => {
      '>
         <img src={pheasant}
         className='w-[20vw] object-cover
-         '/>
+        hover:scale-[1.05] transition-transform
+        
+         '
+         onClick={handleScroll}/>
         <p className='text-sm text-left sm:text-lg 
     
         max-w-[1500px] '>A backyard suite is an independent dwelling
