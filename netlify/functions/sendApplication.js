@@ -48,7 +48,7 @@ export const handler = async (event) => {
 
     const mailOptions = {
         from: `"Application Form" <${applicantEmail}>`, // Set the sender as the applicant's email
-        to: 'thomaslmusial@gmail.com', // Your email address
+        to: 'tom_musial@bellaliant.net', // Your email address
         subject: 'New Application Form Submission',
         text: JSON.stringify(formData, null, 2),
         html: generateEmailHtml(formData),
