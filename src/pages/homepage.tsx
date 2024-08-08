@@ -55,18 +55,19 @@ import ApplicationForm from "../components/applicationForm/applicationForm";
 
 const p1 = [
   {
+    url:p1front,
+    title:'The front of pheasant cove',
+    description:'front of cove',
+    link:''
+  },
+  {
     url:p1pheasant,
     title:'The front of pheasant cove',
     description:'front of cove',
     link:''
   },
 
-  {
-    url:p1front,
-    title:'The front of pheasant cove',
-    description:'front of cove',
-    link:''
-  },
+ 
   {
     url:p1cove,
     title:'The front of pheasant cove',

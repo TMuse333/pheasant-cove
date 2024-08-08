@@ -167,21 +167,22 @@ export const applicationQuestions = [
         isPhoneNumber: true,
         required: true,
     },
-    {
-        question: 'Applicant present address',
-        placeholder: 'Enter applicant present address here',
-        required: true,
-    },
-    {
-        question: 'Applicant duration at present address',
-        placeholder: 'Enter duration here',
-        required: true,
-    }
+    // {
+    //     question: 'Applicant present address',
+    //     placeholder: 'Enter applicant present address here',
+    //     required: true,
+    //     textArea:true
+    // },
+    // {
+    //     question: 'Length of time at this address',
+    //     placeholder: 'Enter duration here',
+    //     required: true,
+    // }
 ];
 
 export const applicationQuestions2 = [
     {
-        question: 'Vehicle make and model',
+        question: 'Description of your car',
         placeholder: 'Enter vehicle make and model here',
         required: true,
     },
@@ -207,10 +208,17 @@ export const currentAddressQuestions = [
         question: 'Current address',
         placeholder: 'Enter current address here',
         required: true,
+        textArea:true
+    },
+    {
+        question:'Were you a renter or owner?',
+        multipleChoices:true,
+        choices:['Rent','Own'],
+        required:true
     },
     {
         question: 'Current address duration',
-        placeholder: 'Enter duration at current address here',
+        placeholder: 'Length of time at this address',
         required: true,
     },
     {
@@ -431,10 +439,15 @@ export const occupantsQuestions = [
         required: true,
     },
     {
-        question: 'Co-applicant status',
+        question: 'Do you regard any of these occupants as a co-applicant who would share equally in all provisions of the lease?',
         multipleChoices: true,
         choices: ['Yes', 'No'],
         required: true,
+    },
+    {
+        question:'Name(s) of co-applicants',
+        placeholder:'Enter the names of the co-applicant(s) here',
+        required:false
     }
 ];
 

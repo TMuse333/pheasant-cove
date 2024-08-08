@@ -184,7 +184,7 @@ hasDescription}) =>{
 
         return (
             <>
-              <section className='w-[90vw] md:w-[45vw] bg-red-200 h-[90vw] md:h-[45vw] max-w-[500px] max-h-[500px]  relative mb-auto flex flex-col md:flex-row ml-auto mr-auto md:ml-0 mt-auto justify-center items-center'>
+              <section className='w-[90vw] md:w-[45vw] h-[90vw] md:h-[45vw] max-w-[500px] max-h-[500px]  relative mb-auto flex flex-col md:flex-row ml-auto mr-auto md:ml-0 mt-auto justify-center items-center'>
                 <div className='flex relative w-[90vw] md:w-[45vw] max-w-[500px]
                  h-[90vw] md:h-[45vw] md:max-h-[500px]'>
                   <section className='flex relative justify-center items-center ml-auto mr-auto w-[100vw] md:w-[50vw] max-w-[500px] z-3 overflow-hidden aspect-square'>

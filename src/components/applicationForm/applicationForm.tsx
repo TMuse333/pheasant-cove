@@ -12,10 +12,12 @@ import {generalLeaseTerms,applicationQuestions,
 
 import axios from 'axios'
 import { useGeneralContext } from "../../context/context";
+import { useState } from "react";
 
 const ApplicationForm = () => {
 
 
+    const [termsAgreed, setTermsAgreed] = useState(false)
     const {applicationFormState} = useGeneralContext()
     // const [missingFields, setMissingFields] = useState<string[]>([]);
     // useEffect(() => {
@@ -69,6 +71,10 @@ const ApplicationForm = () => {
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if(!termsAgreed){
+        window.alert("Please agree to the declaration by checking the box")
+    }
+
     console.log('the data sent',applicationFormState)
 
     try {
@@ -80,6 +86,10 @@ const handleSubmit = async (e: React.FormEvent) => {
         alert('Failed to submit application.');
     }
 };
+
+function handleAgreeClick(){
+    setTermsAgreed(!termsAgreed)
+}
     return (
         <>
             {/* <Navbar
@@ -97,10 +107,11 @@ const handleSubmit = async (e: React.FormEvent) => {
             mr-auto pt-5 text-center">
 
           
-            <h1 className="text-white text-3xl md:text-5xl">Submit an application</h1>
+            <h1 className="text-white text-3xl md:text-3xl">Submit an application</h1>
             <h2 className="text-white w-[80vw] ml-auto mr-auto
-            mt-5 md:text-xl">Fill out the following for to
-            see if you're a good fit for us</h2>
+            mt-5 md:text-3xl">
+                Viewings of the backyard suite are based on completed applications.
+                </h2>
               </section>
 
 <section className="flex flex-col lg:flex-row w-[90vw]
@@ -115,37 +126,42 @@ lg:w-screen
 
              
 
-              <h1 className="text-white text-4xl mb-4 mt-4">General Lease Terms</h1>
+              <h1 className="text-white text-3xl mb-4 mt-4">General lease terms</h1>
 
               <div className="w-[99vw] lg:w-[45vw] border border-black 
-             bg-gradient-to-b from-blue-300 to-blue-500 rounded-xl  max-w-[800px]
-             border border-black md:mb-auto ">
+             bg-gradient-to-b from-blue-300 to-blue-500 rounded-xl  
+             border border-black md:mb-auto md:max-h-[588px]">
 
                 <ul className="pt-5 ml-auto mr-auto
                 bg-gradient-to-b from-blue-300 to-blue-500
-                mb-auto ">
+    mt-auto">
                     {generalLeaseTerms.map((term, index) => (
                         
                             <div 
                             key={index}
                             className={`w-full flex justify-between
-                            mb-5 `}>
-                                <p className="w-[40%]">{term.term}</p>
-                                <p className="w-[60%]">{term.condition}</p>
+                            mb-5 text-left`}>
+                                <p className="w-[40%] ml-4">{term.term}</p>
+                                <p className="w-[60%] ">{term.condition}</p>
                             </div>
                        
                     ))}
                 </ul>
               </div>
               </section>
-<div className="lg:w-[50vw] h-screen overflow-y-scroll
-border border-black rounded-md mt-6
-mb-8">
+<div className="lg:w-[50vw]  overflow-y-scroll
+border border-black rounded-md mt-6 md:h-[585px]
+mb-8 mt-auto md:mb-0 md:max-h-[588px]">
 
 
-              <InputForm
+                <InputForm
                 questions={applicationQuestions}
-title='Applicant information'
+                title=''
+                />
+
+                <InputForm
+                questions={currentAddressQuestions}
+                title='Current address'
                 />
              
 
@@ -157,11 +173,6 @@ title='Applicant information'
                 <InputForm
                 questions={employmentQuestions}
                 title='Current employment'
-                />
-
-                <InputForm
-                questions={currentAddressQuestions}
-                title='Current address'
                 />
 
                 <InputForm
@@ -194,19 +205,7 @@ questions={emergencyQuestions}
 title="Other occupants"
 questions={occupantsQuestions}
 />
-
-<button onClick={handleSubmit}
- className="mt-5 w-[150px] ml-0 bg-orange-400 rounded-none
- p-2 border-2 border-white text-white
- hover:scale-[1.05] hover:border-orange-400
- hover:bg-white hover:text-orange-400 
- transition-all">
-    Submit Application
-</button>
-</div>
-</section>
-
-{/* <section className="text-white w-[90vw] max-w-[1400px] ml-auto mr-auto
+<section className="text-white  ml-auto mr-auto w-[80%]
 ">
 
 
@@ -225,14 +224,51 @@ incomplete or incorrect information provided in the application may cause a dela
 may result in the denial of the application.
 </p>
 
-<h2 className="text-xl text-left ml-5">Applicants name</h2>
-<div className=" mt-8 w-[95vw] mr-auto ml-4 h-[3px] bg-black
-max-w-[700px]"></div>
+<div className="flex flex-col">
 
-<h2 className="text-xl text-left ml-5 mt-7">Applicants Signature</h2>
-<div className=" mt-8 w-[95vw] mr-auto ml-4  h-[3px] bg-black mb-8
-max-w-[700px]"></div>
-</section> */}
+<div className="mb-6 text-left ml-5">
+    <label className="inline-flex items-center mb-4"
+    onClick={handleAgreeClick}>
+      <input type="checkbox" className="form-checkbox h-5 w-5 text-orange-400" />
+      <span className="ml-2 text-lg">I agree to the terms and conditions</span>
+    </label>
+  </div>
+
+  <div className="mb-6 text-left ml-5">
+    <label htmlFor="applicantName" className="text-xl">Applicant's Name</label>
+    <input
+      type="text"
+      id="applicantName"
+      name="applicantName"
+      className="w-full mt-2 p-2 text-black rounded border-2 border-gray-300 focus:outline-none focus:border-orange-400"
+      placeholder="Enter your name"
+    />
+  </div>
+
+
+
+<button onClick={handleSubmit}
+ className="mt-5 w-[150px] bg-orange-400 rounded-none
+ p-2 border-2 border-white text-white mr-auto
+ hover:scale-[1.05] hover:border-orange-400
+ hover:bg-white hover:text-orange-400 
+ transition-all mb-4 ml-5">
+    Submit Application
+</button>
+
+
+
+</div>
+
+
+
+
+</section>
+
+</div>
+</section>
+
+
 
 
 

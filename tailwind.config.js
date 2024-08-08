@@ -8,7 +8,9 @@ export default {
     extend: {
       screens:{
         sm:'655px',
-        md:'865px'
+        bs:'1080px',
+        md:'865px',
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,6 +20,7 @@ export default {
       },
       fontFamily:{
         arima: ['"Arima Madurai"', 'cursive'],
+        'helvetica': ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       }
     },
   },
