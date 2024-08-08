@@ -22,11 +22,14 @@ md:pl-0 pr-0
 mb-4 md:mb-0
 relative
   mr-auto 
-  ml-auto     
+  ml-auto 
+  fancy-font    
             
             ">
-          <h1 className="font-arima text-black text-5xl md:text-6xl
-          mt-8 md:mt-[4rem] md:pl-8 md:pr-6">Welcome to Pheasant Cove</h1>
+          <h1 className="text-black text-5xl md:text-6xl
+          mt-8 md:mt-[4rem] md:pl-8 md:pr-6 font-arima">
+            Welcome to Pheasant Cove</h1>
+           
                 <img src={pheasant}
             className='object-contain w-[40vw]
             md:w-[35vw] 
@@ -51,7 +54,7 @@ export const BottomWelcomeText = () => {
         
         <p className='text-lg mt-3
         sm:text-lg 
-         font-arima
+         fancy-font
         pt-3 pb-3 bg-gradient-to-b from-blue-500 to-blue-800
        
          '>
@@ -81,7 +84,7 @@ mb-auto
 max-w-[500px]            
         
         ">
-            <h2 className='font-arima text-xl md:text-3xl mt-0 mb-1
+            <h2 className='fancy-font text-xl md:text-3xl mt-0 mb-1
             text-left pl-8 text-black '>Features</h2>
         <ul style={{ listStyleType: 'disc' }} 
         className=' font-helvetica mt-0 mb-auto text-sm 
@@ -137,7 +140,7 @@ export const BottomText2 = () => {
 
     return (
 
-    <div className='flex  font-arima
+    <div className='flex  fancy-font
    items-center 
     w-[95vw]
     bg-gradient-to-b from-blue-500 to-blue-800

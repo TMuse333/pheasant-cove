@@ -99,7 +99,7 @@ function handleAgreeClick(){
         <section id='application'
         className="  bg-radial-gradient from-blue-500 to-blue-900
         w-screen overflow-x-hidden pt-8
-        font-arima
+        fancy-font
        " >
 
 

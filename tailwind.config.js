@@ -20,7 +20,7 @@ export default {
       },
       fontFamily:{
         arima: ['"Arima Madurai"', 'cursive'],
-        'helvetica': ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        helvetica: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       }
     },
   },

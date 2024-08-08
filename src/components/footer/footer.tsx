@@ -41,6 +41,12 @@ const Footer:React.FC<links> = ({links}) => {
     const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
 
     const [hovered, setHovered] = useState(false)
+    function scrollToSection(destination: string) {
+        const element = document.getElementById(destination);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     const handleMouseEnter = () => {
         setHovered(true)
@@ -83,13 +89,15 @@ const Footer:React.FC<links> = ({links}) => {
       
         {links.map((link,index) => (
 
-<Link key={index}
-to={link.destination} >
 
 
 
-            <p className='mt-2 hover:text-orange-400 md:text-xl'>{link.name}</p>
-            </Link>
+
+            <p key={index}
+            onClick={()=>scrollToSection(link.destination)}
+     
+            className='mt-2 hover:text-orange-400 md:text-xl'>{link.name}</p>
+           
 
 
         ))}
