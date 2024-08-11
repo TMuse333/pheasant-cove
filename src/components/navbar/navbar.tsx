@@ -10,9 +10,9 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
     const [subMenuClicked, setSubMenuClicked] = useState(false);
 
-    function handleSubmenuClick() {
-        setSubMenuClicked(!subMenuClicked);
-    }
+    // function handleSubmenuClick() {
+    //     setSubMenuClicked(!subMenuClicked);
+    // }
 
     function scrollToSection(destination: string) {
         const element = document.getElementById(destination);
