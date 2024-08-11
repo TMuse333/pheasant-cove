@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 
 interface NavbarProps {
     links: {
@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ links }) => {
-    const [subMenuClicked, setSubMenuClicked] = useState(false);
+    // const [subMenuClicked, setSubMenuClicked] = useState(false);
 
     // function handleSubmenuClick() {
     //     setSubMenuClicked(!subMenuClicked);
