@@ -118,7 +118,7 @@ const Footer:React.FC<links> = ({links}) => {
       sm:text-2xl'>Pheasant Cove,
       The lake of the woods, Nova scotia</p>
       <Link 
-            to='https://q3designs.netlify.app'
+            to='https://www.focusflowsoftware.com'
             >
                 <motion.p
                 onMouseEnter={handleMouseEnter}
@@ -130,7 +130,7 @@ const Footer:React.FC<links> = ({links}) => {
                     color:backgroundColor,
                 }}
                 className='w-[200px] ml-auto mr-auto mb-5 mt-5 p-3 rounded-xl'   >
-                Created by Q3 Designs
+                Created by FocusFlow Software
                 </motion.p>
                
             </Link>

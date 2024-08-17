@@ -7,7 +7,7 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
     service: 'gmail', // Use your email service provider
     auth: {
-        user: 'focuspointsoftware33@gmail.com', // Your email address
+        user: process.env.EMAIL, // Your email address
         pass: process.env.EMAIL_PASSWORD, // Your email password or application-specific password
     },
 });
